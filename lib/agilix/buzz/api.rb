@@ -1,99 +1,86 @@
 module Agilix
   module Buzz
     class Api
-      URL_ENDPOINT = ENV.fetch("AGILIX_BUZZ_BASE_URL", "https://api.schooldigger.com")
-      API_VERSION = ENV.fetch("AGILIX_BUZZ_API_VERSION", "1.1")
-      URL_BASE = "#{URL_ENDPOINT}/v#{API_VERSION}"
+      URL_ENDPOINT = ENV.fetch("AGILIX_BUZZ_URL", "https://api.schooldigger.com")
+      URL_BASE = "#{URL_ENDPOINT}/cmd"
       include HTTParty
 
-      def get(path, query = {})
-        response = self.class.get(URL_BASE + path, query: modify_query(query), timeout: 30)
+      include Agilix::Buzz::Commands::Authentication
+      include Agilix::Buzz::Commands::Course
+      include Agilix::Buzz::Commands::General
+
+      attr_accessor :username, :password, :domain, :token, :token_expiration
+
+      def initialize(options = {})
+        @username = options.fetch(:username, default_username)
+        @password = options.fetch(:password, default_password)
+        @domain = options.fetch(:domain, default_domain)
       end
 
-      # # Agilix::Buzz::Api.new.autocomplete('San Die', st: "CA")
-      def autocomplete(query, options = {} )
-        available_options = %w(q st level boxLatitudeNW boxLongitudeNW boxLatitudeSE boxLongitudeSE returnCount)
-        options = options.select {|k,v| available_options.include?(k.to_s)}
-        options[:q] = query
-        get "/autocomplete/schools", options
+      def authenticated_get(query = {})
+        check_authentication
+        get query
       end
 
-      # # Agilix::Buzz::Api.new.districts('CA')
-      def districts(state, options = {} )
-        available_options = %w(st q city zip nearLatitude nearLongitude boundaryAddress distanceMiles isInBoundaryOnly boxLatitudeNW boxLongitudeNW boxLatitudeSE boxLongitudeSE page perPage sortBy)
-        options = options.select {|k,v| available_options.include?(k.to_s)}
-        options[:st] = state
-        options[:perPage] ||= 50
-        options[:page] ||= 1
-        get "/districts", options
+      def authenticated_post(query = {})
+        check_authentication
+        post query
       end
 
-      # # Agilix::Buzz::Api.new.district("0600001")
-      def district(district_id)
-        response = get "/districts/#{district_id}"
-        return "Not Found" if response.code == 404
-        response
+      def get(query = {})
+        response = self.class.get(URL_BASE, query: modify_query(query), timeout: 30, headers: headers)
       end
 
-      # # Agilix::Buzz::Api.new.district_rankings('CA')
-      def district_rankings(state, options = {} )
-        available_options = %w(st year page perPage)
-        options = options.select {|k,v| available_options.include?(k.to_s)}
-        options[:perPage] ||= 50
-        options[:page] ||= 1
-        get "/rankings/districts/#{state}", options
+      def post(query = {})
+        response = self.class.post(URL_BASE, body: modify_body(query), timeout: 30, headers: headers)
       end
 
-
-      # # Agilix::Buzz::Api.new.schools('CA')
-      # # Agilix::Buzz::Api.new.schools('CA', q: "East High")
-      def schools(state, options = {} )
-        available_options = %w(st q districtID level city zip isMagnet isCharter isVirtual isTitleI isTitleISchoolwide nearLatitude nearLongitude boundaryAddress distanceMiles isInBoundaryOnly boxLatitudeNW boxLongitudeNW boxLatitudeSE boxLongitudeSE page perPage sortBy)
-        options = options.select {|k,v| available_options.include?(k.to_s)}
-        options[:st] = state
-        options[:perPage] ||= 50
-        options[:page] ||= 1
-        get "/schools", options
-      end
-
-      # # Agilix::Buzz::Api.new.school("490003601072")
-      def school(school_id)
-        response = get "/schools/#{school_id}"
-        return "Not Found" if response.code == 404
-        response
-      end
-
-      # # Agilix::Buzz::Api.new.school_rankings('CA')
-      def school_rankings(state, options = {} )
-        available_options = %w(st year level page perPage)
-        options = options.select {|k,v| available_options.include?(k.to_s)}
-        options[:perPage] ||= 50
-        options[:page] ||= 1
-        get "/rankings/schools/#{state}", options
-      end
-
-      ## response = Agilix::Buzz::Api.new.districts('CA')
-      ## next_page_response = Agilix::Buzz::Api.new.next_page(response)
-      def next_page(response)
-        max_pages = response["numberOfPages"]
-        original_query  = response.request.options[:query]
-        current_page = original_query[:page]
-        next_page = current_page.to_i + 1
-        raise "Already at Last Page" if current_page >= max_pages
-
-        query = original_query.merge({page: next_page})
-        Agilix::Buzz::Api.get( response.request.path, query: query, timeout: 30)
+      def check_authentication
+        if token && token_expiration
+          if token_expiration < Time.now
+            extend_session
+          end
+        else
+          response = login username: @username, password: @password, domain: @domain
+          @token = response.dig("response", "user", "token")
+          @token_expiration = Time.now + (response.dig("response", "user", "authenticationexpirationminutes").to_i * 60 )
+        end
       end
 
       private
 
-      def modify_query(query)
-        default_params = {
-          appID: ENV.fetch("AGILIX_BUZZ_USERNAME", 'not-implemented'),
-          appKey:  ENV.fetch("AGILIX_BUZZ_PASSWORD", 'not-implemented')
-        }
-        default_params.merge query
+      def modify_query(query = {})
+        default_params = {}
+        default_params.merge! query
+        default_params["_token"] =  token if token
+        default_params
       end
+
+      def modify_body(body = {})
+        default_params = { request: {}.merge(body) }
+        default_params[:request]["_token"] = token if token
+        default_params.to_json
+      end
+
+      def headers
+        {
+          "Accept" => "application/json",
+          "Content-Type" => "application/json",
+        }
+      end
+
+      def default_username
+        ENV["AGILIX_BUZZ_USERNAME"]
+      end
+
+      def default_password
+        ENV["AGILIX_BUZZ_PASSWORD"]
+      end
+
+      def default_domain
+        ENV["AGILIX_BUZZ_DEFAULT_DOMAIN"]
+      end
+
     end
   end
 end

@@ -31,7 +31,7 @@ AGILIX_BUZZ_PASSWORD = 'my-password'
 Optionally, if your Buzz instance runs on your own url, you can define it as well:
 
 ```
-AGILIX_BUZZ_URL = 'api.mycustomdomain.com'
+AGILIX_BUZZ_URL = 'https://api.mycustomdomain.com'
 ```
 
 ## Usage
