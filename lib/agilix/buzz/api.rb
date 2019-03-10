@@ -7,6 +7,7 @@ module Agilix
 
       include Agilix::Buzz::Commands::Authentication
       include Agilix::Buzz::Commands::Course
+      include Agilix::Buzz::Commands::Domain
       include Agilix::Buzz::Commands::General
 
       attr_accessor :username, :password, :domain, :token, :token_expiration
@@ -27,12 +28,23 @@ module Agilix
         post query
       end
 
+      def authenticated_bulk_post(query = {})
+        check_authentication
+        bulk_post query
+      end
+
       def get(query = {})
         response = self.class.get(URL_BASE, query: modify_query(query), timeout: 30, headers: headers)
       end
 
       def post(query = {})
         response = self.class.post(URL_BASE, body: modify_body(query), timeout: 30, headers: headers)
+      end
+
+      def bulk_post(query = {})
+        cmd = query.delete(:cmd)
+        url = URL_BASE + "?cmd=#{cmd}&_token=#{token}"
+        response = self.class.post(url, body: modify_bulk_body(query), timeout: 30, headers: headers)
       end
 
       def check_authentication
@@ -47,6 +59,14 @@ module Agilix
         end
       end
 
+      def argument_cleaner(required_params: , optional_params: , options: )
+        missing_required = required_params - options.map {|k,v| k.to_sym }
+        raise ArgumentError.new("Missing Required Arguments: #{missing_required.join(', ')}") if missing_required.any?
+
+        all_params = (required_params + optional_params).flatten
+        return options.select {|k,v| all_params.include?(k.to_sym)}
+      end
+
       private
 
       def modify_query(query = {})
@@ -59,6 +79,12 @@ module Agilix
       def modify_body(body = {})
         default_params = { request: {}.merge(body) }
         default_params[:request]["_token"] = token if token
+        default_params.to_json
+      end
+
+      def modify_bulk_body(query = {})
+        root_node = query.delete(:root_node)
+        default_params = { requests: { root_node.to_sym => query[:body] } }
         default_params.to_json
       end
 
