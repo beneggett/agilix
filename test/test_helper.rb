@@ -27,6 +27,13 @@ VCR.configure do |c|
   c.hook_into :webmock
   c.filter_sensitive_data('<AGILIX_BUZZ_USERNAME>') { ENV["AGILIX_BUZZ_USERNAME"] }
   c.filter_sensitive_data('<AGILIX_BUZZ_PASSWORD>') { ENV["AGILIX_BUZZ_PASSWORD"] }
-    c.filter_sensitive_data('api.agilixbuzz.com') { ENV["AGILIX_BUZZ_URL"] }
+  c.filter_sensitive_data('api.agilixbuzz.com') { ENV["AGILIX_BUZZ_URL"] }
+  c.filter_sensitive_data('agilixbuzz.com') { ENV["AGILIX_BUZZ_DOMAIN"] }
 
+
+
+end
+
+def api
+  @api ||= Agilix::Buzz::Api.new
 end
