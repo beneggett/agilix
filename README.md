@@ -98,12 +98,26 @@ api.restore_domain domainid: '57027'
 api.update_domains [{ domainid: "57027", name: "BuzzTestUpdated1", userspace: 'buzz-test-fc-1', parentid: '57025'}]
 ```
 
-## Reports
+### Reports
 
-- [ ] [GetReportInfo](https://api.agilixbuzz.com/docs/#!/Command/GetReportInfo)
-- [ ] [GetReportList](https://api.agilixbuzz.com/docs/#!/Command/GetReportList)
-- [ ] [GetRunnableReportList](https://api.agilixbuzz.com/docs/#!/Command/GetRunnableReportList)
-- [ ] [RunReport](https://api.agilixbuzz.com/docs/#!/Command/RunReport)
+`get_runnable_report_list` and `run_report` are probably the only ones you would use.
+
+#### [GetReportInfo](https://api.agilixbuzz.com/docs/#!/Command/GetReportInfo)
+```
+api.get_report_info reportid: 127
+```
+#### [GetReportList](https://api.agilixbuzz.com/docs/#!/Command/GetReportList)
+```
+api.get_report_list domainid: 1
+```
+#### [GetRunnableReportList](https://api.agilixbuzz.com/docs/#!/Command/GetRunnableReportList)
+```
+api.get_runnable_report_list domainid: 57025
+```
+#### [RunReport](https://api.agilixbuzz.com/docs/#!/Command/RunReport)
+```
+api.run_report reportid: 127, entityid: 57025, format: 'json'
+```
 
 ## Users
 

@@ -9,6 +9,7 @@ module Agilix
       include Agilix::Buzz::Commands::Course
       include Agilix::Buzz::Commands::Domain
       include Agilix::Buzz::Commands::General
+      include Agilix::Buzz::Commands::Report
 
       attr_accessor :username, :password, :domain, :token, :token_expiration
 
