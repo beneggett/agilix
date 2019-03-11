@@ -57,7 +57,7 @@ module Agilix
         else
           response = login username: @username, password: @password, domain: @domain
           @token = response.dig("response", "user", "token")
-          @token_expiration = Time.now + (response.dig("response", "user", "authenticationexpirationminutes").to_i * 60 )
+          @token_expiration = Time.now + (response.dig("response", "user", "authenticationexpirationminutes").to_i * 60 ) if @token
         end
       end
 

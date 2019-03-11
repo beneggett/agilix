@@ -37,9 +37,18 @@ AGILIX_BUZZ_URL = 'https://api.mycustomdomain.com'
 ## Usage
 
 There are many primary APIs that are wrapped. Below you will see basic examples of how to use them. For more information about what optional query parameters are available, please consult the [Agilix Buzz API Docs](https://api.agilixbuzz.com/)
-#### Auth
 
-You need to authenticate to use the api. Set the credentials in Environment variables as seen aboce
+### Auth
+
+You need to authenticate to use the api. Set the credentials in Environment variables as seen above. If you've done that, you can set and refernce the api object by:
+```
+api = Agilix::Buzz::Api.new
+```
+
+Otherwise, you can pass `:username`, `:password`, and `:domain` into the initializer
+```
+api = Agilix::Buzz::Api.new username: 'my-username', password: 'my-password', domain: 'my-domain'
+```
 
 
 ### Domains
@@ -86,7 +95,7 @@ api.restore_domain domainid: '57027'
 ```
 #### [UpdateDomains](https://api.agilixbuzz.com/docs/#!/Command/UpdateDomains)
 ```
-api.update_domains [{ domainid: "57027", name: "BuzzTestUpdated1", userspace: 'buzz-test-fc-1', parentid: '57025', stupid: 'arg'}]
+api.update_domains [{ domainid: "57027", name: "BuzzTestUpdated1", userspace: 'buzz-test-fc-1', parentid: '57025'}]
 ```
 
 ## Reports
@@ -443,7 +452,7 @@ Implemented APIs from [Agilix Buzz API Docs](https://api.agilixbuzz.com/)
 | Conversion | [ExportData](https://api.agilixbuzz.com/docs/#!/Command/ExportData), [GetConvertedData](https://api.agilixbuzz.com/docs/#!/Command/GetConvertedData), [ImportData](https://api.agilixbuzz.com/docs/#!/Command/ImportData) | ❌ | ⏬ |
 | Courses | [CopyCourses](https://api.agilixbuzz.com/docs/#!/Command/CopyCourses), [CreateCourses](https://api.agilixbuzz.com/docs/#!/Command/CreateCourses), [CreateDemoCourse](https://api.agilixbuzz.com/docs/#!/Command/CreateDemoCourse), [DeactivateCourse](https://api.agilixbuzz.com/docs/#!/Command/DeactivateCourse), [DeleteCourses](https://api.agilixbuzz.com/docs/#!/Command/DeleteCourses), [GetCourse2](https://api.agilixbuzz.com/docs/#!/Command/GetCourse2), [GetCourseHistory](https://api.agilixbuzz.com/docs/#!/Command/GetCourseHistory), [ListCourses](https://api.agilixbuzz.com/docs/#!/Command/ListCourses), [MergeCourses](https://api.agilixbuzz.com/docs/#!/Command/MergeCourses), [RestoreCourse](https://api.agilixbuzz.com/docs/#!/Command/RestoreCourse), [UpdateCourses](https://api.agilixbuzz.com/docs/#!/Command/UpdateCourses) | ❌ | 🔼 |
 | Discussion Boards | [DeleteMessage](https://api.agilixbuzz.com/docs/#!/Command/DeleteMessage), [DeleteMessagePart](https://api.agilixbuzz.com/docs/#!/Command/DeleteMessagePart), [GetMessage](https://api.agilixbuzz.com/docs/#!/Command/GetMessage), [GetMessageList](https://api.agilixbuzz.com/docs/#!/Command/GetMessageList), [ListRestorableMessages](https://api.agilixbuzz.com/docs/#!/Command/ListRestorableMessages), [PutMessage](https://api.agilixbuzz.com/docs/#!/Command/PutMessage), [PutMessagePart](https://api.agilixbuzz.com/docs/#!/Command/PutMessagePart), [RestoreMessages](https://api.agilixbuzz.com/docs/#!/Command/RestoreMessages), [SubmitMessage](https://api.agilixbuzz.com/docs/#!/Command/SubmitMessage), [UpdateMessageViewed](https://api.agilixbuzz.com/docs/#!/Command/UpdateMessageViewed) | ❌ | 🔽
-| Domains | [CreateDomains](https://api.agilixbuzz.com/docs/#!/Command/CreateDomains), [DeleteDomain](https://api.agilixbuzz.com/docs/#!/Command/DeleteDomain), [GetDomain2](https://api.agilixbuzz.com/docs/#!/Command/GetDomain2), [GetDomainContent](https://api.agilixbuzz.com/docs/#!/Command/GetDomainContent), [GetDomainEnrollmentMetrics](https://api.agilixbuzz.com/docs/#!/Command/GetDomainEnrollmentMetrics), [GetDomainParentList](https://api.agilixbuzz.com/docs/#!/Command/GetDomainParentList), [GetDomainSettings](https://api.agilixbuzz.com/docs/#!/Command/GetDomainSettings), [GetDomainStats](https://api.agilixbuzz.com/docs/#!/Command/GetDomainStats), [ListDomains](https://api.agilixbuzz.com/docs/#!/Command/ListDomains), [RestoreDomain](https://api.agilixbuzz.com/docs/#!/Command/RestoreDomain), [UpdateDomains](https://api.agilixbuzz.com/docs/#!/Command/UpdateDomains) | ❌ | ⏫ |
+| Domains | [CreateDomains](https://api.agilixbuzz.com/docs/#!/Command/CreateDomains), [DeleteDomain](https://api.agilixbuzz.com/docs/#!/Command/DeleteDomain), [GetDomain2](https://api.agilixbuzz.com/docs/#!/Command/GetDomain2), [GetDomainContent](https://api.agilixbuzz.com/docs/#!/Command/GetDomainContent), [GetDomainEnrollmentMetrics](https://api.agilixbuzz.com/docs/#!/Command/GetDomainEnrollmentMetrics), [GetDomainParentList](https://api.agilixbuzz.com/docs/#!/Command/GetDomainParentList), [GetDomainSettings](https://api.agilixbuzz.com/docs/#!/Command/GetDomainSettings), [GetDomainStats](https://api.agilixbuzz.com/docs/#!/Command/GetDomainStats), [ListDomains](https://api.agilixbuzz.com/docs/#!/Command/ListDomains), [RestoreDomain](https://api.agilixbuzz.com/docs/#!/Command/RestoreDomain), [UpdateDomains](https://api.agilixbuzz.com/docs/#!/Command/UpdateDomains) | ✅ | ⏫ |
 | Enrollments | [CreateEnrollments](https://api.agilixbuzz.com/docs/#!/Command/CreateEnrollments), [DeleteEnrollments](https://api.agilixbuzz.com/docs/#!/Command/DeleteEnrollments), [GetEnrollment3](https://api.agilixbuzz.com/docs/#!/Command/GetEnrollment3), [GetEnrollmentActivity](https://api.agilixbuzz.com/docs/#!/Command/GetEnrollmentActivity), [GetEnrollmentGradebook2](https://api.agilixbuzz.com/docs/#!/Command/GetEnrollmentGradebook2), [GetEnrollmentGroupList](https://api.agilixbuzz.com/docs/#!/Command/GetEnrollmentGroupList), [GetEnrollmentMetricsReport](https://api.agilixbuzz.com/docs/#!/Command/GetEnrollmentMetricsReport), [ListEnrollments](https://api.agilixbuzz.com/docs/#!/Command/ListEnrollments), [ListEnrollmentsByTeacher](https://api.agilixbuzz.com/docs/#!/Command/ListEnrollmentsByTeacher), [ListEntityEnrollments](https://api.agilixbuzz.com/docs/#!/Command/ListEntityEnrollments), [ListUserEnrollments](https://api.agilixbuzz.com/docs/#!/Command/ListUserEnrollments), [PutSelfAssessment](https://api.agilixbuzz.com/docs/#!/Command/PutSelfAssessment), [RestoreEnrollment](https://api.agilixbuzz.com/docs/#!/Command/RestoreEnrollment), [UpdateEnrollments](https://api.agilixbuzz.com/docs/#!/Command/UpdateEnrollments) | ❌ | 🔼 |
 | General | [Echo](https://api.agilixbuzz.com/docs/#!/Command/Echo), [GetCommandList](https://api.agilixbuzz.com/docs/#!/Command/GetCommandList), [GetEntityType](https://api.agilixbuzz.com/docs/#!/Command/GetEntityType), [GetStatus](https://api.agilixbuzz.com/docs/#!/Command/GetStatus), [GetUploadLimits](https://api.agilixbuzz.com/docs/#!/Command/GetUploadLimits), [SendMail](https://api.agilixbuzz.com/docs/#!/Command/SendMail) | ❌ | ⏺ |
 | Groups | [AddGroupMembers](https://api.agilixbuzz.com/docs/#!/Command/AddGroupMembers), [CreateGroups](https://api.agilixbuzz.com/docs/#!/Command/CreateGroups), [DeleteGroups](https://api.agilixbuzz.com/docs/#!/Command/DeleteGroups), [GetGroup](https://api.agilixbuzz.com/docs/#!/Command/GetGroup), [GetGroupEnrollmentList](https://api.agilixbuzz.com/docs/#!/Command/GetGroupEnrollmentList), [GetGroupList](https://api.agilixbuzz.com/docs/#!/Command/GetGroupList), [RemoveGroupMembers](https://api.agilixbuzz.com/docs/#!/Command/RemoveGroupMembers), [UpdateGroups](https://api.agilixbuzz.com/docs/#!/Command/UpdateGroups) | ❌ | ⏬ |

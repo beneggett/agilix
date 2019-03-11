@@ -4,7 +4,7 @@ module Agilix
       module Domain
 
         # api = Agilix::Buzz::Api::new
-        # api.create_domains [{name: "BuzzTest1", userspace: 'buzz-test-fc-1', parentid: '57025', stupid: 'arg'}]
+        # api.create_domains [{name: "BuzzTest1", userspace: 'buzz-test-fc-1', parentid: '57025'}]
         def create_domains(items = [])
           options = items.map do |item|
             options = argument_cleaner(required_params: %i( name userspace parentid ), optional_params: %i( reference flags data ), options: item )
@@ -71,7 +71,7 @@ module Agilix
           authenticated_get cmd: "restoredomain", **options
         end
 
-        # api.update_domains [{ domainid: "57031", name: "BuzzTestUpdated1", userspace: 'buzz-test-fc-1', parentid: '57025', stupid: 'arg'}]
+        # api.update_domains [{ domainid: "57031", name: "BuzzTestUpdated1", userspace: 'buzz-test-fc-1', parentid: '57025'}]
         def update_domains(items)
           options = items.map do |item|
             options = argument_cleaner(required_params: %i( domainid  ), optional_params: %i( name userspace parentid reference flags data ), options: item )
