@@ -3,7 +3,6 @@ module Agilix
     module Commands
       module Authentication
 
-
         def login_2(username: , password: , domain: )
           post cmd: "login2", username: "#{domain}/#{username}", password: password
         end

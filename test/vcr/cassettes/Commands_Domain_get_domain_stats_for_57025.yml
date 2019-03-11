@@ -1,0 +1,280 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: api.agilixbuzz.com/cmd?_token=~0.QZ4CC80QQDYC7N.qA4Q0rVjpPpONAKFIqprRjth_eR8bW6fNTcWavd5Dl8&cmd=getdomainstats&domainid=57025&options=users%7Ccourses
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 11 Mar 2019 03:25:47 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=debb0c2652b9452ebbc39b9b235f858011552274747; expires=Tue, 10-Mar-20
+        03:25:47 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000
+      Agilix-Encoding:
+      - gzip
+      Agilix-Server:
+      - xLi_885 (3)
+      Cache-Control:
+      - no-cache, no-store
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4b5a6c567cfba064-SLC
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"response\":{\r\n    \"code\":\"OK\",\r\n    \"stats\":{\r\n
+        \     \"stat\":[{\r\n        \"name\":\"users\",\r\n        \"value\":1\r\n
+        \     },{\r\n        \"name\":\"courses\",\r\n        \"value\":0\r\n      }]\r\n
+        \   }\r\n  }\r\n}"
+    http_version: 
+  recorded_at: Mon, 11 Mar 2019 03:25:46 GMT
+- request:
+    method: get
+    uri: api.agilixbuzz.com/cmd?_token=~0.6MpokTYqYi8C7N._fUlBJKVgK0Br2SxMkje3JG21DW_Yzaw67a26c3Rj1Q&cmd=getdomainstats&domainid=57025&options=users%7Ccourses
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 11 Mar 2019 03:30:16 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d9741f9b6478779c4542948fd115358261552275016; expires=Tue, 10-Mar-20
+        03:30:16 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000
+      Agilix-Encoding:
+      - gzip
+      Agilix-Server:
+      - xLi_885 (3)
+      Cache-Control:
+      - no-cache, no-store
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4b5a72e2df70a070-SLC
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"response\":{\r\n    \"code\":\"OK\",\r\n    \"stats\":{\r\n
+        \     \"stat\":[{\r\n        \"name\":\"users\",\r\n        \"value\":1\r\n
+        \     },{\r\n        \"name\":\"courses\",\r\n        \"value\":0\r\n      }]\r\n
+        \   }\r\n  }\r\n}"
+    http_version: 
+  recorded_at: Mon, 11 Mar 2019 03:30:15 GMT
+- request:
+    method: get
+    uri: api.agilixbuzz.com/cmd?_token=~0.N4EFlbp7FS0C7N.WJ1kd-7EFUy-2AQQFWVhafxaw1214fRyUE99JPG68i0&cmd=getdomainstats&domainid=57025&options=users%7Ccourses
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 11 Mar 2019 03:30:30 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d950c21b2d4ff1d7a432e6bec169336691552275030; expires=Tue, 10-Mar-20
+        03:30:30 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000
+      Agilix-Encoding:
+      - gzip
+      Agilix-Server:
+      - xLi_885 (3)
+      Cache-Control:
+      - no-cache, no-store
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4b5a733e2d99a070-SLC
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"response\":{\r\n    \"code\":\"OK\",\r\n    \"stats\":{\r\n
+        \     \"stat\":[{\r\n        \"name\":\"users\",\r\n        \"value\":1\r\n
+        \     },{\r\n        \"name\":\"courses\",\r\n        \"value\":0\r\n      }]\r\n
+        \   }\r\n  }\r\n}"
+    http_version: 
+  recorded_at: Mon, 11 Mar 2019 03:30:29 GMT
+- request:
+    method: post
+    uri: api.agilixbuzz.com/cmd
+    body:
+      encoding: UTF-8
+      string: '{"request":{"cmd":"login2","username":"auto-tests/<AGILIX_BUZZ_USERNAME>","password":"<AGILIX_BUZZ_PASSWORD>"}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 11 Mar 2019 03:30:56 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d99b47062e80fae7bac518e1c944fe66f1552275056; expires=Tue, 10-Mar-20
+        03:30:56 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000
+      Agilix-Encoding:
+      - gzip
+      Agilix-Server:
+      - xLi_931 (22)
+      Cache-Control:
+      - no-cache, no-store
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4b5a73de5b50a088-SLC
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"response\":{\r\n    \"code\":\"OK\",\r\n    \"user\":{\r\n
+        \     \"userid\":\"57026\",\r\n      \"username\":\"<AGILIX_BUZZ_USERNAME>\",\r\n
+        \     \"firstname\":\"Buzz\",\r\n      \"lastname\":\"Test\",\r\n      \"email\":\"<AGILIX_BUZZ_USERNAME>\",\r\n
+        \     \"domainid\":\"57025\",\r\n      \"domainname\":\"BuzzTestUpdatedName1\",\r\n
+        \     \"userspace\":\"auto-tests\",\r\n      \"token\":\"~0._5_04W_3gmMC7N.SPwfPdSyBM-8kIBwY7UnJaU-j-86kuLvwLNDx0qPQdo\",\r\n
+        \     \"authenticationexpirationminutes\":14\r\n    }\r\n  }\r\n}"
+    http_version: 
+  recorded_at: Mon, 11 Mar 2019 03:30:55 GMT
+- request:
+    method: get
+    uri: api.agilixbuzz.com/cmd?_token=~0._5_04W_3gmMC7N.SPwfPdSyBM-8kIBwY7UnJaU-j-86kuLvwLNDx0qPQdo&cmd=getdomainstats&domainid=57025&options=users%7Ccourses
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 11 Mar 2019 03:30:56 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d6b978580228fa59adf9bdbe9a8b4ab161552275056; expires=Tue, 10-Mar-20
+        03:30:56 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000
+      Agilix-Encoding:
+      - gzip
+      Agilix-Server:
+      - xLi_885 (4)
+      Cache-Control:
+      - no-cache, no-store
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4b5a73df5f76a08e-SLC
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"response\":{\r\n    \"code\":\"OK\",\r\n    \"stats\":{\r\n
+        \     \"stat\":[{\r\n        \"name\":\"users\",\r\n        \"value\":1\r\n
+        \     },{\r\n        \"name\":\"courses\",\r\n        \"value\":0\r\n      }]\r\n
+        \   }\r\n  }\r\n}"
+    http_version: 
+  recorded_at: Mon, 11 Mar 2019 03:30:55 GMT
+recorded_with: VCR 4.0.0

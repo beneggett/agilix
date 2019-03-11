@@ -39,55 +39,54 @@ AGILIX_BUZZ_URL = 'https://api.mycustomdomain.com'
 There are many primary APIs that are wrapped. Below you will see basic examples of how to use them. For more information about what optional query parameters are available, please consult the [Agilix Buzz API Docs](https://api.agilixbuzz.com/)
 #### Auth
 
-You need to authenticate to use the api
+You need to authenticate to use the api. Set the credentials in Environment variables as seen aboce
 
-# First Priority
 
 ### Domains
 
 #### [CreateDomains](https://api.agilixbuzz.com/docs/#!/Command/CreateDomains)
 ```
-api.create_domains [{name: "BuzzTest1", userspace: 'buzz-test-fc-1', parentid: '25328'}]
+api.create_domains [{name: "BuzzTest1", userspace: 'buzz-test-fc-1', parentid: '57025'}]
 ```
 #### [DeleteDomain](https://api.agilixbuzz.com/docs/#!/Command/DeleteDomain)
 ```
-api.delete_domain domainid: '57016'
+api.delete_domain domainid: '57027'
 ```
 #### [GetDomain2](https://api.agilixbuzz.com/docs/#!/Command/GetDomain2)
 ```
-api.get_domain domainid: '25328'
+api.get_domain domainid: '57025'
 ```
 #### [GetDomainContent](https://api.agilixbuzz.com/docs/#!/Command/GetDomainContent)
 ```
-api.get_domain_content domainid: '25328'
+api.get_domain_content domainid: '57025'
 ```
 #### [GetDomainEnrollmentMetrics](https://api.agilixbuzz.com/docs/#!/Command/GetDomainEnrollmentMetrics)
 ```
-api.get_domain_enrollment_metrics domainid: '25328'
+api.get_domain_enrollment_metrics domainid: '57025'
 ```
 #### [GetDomainParentList](https://api.agilixbuzz.com/docs/#!/Command/GetDomainParentList)
 ```
-api.get_domain_parent_list domainid: '25328'
+api.get_domain_parent_list domainid: '57025'
 ```
 #### [GetDomainSettings](https://api.agilixbuzz.com/docs/#!/Command/GetDomainSettings)
 ```
-api.get_domain_settings domainid: '25328', path: "AgilixBuzzSettings.xml"
+api.get_domain_settings domainid: '57025', path: "AgilixBuzzSettings.xml"
 ```
 #### [GetDomainStats](https://api.agilixbuzz.com/docs/#!/Command/GetDomainStats)
 ```
-api.get_domain_stats domainid: '25328', options: "users|courses"
+api.get_domain_stats domainid: '57025', options: "users|courses"
 ```
 #### [ListDomains](https://api.agilixbuzz.com/docs/#!/Command/ListDomains)
 ```
-api.list_domains domainid: '25328'
+api.list_domains domainid: '57025'
 ```
 #### [RestoreDomain](https://api.agilixbuzz.com/docs/#!/Command/RestoreDomain)
 ```
-api.restore_domain domainid: '57016'
+api.restore_domain domainid: '57027'
 ```
 #### [UpdateDomains](https://api.agilixbuzz.com/docs/#!/Command/UpdateDomains)
 ```
-api.update_domains [{ domainid: "57016", name: "BuzzTestUpdated1", userspace: 'buzz-test-fc-1', parentid: '25328', stupid: 'arg'}]
+api.update_domains [{ domainid: "57027", name: "BuzzTestUpdated1", userspace: 'buzz-test-fc-1', parentid: '57025', stupid: 'arg'}]
 ```
 
 ## Reports

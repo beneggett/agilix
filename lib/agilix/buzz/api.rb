@@ -47,6 +47,8 @@ module Agilix
         response = self.class.post(url, body: modify_bulk_body(query), timeout: 30, headers: headers)
       end
 
+      private
+
       def check_authentication
         if token && token_expiration
           if token_expiration < Time.now
@@ -67,7 +69,7 @@ module Agilix
         return options.select {|k,v| all_params.include?(k.to_sym)}
       end
 
-      private
+
 
       def modify_query(query = {})
         default_params = {}
