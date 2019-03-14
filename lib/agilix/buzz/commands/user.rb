@@ -33,9 +33,10 @@ module Agilix
           authenticated_get cmd: "getdomainactivity", **options
         end
 
-        # api.get_profile_picture
+        # api.get_profile_picture entityid: 57026
+        #  api.get_profile_picture entityid: 57025, default: "https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm"
         def get_profile_picture(options = {})
-          options = argument_cleaner(required_params: %i( userid ), optional_params: %i( ), options: options)
+          options = argument_cleaner(required_params: %i( entityid ), optional_params: %i( default ), options: options)
           authenticated_get cmd: "getprofilepicture", **options
         end
 

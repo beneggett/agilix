@@ -4,6 +4,7 @@ Dotenv.load
 TEST_DOMAIN_ID= '57025'
 TEST_SUBDOMAIN_ID = '57031'
 TEST_SUBDOMAIN_ID2 = '57032'
+TEST_USER_ID= '57026'
 
 require 'simplecov'
 require 'pry'
