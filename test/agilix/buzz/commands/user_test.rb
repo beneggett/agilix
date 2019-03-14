@@ -76,12 +76,34 @@ class Agilix::Buzz::Commands::UserTest < Minitest::Test
     end
   end
 
-    describe "#get_profile_picture" do
+  describe "#get_profile_picture" do
     it "gets domain activity login stats for a domain" do
       VCR.use_cassette("Commands::User get_profile_picture for user #{TEST_USER_ID}", match_requests_on: [:query]) do
         response = api.get_profile_picture entityid: TEST_USER_ID
         assert response.success?
         assert_equal "image/png", response.content_type
+      end
+    end
+  end
+
+  describe "#get_user" do
+    it "gets user" do
+      VCR.use_cassette("Commands::User get_user for user #{TEST_USER_ID}", match_requests_on: [:query]) do
+        response = api.get_user2 userid: TEST_USER_ID
+        assert response.success?
+        user = response.dig("response", "user")
+        assert_equal TEST_USER_ID, user["id"]
+      end
+    end
+  end
+
+  describe "#get_user_activity" do
+    it "gets user login activity" do
+      VCR.use_cassette("Commands::User get_user_activity for user #{TEST_USER_ID}", match_requests_on: [:query]) do
+        response = api.get_user_activity userid: TEST_USER_ID
+        assert response.success?
+        activity = response.dig("response", "log", "activity")
+        assert_equal 6, activity.count
       end
     end
   end

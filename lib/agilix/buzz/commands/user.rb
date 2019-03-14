@@ -40,16 +40,16 @@ module Agilix
           authenticated_get cmd: "getprofilepicture", **options
         end
 
-        # api.getuser2
+        # api.get_user2 userid: 57026
         def get_user2(options = {})
-          options = argument_cleaner(required_params: %i( userid ), optional_params: %i( ), options: options)
+          options = argument_cleaner(required_params: %i( userid ), optional_params: %i( select ), options: options)
           authenticated_get cmd: "getuser2", **options
         end
         alias_method :get_user, :get_user2
 
-        # api.getuseractivity
-        def getuseractivity(options = {})
-          options = argument_cleaner(required_params: %i( userid ), optional_params: %i( ), options: options)
+        # api.get_user_activity userid: 57026
+        def get_user_activity(options = {})
+          options = argument_cleaner(required_params: %i( userid ), optional_params: %i( startdate enddate ), options: options)
           authenticated_get cmd: "getuseractivity", **options
         end
 
