@@ -1,0 +1,179 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: api.agilixbuzz.com/cmd?_token=~0.dH9KSlD2QhoC7N.ehQiJm-whW-aO-y6KlSjV81Hbbw9Ko76uDlR3PLQgXc&cmd=createusers2
+    body:
+      encoding: UTF-8
+      string: '{"requests":{"user":[{"domainid":"57025","username":"BuzzUserTestMultiple1","email":"buzzusertestmultiple1@agilix.com","password":"testpassword1234","firstname":"Buzz","lastname":"Jones"},{"domainid":"57025","username":"BuzzUserTestMultiple2","email":"buzzusertestmultiple2@agilix.com","password":"testpassword1234","firstname":"Buzz","lastname":"Michaels"},{"domainid":"57025","username":"BuzzUserTestMultiple3","email":"buzzusertestmultiple3@agilix.com","password":"testpassword1234","firstname":"Buzz","lastname":"Aldrin"}]}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 14 Mar 2019 07:31:44 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d23c3aad63c2dca57b66e860e4845655f1552548704; expires=Fri, 13-Mar-20
+        07:31:44 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000
+      Agilix-Encoding:
+      - gzip
+      Agilix-Server:
+      - xLi_414 (94)
+      Cache-Control:
+      - no-cache, no-store
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4b748cb84d0fa08e-SLC
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"response\":{\r\n    \"code\":\"OK\",\r\n    \"responses\":{\r\n
+        \     \"response\":[{\r\n        \"code\":\"OK\",\r\n        \"user\":{\r\n
+        \         \"userid\":\"60605\"\r\n        }\r\n      },{\r\n        \"code\":\"OK\",\r\n
+        \       \"user\":{\r\n          \"userid\":\"60606\"\r\n        }\r\n      },{\r\n
+        \       \"code\":\"OK\",\r\n        \"user\":{\r\n          \"userid\":\"60607\"\r\n
+        \       }\r\n      }]\r\n    }\r\n  }\r\n}"
+    http_version: 
+  recorded_at: Thu, 14 Mar 2019 07:31:44 GMT
+- request:
+    method: post
+    uri: api.agilixbuzz.com/cmd
+    body:
+      encoding: UTF-8
+      string: '{"request":{"cmd":"login2","username":"auto-tests/<AGILIX_BUZZ_USERNAME>","password":"<AGILIX_BUZZ_PASSWORD>"}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 14 Mar 2019 07:37:12 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=dfc09fc42f062321d77e4fc0c92ee36251552549032; expires=Fri, 13-Mar-20
+        07:37:12 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000
+      Agilix-Encoding:
+      - gzip
+      Agilix-Server:
+      - xLi_414 (23)
+      Cache-Control:
+      - no-cache, no-store
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4b7494bb0d57a022-SLC
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"response\":{\r\n    \"code\":\"OK\",\r\n    \"user\":{\r\n
+        \     \"userid\":\"57026\",\r\n      \"username\":\"<AGILIX_BUZZ_USERNAME>\",\r\n
+        \     \"firstname\":\"Buzz\",\r\n      \"lastname\":\"Test\",\r\n      \"email\":\"<AGILIX_BUZZ_USERNAME>\",\r\n
+        \     \"domainid\":\"57025\",\r\n      \"domainname\":\"BuzzTestUpdatedName1\",\r\n
+        \     \"userspace\":\"auto-tests\",\r\n      \"token\":\"~0.47F9wWKeqkoC7N.e91XQX4VXfNeHFnClkp1OgpJ5pA-8hpDzVDTIAFfluw\",\r\n
+        \     \"authenticationexpirationminutes\":14\r\n    }\r\n  }\r\n}"
+    http_version: 
+  recorded_at: Thu, 14 Mar 2019 07:37:12 GMT
+- request:
+    method: post
+    uri: api.agilixbuzz.com/cmd?_token=~0.47F9wWKeqkoC7N.e91XQX4VXfNeHFnClkp1OgpJ5pA-8hpDzVDTIAFfluw&cmd=createusers2
+    body:
+      encoding: UTF-8
+      string: '{"requests":{"user":[{"domainid":"57025","username":"BuzzUserTestMultiple1","email":"buzzusertestmultiple1@agilix.com","password":"testpassword1234","firstname":"Buzz","lastname":"Jones"},{"domainid":"57025","username":"BuzzUserTestMultiple2","email":"buzzusertestmultiple2@agilix.com","password":"testpassword1234","firstname":"Buzz","lastname":"Michaels"},{"domainid":"57025","username":"BuzzUserTestMultiple3","email":"buzzusertestmultiple3@agilix.com","password":"testpassword1234","firstname":"Buzz","lastname":"Aldrin"}]}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 14 Mar 2019 07:37:12 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=da853662f4660990e041e7bc852423ca81552549032; expires=Fri, 13-Mar-20
+        07:37:12 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000
+      Agilix-Encoding:
+      - gzip
+      Agilix-Server:
+      - xLi_414 (21)
+      Cache-Control:
+      - no-cache, no-store
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4b7494bc0bfca088-SLC
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"response\":{\r\n    \"code\":\"OK\",\r\n    \"responses\":{\r\n
+        \     \"response\":[{\r\n        \"code\":\"BadRequest\",\r\n        \"message\":\"Unable
+        to create user BuzzUserTestMultiple1. Duplicate domain/username:57025/BuzzUserTestMultiple1\",\r\n
+        \       \"errorId\":\"e7eb23c0239a4efeabcf2c340963f9c3\"\r\n      },{\r\n
+        \       \"code\":\"BadRequest\",\r\n        \"message\":\"Unable to create
+        user BuzzUserTestMultiple2. Duplicate domain/username:57025/BuzzUserTestMultiple2\",\r\n
+        \       \"errorId\":\"e7eb23c0239a4efeabcf2c340963f9c3\"\r\n      },{\r\n
+        \       \"code\":\"BadRequest\",\r\n        \"message\":\"Unable to create
+        user BuzzUserTestMultiple3. Duplicate domain/username:57025/BuzzUserTestMultiple3\",\r\n
+        \       \"errorId\":\"e7eb23c0239a4efeabcf2c340963f9c3\"\r\n      }]\r\n    }\r\n
+        \ }\r\n}"
+    http_version: 
+  recorded_at: Thu, 14 Mar 2019 07:37:12 GMT
+recorded_with: VCR 4.0.0

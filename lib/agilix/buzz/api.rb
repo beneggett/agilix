@@ -10,6 +10,7 @@ module Agilix
       include Agilix::Buzz::Commands::Domain
       include Agilix::Buzz::Commands::General
       include Agilix::Buzz::Commands::Report
+      include Agilix::Buzz::Commands::User
 
       attr_accessor :username, :password, :domain, :token, :token_expiration
 
@@ -25,7 +26,7 @@ module Agilix
       end
 
       def authenticated_post(query = {})
-        check_authentication
+        check_authentication unless query.delete(:bypass_authentication_check)
         post query
       end
 
@@ -56,21 +57,22 @@ module Agilix
             extend_session
           end
         else
-          response = login username: @username, password: @password, domain: @domain
-          @token = response.dig("response", "user", "token")
-          @token_expiration = Time.now + (response.dig("response", "user", "authenticationexpirationminutes").to_i * 60 ) if @token
+          authenticate!
         end
+      end
+
+      def authenticate!
+        response = login username: @username, password: @password, domain: @domain
+        @token = response.dig("response", "user", "token")
+        @token_expiration = Time.now + (response.dig("response", "user", "authenticationexpirationminutes").to_i * 60 ) if @token
       end
 
       def argument_cleaner(required_params: , optional_params: , options: )
         missing_required = required_params - options.map {|k,v| k.to_sym }
         raise ArgumentError.new("Missing Required Arguments: #{missing_required.join(', ')}") if missing_required.any?
-
         all_params = (required_params + optional_params).flatten
         return options.select {|k,v| all_params.include?(k.to_sym)}
       end
-
-
 
       def modify_query(query = {})
         default_params = {}
