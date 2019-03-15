@@ -17,7 +17,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 14 Mar 2019 07:49:13 GMT
+      - Fri, 15 Mar 2019 06:58:37 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -25,8 +25,8 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=d23dc07517daf03fd1e149f85513066521552549753; expires=Fri, 13-Mar-20
-        07:49:13 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
+      - __cfduid=db11f36617d58b0cbac44296eb5ea78251552633117; expires=Sat, 14-Mar-20
+        06:58:37 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
       Pragma:
       - no-cache
       Expires:
@@ -38,7 +38,7 @@ http_interactions:
       Agilix-Encoding:
       - gzip
       Agilix-Server:
-      - xLi_414 (33)
+      - xLi_21352 (24)
       Cache-Control:
       - no-cache, no-store
       Expect-Ct:
@@ -46,20 +46,20 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - 4b74a6568dc2a040-SLC
+      - 4b7c99963b62a08e-SLC
     body:
       encoding: UTF-8
       string: "{\r\n  \"response\":{\r\n    \"code\":\"OK\",\r\n    \"user\":{\r\n
         \     \"userid\":\"57026\",\r\n      \"username\":\"<AGILIX_BUZZ_USERNAME>\",\r\n
         \     \"firstname\":\"Buzz\",\r\n      \"lastname\":\"Test\",\r\n      \"email\":\"<AGILIX_BUZZ_USERNAME>\",\r\n
         \     \"domainid\":\"57025\",\r\n      \"domainname\":\"BuzzTestUpdatedName1\",\r\n
-        \     \"userspace\":\"auto-tests\",\r\n      \"token\":\"~0.xZTZ2FaV0SsC7N.5A9QtEsy1lsV9SglXKtEEH8FjAczTIbb8BTcQYFKEd8\",\r\n
+        \     \"userspace\":\"auto-tests\",\r\n      \"token\":\"~0.nC1g7c2jQQ8C7N.USNZrbiyf9cxSm0fAz8dW_Fi36yGziDxoXdSlcBU_M0\",\r\n
         \     \"authenticationexpirationminutes\":14\r\n    }\r\n  }\r\n}"
     http_version: 
-  recorded_at: Thu, 14 Mar 2019 07:49:13 GMT
+  recorded_at: Fri, 15 Mar 2019 06:58:36 GMT
 - request:
     method: get
-    uri: api.agilixbuzz.com/cmd?_token=~0.xZTZ2FaV0SsC7N.5A9QtEsy1lsV9SglXKtEEH8FjAczTIbb8BTcQYFKEd8&cmd=getdomainactivity&domainid=57025
+    uri: api.agilixbuzz.com/cmd?_token=~0.nC1g7c2jQQ8C7N.USNZrbiyf9cxSm0fAz8dW_Fi36yGziDxoXdSlcBU_M0&cmd=getdomainactivity&domainid=57025
     body:
       encoding: US-ASCII
       string: ''
@@ -74,7 +74,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 14 Mar 2019 07:49:13 GMT
+      - Fri, 15 Mar 2019 06:58:37 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -82,8 +82,8 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=d56ceddda6bd2c9570add125aef25bc701552549753; expires=Fri, 13-Mar-20
-        07:49:13 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
+      - __cfduid=dba21dd712f1d2cc65b69759990c046881552633117; expires=Sat, 14-Mar-20
+        06:58:37 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
       Pragma:
       - no-cache
       Expires:
@@ -95,7 +95,7 @@ http_interactions:
       Agilix-Encoding:
       - gzip
       Agilix-Server:
-      - xLi_414 (11)
+      - xLi_21352 (4)
       Cache-Control:
       - no-cache, no-store
       Expect-Ct:
@@ -103,13 +103,14 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - 4b74a657ac15a02e-SLC
+      - 4b7c99972a4da076-SLC
     body:
       encoding: UTF-8
       string: "{\r\n  \"response\":{\r\n    \"code\":\"OK\",\r\n    \"users\":{\r\n
         \     \"user\":[{\r\n        \"id\":\"57026\",\r\n        \"activity\":[{\r\n
-        \         \"logindate\":\"2019-03-14T07:15:27.447Z\",\r\n          \"logoutdate\":\"2019-03-14T07:49:13.633Z\"\r\n
+        \         \"logindate\":\"2019-03-15T06:22:32.467Z\",\r\n          \"logoutdate\":\"2019-03-15T06:44:42.637Z\"\r\n
+        \       },{\r\n          \"logindate\":\"2019-03-15T06:47:43.513Z\",\r\n          \"logoutdate\":\"2019-03-15T06:58:37.36Z\"\r\n
         \       }]\r\n      }]\r\n    }\r\n  }\r\n}"
     http_version: 
-  recorded_at: Thu, 14 Mar 2019 07:49:13 GMT
+  recorded_at: Fri, 15 Mar 2019 06:58:36 GMT
 recorded_with: VCR 4.0.0

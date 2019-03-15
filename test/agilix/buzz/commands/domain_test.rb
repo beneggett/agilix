@@ -5,7 +5,7 @@ class Agilix::Buzz::Commands::DomainTest < Minitest::Test
   describe "#create_domains" do
     it "creates a new domain" do
       VCR.use_cassette("Commands::Domain create_domains", match_requests_on: [:query]) do
-        response = api.create_domains [{name: "BuzzAutoTest001", userspace: 'buzz-test-fc-auto-test-001', parentid: TEST_DOMAIN_ID}]
+        response = api.create_domains [{name: "BuzzAutoTest002", userspace: 'buzz-test-fc-auto-test-002', parentid: TEST_DOMAIN_ID}]
         assert response.success?
         domain_id = response.dig("response", "responses", "response").first.dig("domain", "domainid")
         assert domain_id
@@ -24,8 +24,8 @@ class Agilix::Buzz::Commands::DomainTest < Minitest::Test
 
   describe "#delete_domain" do
     it "deletes a domain" do
-      VCR.use_cassette("Commands::Domain delete_domain #{TEST_DOMAIN_ID}", match_requests_on: [:query]) do
-       response =  api.delete_domain domainid: TEST_DOMAIN_ID
+      VCR.use_cassette("Commands::Domain delete_domain #{TEST_SUBDOMAIN_ID2}", match_requests_on: [:query]) do
+       response =  api.delete_domain domainid: TEST_SUBDOMAIN_ID2
        assert response.success?
        assert_equal "OK", response.dig("response", "code")
       end
@@ -106,8 +106,8 @@ class Agilix::Buzz::Commands::DomainTest < Minitest::Test
 
   describe "#update_domains" do
     it "updates domain attributes" do
-      VCR.use_cassette("Commands::Domain update_domains", match_requests_on: [:query]) do
-        response = api.update_domains [{ domainid: TEST_DOMAIN_ID, name: "BuzzTestUpdatedName1" }]
+      VCR.use_cassette("Commands::Domain update_domains #{TEST_SUBDOMAIN_ID}", match_requests_on: [:query]) do
+        response = api.update_domains [{ domainid: TEST_SUBDOMAIN_ID, name: "BuzzTestUpdatedName1" }]
         assert response.success?
         updated_domains = response.dig("response", "responses", "response")
         assert_equal 1, updated_domains.count

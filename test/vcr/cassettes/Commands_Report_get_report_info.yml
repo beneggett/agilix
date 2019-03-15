@@ -17,7 +17,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 11 Mar 2019 22:15:10 GMT
+      - Fri, 15 Mar 2019 06:58:32 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -25,8 +25,8 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=d83a635638b17037b7f0ca2633710e35c1552342510; expires=Tue, 10-Mar-20
-        22:15:10 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
+      - __cfduid=d0a38fb1a6db1a7fedcd34b268aaded8f1552633112; expires=Sat, 14-Mar-20
+        06:58:32 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
       Pragma:
       - no-cache
       Expires:
@@ -38,7 +38,7 @@ http_interactions:
       Agilix-Encoding:
       - gzip
       Agilix-Server:
-      - xLi_552452 (34)
+      - xLi_21352 (24)
       Cache-Control:
       - no-cache, no-store
       Expect-Ct:
@@ -46,20 +46,20 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - 4b60e2b3cf49a02e-SLC
+      - 4b7c99787a22a05e-SLC
     body:
       encoding: UTF-8
       string: "{\r\n  \"response\":{\r\n    \"code\":\"OK\",\r\n    \"user\":{\r\n
         \     \"userid\":\"57026\",\r\n      \"username\":\"<AGILIX_BUZZ_USERNAME>\",\r\n
         \     \"firstname\":\"Buzz\",\r\n      \"lastname\":\"Test\",\r\n      \"email\":\"<AGILIX_BUZZ_USERNAME>\",\r\n
         \     \"domainid\":\"57025\",\r\n      \"domainname\":\"BuzzTestUpdatedName1\",\r\n
-        \     \"userspace\":\"auto-tests\",\r\n      \"token\":\"~0.0DDvtBJXlHsC7N.4qZFBhEY5TqTZvswixsFsxQJTUr-6YJe0i4xuJ1VSKY\",\r\n
+        \     \"userspace\":\"auto-tests\",\r\n      \"token\":\"~0.iet5NXU_9F4C7N.IRV6vy0T5kT5XgKr6_oNT_B2CEZFOANR5IuGC7x0Gno\",\r\n
         \     \"authenticationexpirationminutes\":14\r\n    }\r\n  }\r\n}"
     http_version: 
-  recorded_at: Mon, 11 Mar 2019 22:15:10 GMT
+  recorded_at: Fri, 15 Mar 2019 06:58:32 GMT
 - request:
     method: get
-    uri: api.agilixbuzz.com/cmd?_token=~0.0DDvtBJXlHsC7N.4qZFBhEY5TqTZvswixsFsxQJTUr-6YJe0i4xuJ1VSKY&cmd=getreportinfo&reportid=123
+    uri: api.agilixbuzz.com/cmd?_token=~0.iet5NXU_9F4C7N.IRV6vy0T5kT5XgKr6_oNT_B2CEZFOANR5IuGC7x0Gno&cmd=getreportinfo&reportid=127
     body:
       encoding: US-ASCII
       string: ''
@@ -74,7 +74,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 11 Mar 2019 22:15:11 GMT
+      - Fri, 15 Mar 2019 06:58:32 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -82,8 +82,8 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=d5febc3f7f57cb2ecd9b80b9ef84311db1552342511; expires=Tue, 10-Mar-20
-        22:15:11 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
+      - __cfduid=dc858e2449af20d8bea41e21982f06b631552633112; expires=Sat, 14-Mar-20
+        06:58:32 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
       Pragma:
       - no-cache
       Expires:
@@ -95,7 +95,7 @@ http_interactions:
       Agilix-Encoding:
       - gzip
       Agilix-Server:
-      - xLi_552452 (3)
+      - xLi_21352 (16)
       Cache-Control:
       - no-cache, no-store
       Expect-Ct:
@@ -103,61 +103,7 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - 4b60e2b62eeba03a-SLC
-    body:
-      encoding: UTF-8
-      string: "{\r\n  \"response\":{\r\n    \"code\":\"AccessDenied\",\r\n    \"message\":\"Access
-        Denied: userId='57026' action='ReportInfo' target='123'\",\r\n    \"errorId\":\"b5c545737133421eb4becfb9e8bebea6\"\r\n
-        \ }\r\n}"
-    http_version: 
-  recorded_at: Mon, 11 Mar 2019 22:15:11 GMT
-- request:
-    method: get
-    uri: api.agilixbuzz.com/cmd?_token=~0.0DDvtBJXlHsC7N.4qZFBhEY5TqTZvswixsFsxQJTUr-6YJe0i4xuJ1VSKY&cmd=getreportinfo&reportid=127
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Mon, 11 Mar 2019 22:15:27 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Set-Cookie:
-      - __cfduid=d12c4191709528b242ac5a0b525765ea81552342527; expires=Tue, 10-Mar-20
-        22:15:27 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
-      Pragma:
-      - no-cache
-      Expires:
-      - "-1"
-      X-Content-Type-Options:
-      - nosniff
-      Strict-Transport-Security:
-      - max-age=31536000
-      Agilix-Encoding:
-      - gzip
-      Agilix-Server:
-      - xLi_5314 (14)
-      Cache-Control:
-      - no-cache, no-store
-      Expect-Ct:
-      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
-      Server:
-      - cloudflare
-      Cf-Ray:
-      - 4b60e31c5dd8a034-SLC
+      - 4b7c9979ae9ba02e-SLC
     body:
       encoding: UTF-8
       string: "{\r\n  \"response\":{\r\n    \"code\":\"OK\",\r\n    \"report\":{\r\n
@@ -170,5 +116,5 @@ http_interactions:
         \         \"name\":\"EntityId\",\r\n          \"type\":\"string\"\r\n        }]\r\n
         \     },\r\n      \"columns\":{\r\n      }\r\n    }\r\n  }\r\n}"
     http_version: 
-  recorded_at: Mon, 11 Mar 2019 22:15:27 GMT
+  recorded_at: Fri, 15 Mar 2019 06:58:32 GMT
 recorded_with: VCR 4.0.0

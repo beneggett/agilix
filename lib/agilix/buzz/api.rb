@@ -26,7 +26,7 @@ module Agilix
       end
 
       def authenticated_post(query = {})
-        check_authentication unless query.delete(:bypass_authentication_check)
+        check_authentication apiunless query.delete(:bypass_authentication_check)
         post query
       end
 
@@ -63,8 +63,10 @@ module Agilix
 
       def authenticate!
         response = login username: @username, password: @password, domain: @domain
+        raise AuthenticationError.new(response.dig("response", "message")) if response.dig("response", "code") == "InvalidCredentials"
         @token = response.dig("response", "user", "token")
         @token_expiration = Time.now + (response.dig("response", "user", "authenticationexpirationminutes").to_i * 60 ) if @token
+        response
       end
 
       def argument_cleaner(required_params: , optional_params: , options: )

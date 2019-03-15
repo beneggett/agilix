@@ -53,28 +53,30 @@ module Agilix
           authenticated_get cmd: "getuseractivity", **options
         end
 
-        # api.getuseractivitystream
-        def getuseractivitystream(options = {})
-          options = argument_cleaner(required_params: %i( userid ), optional_params: %i( ), options: options)
+        # api.get_user_activity_stream userid: 57026
+        def get_user_activity_stream(options = {})
+          options = argument_cleaner(required_params: %i( userid ), optional_params: %i( enrollmentid startkey limit types ), options: options)
           authenticated_get cmd: "getuseractivitystream", **options
         end
 
-        # api.listusers
-        def listusers(options = {})
-          options = argument_cleaner(required_params: %i( userid ), optional_params: %i( ), options: options)
+        # api.list_users domainid: 57025
+        def list_users(options = {})
+          options = argument_cleaner(required_params: %i( domainid ), optional_params: %i( includedescendantdomains limit show select text query ), options: options)
           authenticated_get cmd: "listusers", **options
         end
 
-        # api.restoreuser
-        def restoreuser(options = {})
+        # api.restore_user userid: 57026
+        def restore_user(options = {})
           options = argument_cleaner(required_params: %i( userid ), optional_params: %i( ), options: options)
           authenticated_get cmd: "restoreuser", **options
         end
 
-        # api.updateusers
-        def updateusers(options = {})
-          options = argument_cleaner(required_params: %i( userid ), optional_params: %i( ), options: options)
-          authenticated_get cmd: "updateusers", **options
+        # api.update_users  [{ userid: '57026', username: "BuzzUserTestUpdated1", email: 'buzzusertest1@agilix.com',firstname: 'Buzz', lastname: "ManUpdated"}]
+        def update_users(items)
+          options = items.map do |item|
+            options = argument_cleaner(required_params: %i( userid ), optional_params: %i( domainid username firstname lastname email reference flags data ), options: item)
+          end
+          authenticated_bulk_post cmd: "updateusers", root_node: 'user', body: options
         end
 
       end

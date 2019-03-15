@@ -4,7 +4,8 @@ Dotenv.load
 TEST_DOMAIN_ID= '57025'
 TEST_SUBDOMAIN_ID = '57031'
 TEST_SUBDOMAIN_ID2 = '57032'
-TEST_USER_ID= '57026'
+TEST_USER_ID= '57181'
+TEST_USER_ID2= '57176'
 
 require 'simplecov'
 require 'pry'
@@ -40,8 +41,8 @@ VCR.configure do |c|
 end
 
 def api
-  # @api=  Agilix::Buzz::Api.new
-  @api ||= VCR.use_cassette("API Authenticate", match_requests_on: [:query]) do
-    Agilix::Buzz::Api.new
-  end
+  @api=  Agilix::Buzz::Api.new
+  # @api ||= VCR.use_cassette("API Authenticate", match_requests_on: [:query]) do
+  #   Agilix::Buzz::Api.new
+  # end
 end
