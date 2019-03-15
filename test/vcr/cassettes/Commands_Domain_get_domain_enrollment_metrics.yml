@@ -1,174 +1,6 @@
 ---
 http_interactions:
 - request:
-    method: get
-    uri: api.agilixbuzz.com/cmd?_token=~0.hgkN5AU5VE4C7N.N810cEE1yCpO9rKiySt-0baI1SUaCAZAP4f3yZoPU9w&cmd=getdomainenrollmentmetrics&domainid=57025
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Mon, 11 Mar 2019 03:25:45 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Set-Cookie:
-      - __cfduid=d6a591c4a85c8220b62c92dfe633397e91552274745; expires=Tue, 10-Mar-20
-        03:25:45 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
-      Pragma:
-      - no-cache
-      Expires:
-      - "-1"
-      X-Content-Type-Options:
-      - nosniff
-      Strict-Transport-Security:
-      - max-age=31536000
-      Agilix-Encoding:
-      - gzip
-      Agilix-Server:
-      - xLi_885 (2)
-      Cache-Control:
-      - no-cache, no-store
-      Expect-Ct:
-      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
-      Server:
-      - cloudflare
-      Cf-Ray:
-      - 4b5a6c476e66a046-SLC
-    body:
-      encoding: UTF-8
-      string: "{\r\n  \"response\":{\r\n    \"code\":\"OK\",\r\n    \"domainenrollmentmetrics\":{\r\n
-        \     \"domainid\":\"57025\",\r\n      \"active\":\"0\",\r\n      \"red\":\"0\",\r\n
-        \     \"yellow\":\"0\",\r\n      \"inactive\":\"0\",\r\n      \"complete\":\"0\",\r\n
-        \     \"completion\":{\r\n        \"signal\":\"Green\"\r\n      },\r\n      \"pastperformance\":{\r\n
-        \       \"signal\":\"Green\"\r\n      }\r\n    }\r\n  }\r\n}"
-    http_version: 
-  recorded_at: Mon, 11 Mar 2019 03:25:44 GMT
-- request:
-    method: get
-    uri: api.agilixbuzz.com/cmd?_token=~0.9DjmGS3Q7lsC7N.FfbfsAlD0U8Ed81TTXZE3jFUd7belpfiihoHHsDnXh4&cmd=getdomainenrollmentmetrics&domainid=57025
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Mon, 11 Mar 2019 03:30:18 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Set-Cookie:
-      - __cfduid=da82679f2bb99c050bd7060cacaffdbdd1552275018; expires=Tue, 10-Mar-20
-        03:30:18 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
-      Pragma:
-      - no-cache
-      Expires:
-      - "-1"
-      X-Content-Type-Options:
-      - nosniff
-      Strict-Transport-Security:
-      - max-age=31536000
-      Agilix-Encoding:
-      - gzip
-      Agilix-Server:
-      - xLi_931 (3)
-      Cache-Control:
-      - no-cache, no-store
-      Expect-Ct:
-      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
-      Server:
-      - cloudflare
-      Cf-Ray:
-      - 4b5a72f33fd2a03a-SLC
-    body:
-      encoding: UTF-8
-      string: "{\r\n  \"response\":{\r\n    \"code\":\"OK\",\r\n    \"domainenrollmentmetrics\":{\r\n
-        \     \"domainid\":\"57025\",\r\n      \"active\":\"0\",\r\n      \"red\":\"0\",\r\n
-        \     \"yellow\":\"0\",\r\n      \"inactive\":\"0\",\r\n      \"complete\":\"0\",\r\n
-        \     \"completion\":{\r\n        \"signal\":\"Green\"\r\n      },\r\n      \"pastperformance\":{\r\n
-        \       \"signal\":\"Green\"\r\n      }\r\n    }\r\n  }\r\n}"
-    http_version: 
-  recorded_at: Mon, 11 Mar 2019 03:30:17 GMT
-- request:
-    method: get
-    uri: api.agilixbuzz.com/cmd?_token=~0.PVEfi50ui0UC7N.J2hJs06Z2ErfUIMKu7jOSLrLib6fJ0WHEIREh4ldO5U&cmd=getdomainenrollmentmetrics&domainid=57025
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Mon, 11 Mar 2019 03:30:30 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Set-Cookie:
-      - __cfduid=dc790efba883a5648c55638f07034adec1552275030; expires=Tue, 10-Mar-20
-        03:30:30 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
-      Pragma:
-      - no-cache
-      Expires:
-      - "-1"
-      X-Content-Type-Options:
-      - nosniff
-      Strict-Transport-Security:
-      - max-age=31536000
-      Agilix-Encoding:
-      - gzip
-      Agilix-Server:
-      - xLi_885 (2)
-      Cache-Control:
-      - no-cache, no-store
-      Expect-Ct:
-      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
-      Server:
-      - cloudflare
-      Cf-Ray:
-      - 4b5a733c4a26a064-SLC
-    body:
-      encoding: UTF-8
-      string: "{\r\n  \"response\":{\r\n    \"code\":\"OK\",\r\n    \"domainenrollmentmetrics\":{\r\n
-        \     \"domainid\":\"57025\",\r\n      \"active\":\"0\",\r\n      \"red\":\"0\",\r\n
-        \     \"yellow\":\"0\",\r\n      \"inactive\":\"0\",\r\n      \"complete\":\"0\",\r\n
-        \     \"completion\":{\r\n        \"signal\":\"Green\"\r\n      },\r\n      \"pastperformance\":{\r\n
-        \       \"signal\":\"Green\"\r\n      }\r\n    }\r\n  }\r\n}"
-    http_version: 
-  recorded_at: Mon, 11 Mar 2019 03:30:29 GMT
-- request:
     method: post
     uri: api.agilixbuzz.com/cmd
     body:
@@ -185,7 +17,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 11 Mar 2019 03:30:58 GMT
+      - Fri, 15 Mar 2019 06:58:34 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -193,8 +25,8 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=d549fa5a91fbefcae2a42d3e2d04960e71552275058; expires=Tue, 10-Mar-20
-        03:30:58 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
+      - __cfduid=d1bfb9b156b4dcdb119373588c2659d401552633114; expires=Sat, 14-Mar-20
+        06:58:34 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
       Pragma:
       - no-cache
       Expires:
@@ -206,7 +38,7 @@ http_interactions:
       Agilix-Encoding:
       - gzip
       Agilix-Server:
-      - xLi_931 (25)
+      - xLi_21352 (24)
       Cache-Control:
       - no-cache, no-store
       Expect-Ct:
@@ -214,20 +46,20 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - 4b5a73eae977a040-SLC
+      - 4b7c9985edd3a046-SLC
     body:
       encoding: UTF-8
       string: "{\r\n  \"response\":{\r\n    \"code\":\"OK\",\r\n    \"user\":{\r\n
         \     \"userid\":\"57026\",\r\n      \"username\":\"<AGILIX_BUZZ_USERNAME>\",\r\n
         \     \"firstname\":\"Buzz\",\r\n      \"lastname\":\"Test\",\r\n      \"email\":\"<AGILIX_BUZZ_USERNAME>\",\r\n
         \     \"domainid\":\"57025\",\r\n      \"domainname\":\"BuzzTestUpdatedName1\",\r\n
-        \     \"userspace\":\"auto-tests\",\r\n      \"token\":\"~0.srWhldFi3W4C7N.kufg4SigeemVTNXfRSLVVStbBccmXmFh5JdcoFQvS2s\",\r\n
+        \     \"userspace\":\"auto-tests\",\r\n      \"token\":\"~0.DCVPDvmGQTYC7N.-lxcFtl_Ya9oNAlnSzameHnwaXVS-BMZwDdSMrOx0jU\",\r\n
         \     \"authenticationexpirationminutes\":14\r\n    }\r\n  }\r\n}"
     http_version: 
-  recorded_at: Mon, 11 Mar 2019 03:30:57 GMT
+  recorded_at: Fri, 15 Mar 2019 06:58:34 GMT
 - request:
     method: get
-    uri: api.agilixbuzz.com/cmd?_token=~0.srWhldFi3W4C7N.kufg4SigeemVTNXfRSLVVStbBccmXmFh5JdcoFQvS2s&cmd=getdomainenrollmentmetrics&domainid=57025
+    uri: api.agilixbuzz.com/cmd?_token=~0.DCVPDvmGQTYC7N.-lxcFtl_Ya9oNAlnSzameHnwaXVS-BMZwDdSMrOx0jU&cmd=getdomainenrollmentmetrics&domainid=57025
     body:
       encoding: US-ASCII
       string: ''
@@ -242,7 +74,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 11 Mar 2019 03:30:58 GMT
+      - Fri, 15 Mar 2019 06:58:34 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -250,8 +82,8 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=d2d971e37f5d79dde2cf1878f25edb8111552275058; expires=Tue, 10-Mar-20
-        03:30:58 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
+      - __cfduid=dd0870468dc936bd684728af146e88b541552633114; expires=Sat, 14-Mar-20
+        06:58:34 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
       Pragma:
       - no-cache
       Expires:
@@ -263,7 +95,7 @@ http_interactions:
       Agilix-Encoding:
       - gzip
       Agilix-Server:
-      - xLi_885 (2)
+      - xLi_854 (2)
       Cache-Control:
       - no-cache, no-store
       Expect-Ct:
@@ -271,7 +103,7 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - 4b5a73ebe966a034-SLC
+      - 4b7c9986db32a02e-SLC
     body:
       encoding: UTF-8
       string: "{\r\n  \"response\":{\r\n    \"code\":\"OK\",\r\n    \"domainenrollmentmetrics\":{\r\n
@@ -280,5 +112,5 @@ http_interactions:
         \     \"completion\":{\r\n        \"signal\":\"Green\"\r\n      },\r\n      \"pastperformance\":{\r\n
         \       \"signal\":\"Green\"\r\n      }\r\n    }\r\n  }\r\n}"
     http_version: 
-  recorded_at: Mon, 11 Mar 2019 03:30:57 GMT
+  recorded_at: Fri, 15 Mar 2019 06:58:34 GMT
 recorded_with: VCR 4.0.0

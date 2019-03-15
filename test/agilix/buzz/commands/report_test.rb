@@ -46,5 +46,4 @@ class Agilix::Buzz::Commands::ReportTest < Minitest::Test
     end
   end
 
-
 end

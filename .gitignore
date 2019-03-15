@@ -2,7 +2,7 @@
 /.yardoc
 /Gemfile.lock
 /_yardoc/
-/coverage/
+coverage/*
 /doc/
 /pkg/
 /spec/reports/
@@ -19,3 +19,4 @@ mkmf.log
 .env
 .ruby-version
 .ruby-gemset
+

@@ -3,7 +3,6 @@ module Agilix
     module Commands
       module Domain
 
-        # api = Agilix::Buzz::Api::new
         # api.create_domains [{name: "BuzzTest1", userspace: 'buzz-test-fc-1', parentid: '57025'}]
         def create_domains(items = [])
           options = items.map do |item|

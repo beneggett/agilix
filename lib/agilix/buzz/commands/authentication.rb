@@ -9,8 +9,9 @@ module Agilix
         alias_method :login, :login_2
 
         def extend_session
-          response = authenticated_post cmd: "extendsession"
+          response = authenticated_post cmd: "extendsession", bypass_authentication_check: true
           @token_expiration = Time.now + (response.dig("response", "session", "authenticationexpirationminutes").to_i * 60 )
+          authenticate! if response['code'] == 'NoAuthentication'
           response
         end
 

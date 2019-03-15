@@ -17,7 +17,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 11 Mar 2019 22:15:10 GMT
+      - Fri, 15 Mar 2019 06:58:38 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -25,8 +25,8 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=dc734af105053864bb7307705ddf286361552342509; expires=Tue, 10-Mar-20
-        22:15:09 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
+      - __cfduid=dc564189fd8b70ba2bdd968c8a58b5b091552633118; expires=Sat, 14-Mar-20
+        06:58:38 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
       Pragma:
       - no-cache
       Expires:
@@ -38,7 +38,7 @@ http_interactions:
       Agilix-Encoding:
       - gzip
       Agilix-Server:
-      - xLi_552452 (43)
+      - xLi_854 (22)
       Cache-Control:
       - no-cache, no-store
       Expect-Ct:
@@ -46,20 +46,20 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - 4b60e2aecbfca022-SLC
+      - 4b7c999fbe27a07c-SLC
     body:
       encoding: UTF-8
       string: "{\r\n  \"response\":{\r\n    \"code\":\"OK\",\r\n    \"user\":{\r\n
         \     \"userid\":\"57026\",\r\n      \"username\":\"<AGILIX_BUZZ_USERNAME>\",\r\n
         \     \"firstname\":\"Buzz\",\r\n      \"lastname\":\"Test\",\r\n      \"email\":\"<AGILIX_BUZZ_USERNAME>\",\r\n
         \     \"domainid\":\"57025\",\r\n      \"domainname\":\"BuzzTestUpdatedName1\",\r\n
-        \     \"userspace\":\"auto-tests\",\r\n      \"token\":\"~0.1K_W3rrdN0wC7N.Bke4eUKBH_HZcaAFys-Ah3oIIlX5VpMWb52eSHB0WR8\",\r\n
+        \     \"userspace\":\"auto-tests\",\r\n      \"token\":\"~0.FG7nWzyJhDYC7N.m8DHlXr6Tm3k8qddJLngus2GOb4mb4rzlAwoFoGJJ4c\",\r\n
         \     \"authenticationexpirationminutes\":14\r\n    }\r\n  }\r\n}"
     http_version: 
-  recorded_at: Mon, 11 Mar 2019 22:15:09 GMT
+  recorded_at: Fri, 15 Mar 2019 06:58:38 GMT
 - request:
     method: get
-    uri: api.agilixbuzz.com/cmd?_token=~0.1K_W3rrdN0wC7N.Bke4eUKBH_HZcaAFys-Ah3oIIlX5VpMWb52eSHB0WR8&cmd=runreport&entityid=57025&format=json&reportid=127
+    uri: api.agilixbuzz.com/cmd?_token=~0.FG7nWzyJhDYC7N.m8DHlXr6Tm3k8qddJLngus2GOb4mb4rzlAwoFoGJJ4c&cmd=runreport&entityid=57025&format=json&reportid=127
     body:
       encoding: US-ASCII
       string: ''
@@ -74,7 +74,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 11 Mar 2019 22:15:10 GMT
+      - Fri, 15 Mar 2019 06:58:38 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -82,8 +82,8 @@ http_interactions:
       Connection:
       - keep-alive
       Set-Cookie:
-      - __cfduid=d548c248f4bc588125209422fc9f733371552342510; expires=Tue, 10-Mar-20
-        22:15:10 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
+      - __cfduid=d02a087d75d9c999fd1328c12c72152c31552633118; expires=Sat, 14-Mar-20
+        06:58:38 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
       Pragma:
       - no-cache
       Expires:
@@ -97,7 +97,7 @@ http_interactions:
       Agilix-Encoding:
       - gzip
       Agilix-Server:
-      - xLi_552452 (18)
+      - xLi_854 (33)
       Cache-Control:
       - no-cache, no-store
       Expect-Ct:
@@ -105,7 +105,7 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - 4b60e2b06d8ca040-SLC
+      - 4b7c99a0a8e7a02e-SLC
     body:
       encoding: UTF-8
       string: "{\r\n  \"response\":{\r\n    \"code\":\"OK\",\r\n    \"report\":{\r\n
@@ -130,9 +130,39 @@ http_interactions:
         \           \"User_x0020_Reference\":\"\",\r\n            \"Email\":\"<AGILIX_BUZZ_USERNAME>\",\r\n
         \           \"Description\":\"\",\r\n            \"User_x0020_Id\":\"57026\",\r\n
         \           \"User_x0020_Guid\":\"dbe7aac4-5502-4445-a592-ee40a550fd89\",\r\n
-        \           \"Flags\":\"-1\",\r\n            \"Status\":\"Active\"\r\n          }]\r\n
-        \       }]\r\n      },\r\n      \"run\":{\r\n        \"start\":\"2019-03-11T22:15:10.3392355Z\",\r\n
-        \       \"elapsed\":\"PT0.0087769S\"\r\n      }\r\n    }\r\n  }\r\n}"
+        \           \"Flags\":\"-1\",\r\n            \"Status\":\"Active\"\r\n          },{\r\n
+        \           \"First_x0020_Name\":\"Buzz\",\r\n            \"Last_x0020_Name\":\"Man\",\r\n
+        \           \"Username\":\"BuzzUserTest1\",\r\n            \"User_x0020_Reference\":\"\",\r\n
+        \           \"Email\":\"buzzusertest1@agilix.com\",\r\n            \"Description\":\"\",\r\n
+        \           \"User_x0020_Id\":\"57176\",\r\n            \"User_x0020_Guid\":\"43b97269-2a30-4b06-b8cf-0ad80a96602a\",\r\n
+        \           \"Flags\":\"0\",\r\n            \"Status\":\"Active\"\r\n          },{\r\n
+        \           \"First_x0020_Name\":\"Buzz\",\r\n            \"Last_x0020_Name\":\"Jones\",\r\n
+        \           \"Username\":\"BuzzUserTestMultiple1\",\r\n            \"User_x0020_Reference\":\"\",\r\n
+        \           \"Email\":\"buzzusertestmultiple1@agilix.com\",\r\n            \"Description\":\"\",\r\n
+        \           \"User_x0020_Id\":\"60605\",\r\n            \"User_x0020_Guid\":\"a3ce632c-575e-4d58-96bb-6857504d76e8\",\r\n
+        \           \"Flags\":\"0\",\r\n            \"Status\":\"Active\"\r\n          },{\r\n
+        \           \"First_x0020_Name\":\"Buzz\",\r\n            \"Last_x0020_Name\":\"Michaels\",\r\n
+        \           \"Username\":\"BuzzUserTestMultiple2\",\r\n            \"User_x0020_Reference\":\"\",\r\n
+        \           \"Email\":\"buzzusertestmultiple2@agilix.com\",\r\n            \"Description\":\"\",\r\n
+        \           \"User_x0020_Id\":\"60606\",\r\n            \"User_x0020_Guid\":\"bd98f7ed-f871-46f8-b7b1-aa4e149dcc23\",\r\n
+        \           \"Flags\":\"0\",\r\n            \"Status\":\"Active\"\r\n          },{\r\n
+        \           \"First_x0020_Name\":\"Buzz\",\r\n            \"Last_x0020_Name\":\"Aldrin\",\r\n
+        \           \"Username\":\"BuzzUserTestMultiple3\",\r\n            \"User_x0020_Reference\":\"\",\r\n
+        \           \"Email\":\"buzzusertestmultiple3@agilix.com\",\r\n            \"Description\":\"\",\r\n
+        \           \"User_x0020_Id\":\"60607\",\r\n            \"User_x0020_Guid\":\"c6846110-2813-47b6-996b-e56ae253b87c\",\r\n
+        \           \"Flags\":\"0\",\r\n            \"Status\":\"Active\"\r\n          },{\r\n
+        \           \"First_x0020_Name\":\"Buzz\",\r\n            \"Last_x0020_Name\":\"Man\",\r\n
+        \           \"Username\":\"BuzzUserAutoTest1\",\r\n            \"User_x0020_Reference\":\"\",\r\n
+        \           \"Email\":\"buzzuserautotest1@agilix.com\",\r\n            \"Description\":\"\",\r\n
+        \           \"User_x0020_Id\":\"60608\",\r\n            \"User_x0020_Guid\":\"6486ed11-a350-49ee-b90b-b1562cf32955\",\r\n
+        \           \"Flags\":\"0\",\r\n            \"Status\":\"Active\"\r\n          },{\r\n
+        \           \"First_x0020_Name\":\"Buzz\",\r\n            \"Last_x0020_Name\":\"Man\",\r\n
+        \           \"Username\":\"BuzzUserAutoTestUser1\",\r\n            \"User_x0020_Reference\":\"\",\r\n
+        \           \"Email\":\"buzzuserautotestuser1@agilix.com\",\r\n            \"Description\":\"\",\r\n
+        \           \"User_x0020_Id\":\"60612\",\r\n            \"User_x0020_Guid\":\"eb5fbba7-94f8-41a6-9f3d-4e4d783600bf\",\r\n
+        \           \"Flags\":\"0\",\r\n            \"Status\":\"Active\"\r\n          }]\r\n
+        \       }]\r\n      },\r\n      \"run\":{\r\n        \"start\":\"2019-03-15T06:58:38.8926577Z\",\r\n
+        \       \"elapsed\":\"PT0.0312525S\"\r\n      }\r\n    }\r\n  }\r\n}"
     http_version: 
-  recorded_at: Mon, 11 Mar 2019 22:15:10 GMT
+  recorded_at: Fri, 15 Mar 2019 06:58:38 GMT
 recorded_with: VCR 4.0.0
