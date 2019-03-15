@@ -49,7 +49,13 @@ Otherwise, you can pass `:username`, `:password`, and `:domain` into the initial
 ```
 api = Agilix::Buzz::Api.new username: 'my-username', password: 'my-password', domain: 'my-domain'
 ```
+The authentication API gives you back a token that can be used within a 15 minute window. This library will manage the need to fetch a new token or `extend_session` by setting the token & token expiration in the initialized api object.
 
+### Passing arguments
+
+All APIs have defined required arguments and optional arguments, and an argument cleaner will prevent the calls from being made if conditions are not met. Additionally it will strip out any unsupported api params that are not defined in the required or optional fields.
+
+Below are instructions for basic invocation of the api methods. For additional information about each API method, please consult the Agilix documentation, linked in each method's name.
 
 ### Domains
 
@@ -62,6 +68,7 @@ api.create_domains [{name: "BuzzTest1", userspace: 'buzz-test-fc-1', parentid: '
 api.delete_domain domainid: '57027'
 ```
 #### [GetDomain2](https://api.agilixbuzz.com/docs/#!/Command/GetDomain2)
+This is aliased to `get_domain`
 ```
 api.get_domain domainid: '57025'
 ```
@@ -121,17 +128,77 @@ api.run_report reportid: 127, entityid: 57025, format: 'json'
 
 ## Users
 
-- [ ] [CreateUsers2](https://api.agilixbuzz.com/docs/#!/Command/CreateUsers2)
-- [ ] [DeleteUsers](https://api.agilixbuzz.com/docs/#!/Command/DeleteUsers)
-- [ ] [GetActiveUserCount](https://api.agilixbuzz.com/docs/#!/Command/GetActiveUserCount)
-- [ ] [GetDomainActivity](https://api.agilixbuzz.com/docs/#!/Command/GetDomainActivity)
-- [ ] [GetProfilePicture](https://api.agilixbuzz.com/docs/#!/Command/GetProfilePicture)
-- [ ] [GetUser2](https://api.agilixbuzz.com/docs/#!/Command/GetUser2)
-- [ ] [GetUserActivity](https://api.agilixbuzz.com/docs/#!/Command/GetUserActivity)
-- [ ] [GetUserActivityStream](https://api.agilixbuzz.com/docs/#!/Command/GetUserActivityStream)
-- [ ] [ListUsers](https://api.agilixbuzz.com/docs/#!/Command/ListUsers)
-- [ ] [RestoreUser](https://api.agilixbuzz.com/docs/#!/Command/RestoreUser)
-- [ ] [UpdateUsers](https://api.agilixbuzz.com/docs/#!/Command/UpdateUsers)
+#### [CreateUsers2](https://api.agilixbuzz.com/docs/#!/Command/CreateUsers2)
+This is aliased to `create_users`
+```
+api.create_users( [{
+  domainid: '57025',
+  username: "BuzzUserTest1",
+  email: 'buzzusertest1@agilix.com',
+  password: 'testpassword1234',
+  firstname: 'Buzz',
+  lastname: "Man",
+  passwordquestion: "Who's your best friend?",
+  passwordanswer: "Me"
+  }] )
+```
+
+#### [DeleteUsers](https://api.agilixbuzz.com/docs/#!/Command/DeleteUsers)
+```
+api.delete_users [userid: '57181']
+```
+
+#### [GetActiveUserCount](https://api.agilixbuzz.com/docs/#!/Command/GetActiveUserCount)
+```
+api.get_active_user_count domainid: '57025'
+api.get_active_user_count domainid: '5', includedescendantdomains: true, bymonth:true, startdate: '2018-01-01', enddate: '2019-03-01'
+```
+
+#### [GetDomainActivity](https://api.agilixbuzz.com/docs/#!/Command/GetDomainActivity)
+```
+api.get_domain_activity domainid: '57025'
+```
+
+#### [GetProfilePicture](https://api.agilixbuzz.com/docs/#!/Command/GetProfilePicture)
+Returns base 64 encoded picture
+```
+api.get_profile_picture entityid: 57026
+```
+The api will return 404 not found if they don't have one, unless you supply it with a default profile pic, then it will return that
+```
+api.get_profile_picture entityid: 57025, default: "https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm"
+```
+
+#### [GetUser2](https://api.agilixbuzz.com/docs/#!/Command/GetUser2)
+This is aliased to `get_user`
+```
+api.get_user userid: 57026
+```
+
+#### [GetUserActivity](https://api.agilixbuzz.com/docs/#!/Command/GetUserActivity)
+```
+api.get_user_activity userid: 57026
+```
+
+#### [GetUserActivityStream](https://api.agilixbuzz.com/docs/#!/Command/GetUserActivityStream)
+```
+api.get_user_activity_stream userid: 57026
+```
+
+#### [ListUsers](https://api.agilixbuzz.com/docs/#!/Command/ListUsers)
+```
+api.list_users domainid: 57025
+```
+
+#### [RestoreUser](https://api.agilixbuzz.com/docs/#!/Command/RestoreUser)
+```
+api.restore_user userid: 57026
+```
+
+#### [UpdateUsers](https://api.agilixbuzz.com/docs/#!/Command/UpdateUsers)
+```
+api.update_users  [{ userid: '57026', username: "BuzzUserTestUpdated1", email: 'buzzusertest1@agilix.com',firstname: 'Buzz', lastname: "ManUpdated"}]
+```
 
 ---
 
