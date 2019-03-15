@@ -26,7 +26,7 @@ module Agilix
       end
 
       def authenticated_post(query = {})
-        check_authentication apiunless query.delete(:bypass_authentication_check)
+        check_authentication unless query.delete(:bypass_authentication_check)
         post query
       end
 
@@ -49,8 +49,6 @@ module Agilix
         response = self.class.post(url, body: modify_bulk_body(query), timeout: 30, headers: headers)
       end
 
-      private
-
       def check_authentication
         if token && token_expiration
           if token_expiration < Time.now
@@ -60,6 +58,8 @@ module Agilix
           authenticate!
         end
       end
+
+      private
 
       def authenticate!
         response = login username: @username, password: @password, domain: @domain

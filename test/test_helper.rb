@@ -41,7 +41,7 @@ VCR.configure do |c|
 end
 
 def api
-  @api=  Agilix::Buzz::Api.new
+  @api ||=  Agilix::Buzz::Api.new
   # @api ||= VCR.use_cassette("API Authenticate", match_requests_on: [:query]) do
   #   Agilix::Buzz::Api.new
   # end
