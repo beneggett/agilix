@@ -206,21 +206,110 @@ api.update_users  [{ userid: '57026', username: "BuzzUserTestUpdated1", email: '
 
 ## Authentication
 
-- [ ] [ExtendSession](https://api.agilixbuzz.com/docs/#!/Command/ExtendSession)
-- [ ] [GetKey](https://api.agilixbuzz.com/docs/#!/Command/GetKey)
-- [ ] [ForcePasswordChange](https://api.agilixbuzz.com/docs/#!/Command/ForcePasswordChange)
-- [ ] [GetPasswordLoginAttemptHistory](https://api.agilixbuzz.com/docs/#!/Command/GetPasswordLoginAttemptHistory)
-- [ ] [GetPasswordPolicy](https://api.agilixbuzz.com/docs/#!/Command/GetPasswordPolicy)
-- [ ] [GetPasswordQuestion](https://api.agilixbuzz.com/docs/#!/Command/GetPasswordQuestion)
-- [ ] [Login2](https://api.agilixbuzz.com/docs/#!/Command/Login2)
-- [ ] [Logout](https://api.agilixbuzz.com/docs/#!/Command/Logout)
-- [ ] [Proxy](https://api.agilixbuzz.com/docs/#!/Command/Proxy)
-- [ ] [PutKey](https://api.agilixbuzz.com/docs/#!/Command/PutKey)
-- [ ] [ResetLockout](https://api.agilixbuzz.com/docs/#!/Command/ResetLockout)
-- [ ] [ResetPassword](https://api.agilixbuzz.com/docs/#!/Command/ResetPassword)
-- [ ] [Unproxy](https://api.agilixbuzz.com/docs/#!/Command/Unproxy)
-- [ ] [UpdatePassword](https://api.agilixbuzz.com/docs/#!/Command/UpdatePassword)
-- [ ] [UpdatePasswordQuestionAnswer](https://api.agilixbuzz.com/docs/#!/Command/UpdatePasswordQuestionAnswer)
+#### [Login2](https://api.agilixbuzz.com/docs/#!/Command/Login2)
+This is handled automatically by instantiation of a base Agilix::Buzz::Api instance. It wouldn't need to be called manually unless using for other users or making calls on their behalf
+```
+api.login username: 'my-username', password: 'my-password', domain: 'my-domain'
+```
+
+#### [Logout](https://api.agilixbuzz.com/docs/#!/Command/Logout)
+Clears your login session
+```
+api.logout
+```
+
+#### [ExtendSession](https://api.agilixbuzz.com/docs/#!/Command/ExtendSession)
+This is handled automatically by instantiation of a base Agilix::Buzz::Api instance and on subsequent calls to the api through the check_authentication method
+```
+api.extend_session
+```
+
+#### [ForcePasswordChange](https://api.agilixbuzz.com/docs/#!/Command/ForcePasswordChange)
+```
+api.force_password_change userid: 57181
+```
+
+#### [GetPasswordLoginAttemptHistory](https://api.agilixbuzz.com/docs/#!/Command/GetPasswordLoginAttemptHistory)
+```
+api.get_password_login_attempt_history userid: 57181
+api.get_password_login_attempt_history userid: 57181, earliestrecordtoreturn: '2018-01-01'
+```
+
+#### [GetPasswordPolicy](https://api.agilixbuzz.com/docs/#!/Command/GetPasswordPolicy)
+For current domain
+```
+api.get_password_policy
+```
+for a specific domain
+```
+api.get_password_policy domainid: 57031
+```
+
+#### [GetPasswordQuestion](https://api.agilixbuzz.com/docs/#!/Command/GetPasswordQuestion)
+```
+api.get_password_question username: "auto-tests/BuzzUserUp1"
+```
+
+#### [UpdatePasswordQuestionAnswer](https://api.agilixbuzz.com/docs/#!/Command/UpdatePasswordQuestionAnswer)
+ISSUE: This works with a GET call
+```
+api.update_password_question_answer userid: 57181, passwordquestion: "Where is your favorite vacation place?", passwordanswer: "Hawaii"
+
+```
+
+#### [Proxy](https://api.agilixbuzz.com/docs/#!/Command/Proxy)
+```
+  api.proxy userid: 57181
+```
+In addition to these, we've created a proxy api method that will setup an api client for the proxied connection:
+
+#### Proxy Api
+```
+proxy_api = api.proxy_api userid: 57181
+```
+
+This will allow you to make requests as the proxied user, like you would the main api user. It's required to demonstrate how unproxy works below
+
+#### [Unproxy](https://api.agilixbuzz.com/docs/#!/Command/Unproxy)
+First setup a proxy_api
+```
+proxy_api = api.proxy_api userid: 57181
+```
+Then you can unproxy out of it to logout as the proxied user
+```
+proxy_api.unproxy userid: 57181
+```
+
+#### [ResetLockout](https://api.agilixbuzz.com/docs/#!/Command/ResetLockout)
+```
+api.reset_lockout userid: 57181
+```
+#### [ResetPassword](https://api.agilixbuzz.com/docs/#!/Command/ResetPassword)
+```
+api.reset_password username:'auto-tests/BuzzUserUp1'
+```
+
+#### [UpdatePassword](https://api.agilixbuzz.com/docs/#!/Command/UpdatePassword)
+```
+api.update_password userid: 57181, password: "IChanged123"
+```
+
+#### [PutKey](https://api.agilixbuzz.com/docs/#!/Command/PutKey)
+ISSUE: This should be a POST method as it's storing data
+```
+api.put_key entityid: 57031, name: 'secret_key_1', value: "Super Secret"
+```
+
+#### [GetKey](https://api.agilixbuzz.com/docs/#!/Command/GetKey)
+```
+api.get_key entityid: 57031, name: 'secret_key_1'
+```
+
+#### [ComputeHMAC](https://api.agilixbuzz.com/docs/#!/Command/ComputeHMAC)
+This requires a key to exist with the given keyname, see `put_key`. **not sure what its used for yet**
+```
+api.compute_hmac domainid: 57025, keyname: "secret_key_1", message:"my-secret-1"
+```
 
 ## Courses
 
