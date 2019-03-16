@@ -18,6 +18,8 @@ module Agilix
         @username = options.fetch(:username, default_username)
         @password = options.fetch(:password, default_password)
         @domain = options.fetch(:domain, default_domain)
+        @token = options.dig(:token)
+        @token_expiration = options.dig(:token_expiration)
       end
 
       def authenticated_get(query = {})

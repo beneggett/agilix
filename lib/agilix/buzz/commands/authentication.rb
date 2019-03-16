@@ -22,9 +22,13 @@ module Agilix
         # api.extend_session
         def extend_session
           response = authenticated_post cmd: "extendsession", bypass_authentication_check: true
-          @token_expiration = Time.now + (response.dig("response", "session", "authenticationexpirationminutes").to_i * 60 )
+          @token_expiration = set_token_expiration(response.dig("response", "session", "authenticationexpirationminutes"))
           authenticate! if response['code'] == 'NoAuthentication'
           response
+        end
+
+        def set_token_expiration(minutes)
+          Time.now + (minutes.to_i * 60 )
         end
 
         # api.force_password_change userid: 57181
@@ -60,37 +64,64 @@ module Agilix
           authenticated_post cmd: "updatepasswordquestionanswer", **options
         end
 
-        #
         # api.proxy userid: 57181
         def proxy(options = {})
           options = argument_cleaner(required_params: %i( userid ), optional_params: %i( noazt ), options: options )
+          options[:noazt] ||= true
           authenticated_post cmd: "proxy", **options
         end
 
-        # api.unproxy
+        # proxy_api = api.proxy_api userid: 57181
+        # proxy_api.unproxy userid: 57181
         def unproxy(options = {})
-          options = argument_cleaner(required_params: %i( userid ), optional_params: %i(  ), options: options )
-          authenticated_get cmd: "unproxy", **options
+          options = argument_cleaner(required_params: %i( userid ), optional_params: %i( noazt ), options: options )
+          authenticated_post cmd: "unproxy", **options
         end
 
-        # api.reset_lockout
+
+        # proxy_api = api.proxy_api userid: 57181
+        def proxy_api(userid: )
+          response = proxy userid: userid
+          self.class.new username: response.dig('response', 'user', 'username'), token: response.dig('response', 'user', 'token'), domain: response.dig('response', 'user', 'userspace'), token_expiration: set_token_expiration(response.dig('response', 'user', 'authenticationexpirationminutes'))
+        end
+
+
+        # :skip_test_coverage:
+        # api.proxy_sso_link userid: 57181
+        def proxy_sso_link(userid: )
+          response = proxy userid: userid
+          sso =  {
+             "customization": {
+                "authentication": {
+                   "provider": {
+                      "server": "https://www.google.com"
+                   }
+                }
+             }
+          }
+          self.update_domains [ {domainid: response.dig('response', 'user', 'domainid'), data: sso}]
+          # userspace = response.dig('response', 'user', 'userspace')
+          "https://api.leaderinme.net/SSOLogin?domainid=#{response.dig('response', 'user', 'domainid')}&url=/home&token=#{response.dig('response', 'user', 'token')}"
+        end
+        # :skip_test_coverage:
+
+        # api.reset_lockout userid: 57181
         def reset_lockout(options = {})
-          options = argument_cleaner(required_params: %i( domainid ), optional_params: %i( ), options: options )
-          authenticated_get cmd: "resetlockout", **options
+          options = argument_cleaner(required_params: %i( userid ), optional_params: %i( ), options: options )
+          authenticated_post cmd: "resetlockout", **options
         end
 
-        # api.reset_password
+        # api.reset_password username:'auto-tests/BuzzUserUp1'
         def reset_password(options = {})
-          options = argument_cleaner(required_params: %i( domainid ), optional_params: %i( ), options: options )
+          options = argument_cleaner(required_params: %i( username ), optional_params: %i( answer ), options: options )
           authenticated_get cmd: "resetpassword", **options
         end
 
-       # api.update_password
+       # api.update_password userid: 57181, password: "IChanged123"
         def update_password(options = {})
-          options = argument_cleaner(required_params: %i( domainid ), optional_params: %i( ), options: options )
+          options = argument_cleaner(required_params: %i( userid password ), optional_params: %i( token oldpassword ), options: options )
           authenticated_get cmd: "updatepassword", **options
         end
-
 
         # ISSUE: This should be a POST method as it's storing data
         # api.put_key entityid: 57031, name: 'secret_key_1', value: "Super Secret"

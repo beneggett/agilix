@@ -81,6 +81,17 @@ class Agilix::Buzz::Commands::AuthenticationTest < Minitest::Test
     end
   end
 
+  describe "#get_password_question" do
+    it "looks up a password question for a user" do
+      VCR.use_cassette("Commands::Authentication update_password_question_answer #{TEST_USER_ID}", match_requests_on: [:query]) do
+        response = api.get_password_question username: "auto-tests/BuzzUserUp1"
+        assert response.success?
+        assert_equal "OK", response.dig("response", "code")
+        assert_equal "Where is your favorite vacation place?", response.dig("response", "question", "$value")
+      end
+    end
+  end
+
   describe "#update_password_question_answer" do
     it "updates a password question/answer for a user" do
       VCR.use_cassette("Commands::Authentication update_password_question_answer #{TEST_USER_ID}", match_requests_on: [:query]) do
@@ -91,13 +102,76 @@ class Agilix::Buzz::Commands::AuthenticationTest < Minitest::Test
     end
   end
 
-  describe "#get_password_question" do
-    it "looks up a password question for a user" do
-      VCR.use_cassette("Commands::Authentication update_password_question_answer #{TEST_USER_ID}", match_requests_on: [:query]) do
-        response = api.get_password_question username: "auto-tests/BuzzUserUp1"
+
+  describe "#proxy" do
+    it "gets proxy login info for a user" do
+      VCR.use_cassette("Commands::Authentication proxy #{TEST_USER_ID}", match_requests_on: [:query]) do
+        response = api.proxy userid: TEST_USER_ID
         assert response.success?
         assert_equal "OK", response.dig("response", "code")
-        assert_equal "Where is your favorite vacation place?", response.dig("response", "question", "$value")
+        assert_equal TEST_USER_ID, response.dig("response", "user", "userid")
+      end
+    end
+  end
+
+  describe "#proxy_api" do
+    it "starts a proxy api session for a user" do
+      VCR.use_cassette("Commands::Authentication proxy_api #{TEST_USER_ID}", match_requests_on: [:query]) do
+        proxy_api = api.proxy_api userid: TEST_USER_ID
+        assert proxy_api.token
+        assert proxy_api.token_expiration
+      end
+    end
+  end
+
+  describe "#unproxy" do
+    it "does not unproxy a user if they aren't using current api" do
+      VCR.use_cassette("Commands::Authentication unproxy fail #{TEST_USER_ID}", match_requests_on: [:query]) do
+        response = api.unproxy userid: TEST_USER_ID
+        assert response.success?
+        assert_equal "BadRequest", response.dig("response", "code")
+      end
+    end
+
+    it "successfully unproxies a proxied user" do
+      VCR.use_cassette("Commands::Authentication unproxy #{TEST_USER_ID}", match_requests_on: [:query]) do
+        proxy_api = api.proxy_api userid: TEST_USER_ID
+        response = proxy_api.unproxy userid: TEST_USER_ID
+        assert response.success?
+        assert_equal "OK", response.dig("response", "code")
+        refute_equal TEST_USER_ID, response.dig("response", "user", "userid")
+        assert_equal ENV.fetch("AGILIX_BUZZ_USERNAME", 'your-username'), response.dig("response", "user", "username")
+      end
+    end
+  end
+
+
+  describe "#reset_lockout" do
+    it "resets an account lockout for a user" do
+      VCR.use_cassette("Commands::Authentication reset_lockout #{TEST_USER_ID}", match_requests_on: [:query]) do
+        response = api.reset_lockout userid: TEST_USER_ID
+        assert response.success?
+        assert_equal "OK", response.dig("response", "code")
+      end
+    end
+  end
+
+  describe "#reset_password" do
+    it "triggers a reset password email for a user" do
+      VCR.use_cassette("Commands::Authentication reset_password #{TEST_USER_ID}", match_requests_on: [:query]) do
+        response = api.reset_password username: 'auto-tests/BuzzUserUp1'
+        assert response.success?
+        assert_equal "OK", response.dig("response", "code")
+      end
+    end
+  end
+
+  describe "#update_password" do
+    it "updates a password for a user" do
+      VCR.use_cassette("Commands::Authentication update_password #{TEST_USER_ID}", match_requests_on: [:query]) do
+        response = api.update_password userid: 57181, password: "IChanged123"
+        assert response.success?
+        assert_equal "OK", response.dig("response", "code")
       end
     end
   end
