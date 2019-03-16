@@ -4,7 +4,7 @@ module Agilix
       module Authentication
 
         # This is handled automatically by instantiation of a base Agilix::Buzz::Api instance. It wouldn't need to be called manually unless using for other users or making calls on their behalf
-        #  api.login username: 'my-username', password: 'my-password', domain: 'my-domain'
+        # api.login username: 'my-username', password: 'my-password', domain: 'my-domain'
         def login2(username: , password: , domain: )
           post cmd: "login2", username: "#{domain}/#{username}", password: password
         end
@@ -25,10 +25,6 @@ module Agilix
           @token_expiration = set_token_expiration(response.dig("response", "session", "authenticationexpirationminutes"))
           authenticate! if response['code'] == 'NoAuthentication'
           response
-        end
-
-        def set_token_expiration(minutes)
-          Time.now + (minutes.to_i * 60 )
         end
 
         # api.force_password_change userid: 57181
@@ -111,7 +107,7 @@ module Agilix
           authenticated_post cmd: "resetlockout", **options
         end
 
-        # api.reset_password username:'auto-tests/BuzzUserUp1'
+        #
         def reset_password(options = {})
           options = argument_cleaner(required_params: %i( username ), optional_params: %i( answer ), options: options )
           authenticated_get cmd: "resetpassword", **options
@@ -130,7 +126,7 @@ module Agilix
           authenticated_get cmd: "putkey", **options
         end
 
-        # api.get_key entityid: 57031, name: 'secret_key_1',
+        # api.get_key entityid: 57031, name: 'secret_key_1'
         def get_key(options = {})
           options = argument_cleaner(required_params: %i( entityid name ), optional_params: %i( ), options: options )
           authenticated_get cmd: "getkey", **options
@@ -143,6 +139,11 @@ module Agilix
           options = argument_cleaner(required_params: %i( domainid keyname message ), optional_params: %i( algorithm format ), options: options )
           options[:message] = "$VAR_USERID#{options[:message]}$VAR_SECRETTime$VAR_TIME"
           authenticated_get cmd: "computeHMAC", **options
+        end
+
+        private
+        def set_token_expiration(minutes)
+          Time.now + (minutes.to_i * 60 )
         end
 
       end
