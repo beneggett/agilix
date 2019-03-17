@@ -27,27 +27,31 @@ module Agilix
           authenticated_post cmd: "createdemocourse", **options
         end
 
+        # ISSUE: get request should be delete, put, patch
         # api.deactivate_course
         def deactivate_course(options = {})
-          options = argument_cleaner(required_params: %i( domainid ), optional_params: %i( ), options: options )
+          options = argument_cleaner(required_params: %i( courseid ), optional_params: %i( ), options: options )
           authenticated_get cmd: "deactivatecourse", **options
         end
 
-        # api.delete_courses
-        def delete_courses(options = {})
-          options = argument_cleaner(required_params: %i( domainid ), optional_params: %i( ), options: options )
-          authenticated_get cmd: "deletecourses", **options
+        # ISSUE: Why so different than deactivate course
+        # api.delete_courses [{courseid: 60994}]
+        def delete_courses(items = [])
+          options = items.map do |item|
+            argument_cleaner(required_params: %i( courseid ), optional_params: %i(), options: item )
+          end
+          authenticated_bulk_post cmd: "deletecourses", root_node: "course", body: options
         end
 
         # api.get_course2
         def get_course2(options = {})
-          options = argument_cleaner(required_params: %i( domainid ), optional_params: %i( ), options: options )
+          options = argument_cleaner(required_params: %i( courseid ), optional_params: %i( ), options: options )
           authenticated_get cmd: "getcourse2", **options
         end
 
         # api.get_course_history
         def get_course_history(options = {})
-          options = argument_cleaner(required_params: %i( domainid ), optional_params: %i( ), options: options )
+          options = argument_cleaner(required_params: %i( courseid ), optional_params: %i( ), options: options )
           authenticated_get cmd: "getcoursehistory", **options
         end
 
@@ -60,19 +64,19 @@ module Agilix
 
         # api.merge_courses
         def merge_courses(options = {})
-          options = argument_cleaner(required_params: %i( domainid ), optional_params: %i( ), options: options )
+          options = argument_cleaner(required_params: %i( courseid ), optional_params: %i( ), options: options )
           authenticated_get cmd: "mergecourses", **options
         end
 
-        # api.restore_course
+        # api.restore_course courseid: 60994
         def restore_course(options = {})
-          options = argument_cleaner(required_params: %i( domainid ), optional_params: %i( ), options: options )
+          options = argument_cleaner(required_params: %i( courseid ), optional_params: %i( ), options: options )
           authenticated_get cmd: "restorecourse", **options
         end
 
         # api.update_courses
         def update_courses(options = {})
-          options = argument_cleaner(required_params: %i( domainid ), optional_params: %i( ), options: options )
+          options = argument_cleaner(required_params: %i( courseid ), optional_params: %i( ), options: options )
           authenticated_get cmd: "updatecourses", **options
         end
 
