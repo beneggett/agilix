@@ -313,17 +313,64 @@ api.compute_hmac domainid: 57025, keyname: "secret_key_1", message:"my-secret-1"
 
 ## Courses
 
-- [ ] [CopyCourses](https://api.agilixbuzz.com/docs/#!/Command/CopyCourses)
-- [ ] [CreateCourses](https://api.agilixbuzz.com/docs/#!/Command/CreateCourses)
-- [ ] [CreateDemoCourse](https://api.agilixbuzz.com/docs/#!/Command/CreateDemoCourse)
-- [ ] [DeactivateCourse](https://api.agilixbuzz.com/docs/#!/Command/DeactivateCourse)
-- [ ] [DeleteCourses](https://api.agilixbuzz.com/docs/#!/Command/DeleteCourses)
-- [ ] [GetCourse2](https://api.agilixbuzz.com/docs/#!/Command/GetCourse2)
-- [ ] [GetCourseHistory](https://api.agilixbuzz.com/docs/#!/Command/GetCourseHistory)
-- [ ] [ListCourses](https://api.agilixbuzz.com/docs/#!/Command/ListCourses)
-- [ ] [MergeCourses](https://api.agilixbuzz.com/docs/#!/Command/MergeCourses)
-- [ ] [RestoreCourse](https://api.agilixbuzz.com/docs/#!/Command/RestoreCourse)
-- [ ] [UpdateCourses](https://api.agilixbuzz.com/docs/#!/Command/UpdateCourses)
+#### [CopyCourses](https://api.agilixbuzz.com/docs/#!/Command/CopyCourses)
+```
+api.copy_courses [{courseid: 60982, domainid: 57025}]
+```
+
+#### [CreateCourses](https://api.agilixbuzz.com/docs/#!/Command/CreateCourses)
+```
+api.create_courses title: "Starter Course", domainid: 57025
+```
+
+#### [CreateDemoCourse](https://api.agilixbuzz.com/docs/#!/Command/CreateDemoCourse)
+ISSUE: documentation on request format is inconsistent, not sure if it is bulk
+```
+api.create_demo_course courseid: 60982, domainid: 57025, title: "Demo Course",
+```
+
+#### [DeactivateCourse](https://api.agilixbuzz.com/docs/#!/Command/DeactivateCourse)
+ISSUE: get request should be delete, put, patch
+```
+api.deactivate_course
+```
+
+#### [DeleteCourses](https://api.agilixbuzz.com/docs/#!/Command/DeleteCourses)
+ISSUE: Why so different than deactivate course
+```
+api.delete_courses [{courseid: 60994}]
+```
+
+#### [GetCourse2](https://api.agilixbuzz.com/docs/#!/Command/GetCourse2)
+```
+api.get_course2 courseid: 60994
+```
+
+#### [GetCourseHistory](https://api.agilixbuzz.com/docs/#!/Command/GetCourseHistory)
+```
+api.get_course_history courseid: 60994
+```
+
+#### [ListCourses](https://api.agilixbuzz.com/docs/#!/Command/ListCourses)
+```
+api.list_courses domainid: 5
+```
+
+#### [MergeCourses](https://api.agilixbuzz.com/docs/#!/Command/MergeCourses)
+```
+api.merge_courses courseid: 60994
+```
+
+#### [RestoreCourse](https://api.agilixbuzz.com/docs/#!/Command/RestoreCourse)
+```
+api.restore_course courseid: 60994
+```
+
+#### [UpdateCourses](https://api.agilixbuzz.com/docs/#!/Command/UpdateCourses)
+```
+api.update_courses [{courseid: 60994, title: "Updated Course"}]
+```
+
 
 ## Enrollments
 
