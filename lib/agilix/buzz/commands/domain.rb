@@ -60,6 +60,7 @@ module Agilix
         # api.list_domains domainid: '0' # all domains for user
         # api.list_domains domainid: '57025'
         def list_domains(options = {})
+          options[:domainid] ||= 0
           options = argument_cleaner(required_params: %i( domainid  ), optional_params: %i( includedescendantdomains limit show select text query ), options: options )
           authenticated_get cmd: "listdomains", **options
         end
