@@ -38,17 +38,17 @@ module Agilix
       end
 
       def get(query = {})
-        response = self.class.get(URL_BASE, query: modify_query(query), timeout: 30, headers: headers)
+        response = self.class.get(URL_BASE, query: modify_query(query), timeout: 60, headers: headers)
       end
 
       def post(query = {})
-        response = self.class.post(URL_BASE, body: modify_body(query), timeout: 30, headers: headers)
+        response = self.class.post(URL_BASE, body: modify_body(query), timeout: 60, headers: headers)
       end
 
       def bulk_post(query = {})
         cmd = query.delete(:cmd)
         url = URL_BASE + "?cmd=#{cmd}&_token=#{token}"
-        response = self.class.post(url, body: modify_bulk_body(query), timeout: 30, headers: headers)
+        response = self.class.post(url, body: modify_bulk_body(query), timeout: 60, headers: headers)
       end
 
       def check_authentication

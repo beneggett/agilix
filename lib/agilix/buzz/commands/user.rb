@@ -6,7 +6,7 @@ module Agilix
         # api.create_users [{ domainid: '57025', username: "BuzzUserTest1", email: 'buzzusertest1@agilix.com', password: 'testpassword1234', firstname: 'Buzz', lastname: "Man", passwordquestion: "Who's your best friend?", passwordanswer: "Me"}]
         def create_users2(items = [])
           options = items.map do |item|
-            options = argument_cleaner(required_params: %i( domainid username email password firstname lastname   ), optional_params: %i( passwordquestion passwordanswer reference flags rights roleid data ), options: item )
+            argument_cleaner(required_params: %i( domainid username email password firstname lastname   ), optional_params: %i( passwordquestion passwordanswer reference flags rights roleid data ), options: item )
           end
           authenticated_bulk_post cmd: "createusers2", root_node: 'user', body: options
         end
@@ -15,7 +15,7 @@ module Agilix
         # api.delete_users [userid: '57181']
         def delete_users(items = {})
           options = items.map do |item|
-            options = argument_cleaner(required_params: %i( userid ), optional_params: %i( ), options: item )
+            argument_cleaner(required_params: %i( userid ), optional_params: %i( ), options: item )
           end
           authenticated_bulk_post cmd: "deleteusers", root_node: 'user', body: options
         end
@@ -74,7 +74,7 @@ module Agilix
         # api.update_users  [{ userid: '57026', username: "BuzzUserTestUpdated1", email: 'buzzusertest1@agilix.com',firstname: 'Buzz', lastname: "ManUpdated"}]
         def update_users(items)
           options = items.map do |item|
-            options = argument_cleaner(required_params: %i( userid ), optional_params: %i( domainid username firstname lastname email reference flags data ), options: item)
+            argument_cleaner(required_params: %i( userid ), optional_params: %i( domainid username firstname lastname email reference flags data ), options: item)
           end
           authenticated_bulk_post cmd: "updateusers", root_node: 'user', body: options
         end

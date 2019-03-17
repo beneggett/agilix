@@ -6,7 +6,7 @@ module Agilix
         # api.create_domains [{name: "BuzzTest1", userspace: 'buzz-test-fc-1', parentid: '57025'}]
         def create_domains(items = [])
           options = items.map do |item|
-            options = argument_cleaner(required_params: %i( name userspace parentid ), optional_params: %i( reference flags data ), options: item )
+            argument_cleaner(required_params: %i( name userspace parentid ), optional_params: %i( reference flags data ), options: item )
           end
           authenticated_bulk_post cmd: "createdomains", root_node: 'domain', body: options
         end
@@ -60,6 +60,7 @@ module Agilix
         # api.list_domains domainid: '0' # all domains for user
         # api.list_domains domainid: '57025'
         def list_domains(options = {})
+          options[:domainid] ||= 0
           options = argument_cleaner(required_params: %i( domainid  ), optional_params: %i( includedescendantdomains limit show select text query ), options: options )
           authenticated_get cmd: "listdomains", **options
         end
@@ -73,7 +74,7 @@ module Agilix
         # api.update_domains [{ domainid: "57031", name: "BuzzTestUpdated1", userspace: 'buzz-test-fc-1', parentid: '57025'}]
         def update_domains(items)
           options = items.map do |item|
-            options = argument_cleaner(required_params: %i( domainid  ), optional_params: %i( name userspace parentid reference flags data ), options: item )
+            argument_cleaner(required_params: %i( domainid  ), optional_params: %i( name userspace parentid reference flags data ), options: item )
           end
           authenticated_bulk_post cmd: "updatedomains", root_node: 'domain', body: options
         end

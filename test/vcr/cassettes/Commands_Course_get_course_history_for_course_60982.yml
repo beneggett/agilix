@@ -1,0 +1,122 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: api.agilixbuzz.com/cmd
+    body:
+      encoding: UTF-8
+      string: '{"request":{"cmd":"login2","username":"auto-tests/<AGILIX_BUZZ_USERNAME>","password":"<AGILIX_BUZZ_PASSWORD>"}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 17 Mar 2019 08:10:17 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=dc2936b845e1fbd6ac031560e5310c8011552810217; expires=Mon, 16-Mar-20
+        08:10:17 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000
+      Agilix-Encoding:
+      - gzip
+      Agilix-Server:
+      - xLi_23152 (49)
+      Cache-Control:
+      - no-cache, no-store
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4b8d7d533d4da07c-SLC
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"response\":{\r\n    \"code\":\"OK\",\r\n    \"user\":{\r\n
+        \     \"userid\":\"57026\",\r\n      \"username\":\"<AGILIX_BUZZ_USERNAME>\",\r\n
+        \     \"firstname\":\"Buzz\",\r\n      \"lastname\":\"Test\",\r\n      \"email\":\"<AGILIX_BUZZ_USERNAME>\",\r\n
+        \     \"domainid\":\"57025\",\r\n      \"domainname\":\"BuzzTestUpdatedName1\",\r\n
+        \     \"userspace\":\"auto-tests\",\r\n      \"token\":\"~0.zyj_Qk1vJTUC7N.Nptrvrb-KZ7LIsvyaVJ5wtIo34mhIhuUQRtN02ytkgM\",\r\n
+        \     \"authenticationexpirationminutes\":14\r\n    }\r\n  }\r\n}"
+    http_version: 
+  recorded_at: Sun, 17 Mar 2019 08:10:16 GMT
+- request:
+    method: get
+    uri: api.agilixbuzz.com/cmd?_token=~0.zyj_Qk1vJTUC7N.Nptrvrb-KZ7LIsvyaVJ5wtIo34mhIhuUQRtN02ytkgM&cmd=getcoursehistory&courseid=60982
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 17 Mar 2019 08:10:17 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d01ab3e3f185d5a31350d23ac6280c9fb1552810217; expires=Mon, 16-Mar-20
+        08:10:17 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000
+      Agilix-Encoding:
+      - gzip
+      Agilix-Server:
+      - xLi_23152 (15)
+      Cache-Control:
+      - no-cache, no-store
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4b8d7d547d3aa03a-SLC
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"response\":{\r\n    \"code\":\"OK\",\r\n    \"history\":{\r\n
+        \     \"course\":[{\r\n        \"id\":\"60982\",\r\n        \"title\":\"Find
+        Your Voice\",\r\n        \"domainid\":\"57025\",\r\n        \"reference\":\"\",\r\n
+        \       \"guid\":\"9921b86c-4b51-4403-9f66-90a4110ae0cb\",\r\n        \"schema\":3,\r\n
+        \       \"baseid\":\"0\",\r\n        \"type\":\"Continuous\",\r\n        \"startdate\":\"2018-04-17T06:00:00Z\",\r\n
+        \       \"enddate\":\"2019-04-18T05:59:59Z\",\r\n        \"days\":365,\r\n
+        \       \"term\":\"\",\r\n        \"protection\":0,\r\n        \"flags\":0,\r\n
+        \       \"creationdate\":\"2019-03-17T05:37:21.623Z\",\r\n        \"creationby\":\"4305\",\r\n
+        \       \"modifieddate\":\"2019-03-17T05:37:21.623Z\",\r\n        \"modifiedby\":\"4305\",\r\n
+        \       \"mainmodifieddate\":\"2019-03-17T05:37:21.623Z\",\r\n        \"mainmodifiedby\":\"4305\",\r\n
+        \       \"version\":\"1\"\r\n      }]\r\n    }\r\n  }\r\n}"
+    http_version: 
+  recorded_at: Sun, 17 Mar 2019 08:10:16 GMT
+recorded_with: VCR 4.0.0
