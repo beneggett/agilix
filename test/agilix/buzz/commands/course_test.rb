@@ -4,6 +4,7 @@ class Agilix::Buzz::Commands::CourseTest < Minitest::Test
   SOURCE_COURSE_ID     = 60982
   DEACTIVATE_COURSE_ID = 60990
   DELETE_COURSE_ID     = 60994
+  MERGE_COURSE_ID      = 60995
 
   describe '#copy_courses' do
     it "Copies a course to a domain" do
@@ -61,6 +62,29 @@ class Agilix::Buzz::Commands::CourseTest < Minitest::Test
     end
   end
 
+  describe '#get_course' do
+    it "Gets a courses by id " do
+      VCR.use_cassette("Commands::Course get_course for course #{SOURCE_COURSE_ID}", match_requests_on: [:query]) do
+        response = api.get_course courseid: SOURCE_COURSE_ID
+        assert response.success?
+        assert_equal "OK", response.dig('response', 'code')
+        assert_equal SOURCE_COURSE_ID.to_s, response.dig('response', 'course', 'id')
+      end
+    end
+  end
+
+  describe '#get_course_history' do
+    it "Gets a courses by id " do
+      VCR.use_cassette("Commands::Course get_course_history for course #{SOURCE_COURSE_ID}", match_requests_on: [:query]) do
+        response = api.get_course_history courseid: SOURCE_COURSE_ID
+        assert response.success?
+        assert_equal "OK", response.dig('response', 'code')
+        histories = response.dig('response', 'history', 'course')
+        assert histories
+        assert_equal SOURCE_COURSE_ID.to_s, histories.sample['id']
+      end
+    end
+  end
 
   describe '#list_courses' do
     it "Returns a list of courses by id " do
@@ -81,6 +105,17 @@ class Agilix::Buzz::Commands::CourseTest < Minitest::Test
     end
   end
 
+  describe '#merge_courses' do
+    it "Merges a course into its master" do
+      VCR.use_cassette("Commands::Course merge_courses for course #{MERGE_COURSE_ID}", match_requests_on: [:query]) do
+        response = api.merge_courses [{courseid: MERGE_COURSE_ID}]
+        assert response.success?
+        assert_equal "OK", response.dig('response', 'code')
+        assert_equal "OK", response.dig('response', 'responses', 'response').first['code']
+      end
+    end
+  end
+
   describe '#restore_course' do
     it "restores a course" do
       VCR.use_cassette("Commands::Course restore_course for course #{DELETE_COURSE_ID}", match_requests_on: [:query]) do
@@ -91,6 +126,15 @@ class Agilix::Buzz::Commands::CourseTest < Minitest::Test
     end
   end
 
-
+  describe '#update_courses' do
+    it "Updates a course" do
+      VCR.use_cassette("Commands::Course update_courses for course #{MERGE_COURSE_ID}", match_requests_on: [:query]) do
+        response = api.update_courses [{courseid: MERGE_COURSE_ID, title: "Updated Course"}]
+        assert response.success?
+        assert_equal "OK", response.dig('response', 'code')
+        assert_equal "OK", response.dig('response', 'responses', 'response').first['code']
+      end
+    end
+  end
 
 end
