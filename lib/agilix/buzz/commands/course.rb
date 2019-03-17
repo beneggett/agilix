@@ -3,22 +3,28 @@ module Agilix
     module Commands
       module Course
 
-        # api.copy_courses courseid: 54, domainid: 57025
-        def copy_courses(options = {})
-          options = argument_cleaner(required_params: %i( courseid domainid ), optional_params: %i( action depth reference status roleid title type startdate enddate days term indexrule ), options: options )
+        # api.copy_courses [{courseid: 54, domainid: 57025}]
+        def copy_courses(items = [])
+          options = items.map do |item|
+            argument_cleaner(required_params: %i( courseid domainid ), optional_params: %i( action depth reference status roleid title type startdate enddate days term indexrule ), options: item )
+          end
           authenticated_bulk_post cmd: "copycourses", root_node: "course", body: options
         end
 
-        # api.create_courses
-        def create_courses(options = {})
-          options = argument_cleaner(required_params: %i( domainid ), optional_params: %i( ), options: options )
-          authenticated_get cmd: "createcourses", **options
+        # api.create_courses title: "Starter Course", domainid: 57025
+        def create_courses(items = [])
+          options = items.map do |item|
+            item[:schema] ||= 3 # should default to 3, 2 is old news
+            argument_cleaner(required_params: %i( title domainid schema ), optional_params: %i(reference status roleid type startdate enddate days term indexrule data ), options: item )
+          end
+          authenticated_bulk_post cmd: "createcourses", root_node: "course", body: options
         end
 
-        # api.create_demo_course
+        # ISSUE: documentation on request format is inconsistent, not sure if it is bulk post or normal post format. in one place rood node is request, in other its course
+        # api.create_demo_course courseid: 60982, domainid: 57025, title: "Demo Course", daysoffset: 60
         def create_demo_course(options = {})
-          options = argument_cleaner(required_params: %i( domainid ), optional_params: %i( ), options: options )
-          authenticated_get cmd: "createdemocourse", **options
+          options = argument_cleaner(required_params: %i( courseid domainid ), optional_params: %i( schema reference title daysoffset usermap ), options: options )
+          authenticated_post cmd: "createdemocourse", **options
         end
 
         # api.deactivate_course
