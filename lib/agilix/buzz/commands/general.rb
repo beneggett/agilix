@@ -56,7 +56,9 @@ module Agilix
               [ k , {"$value" => v } ]
             end.to_h
           end
-          proxy_api = self.proxy_api userid: 57181 ##FIXME: needs associated with ennrollment user
+          enrollment_response = self.get_enrollment enrollmentid: options[:enrollmentid]
+          user_id = enrollment_response.dig("response", "enrollment", "userid")
+          proxy_api = self.proxy_api userid: user_id
           proxy_api.authenticated_query_post query_params: {cmd: "sendmail", enrollmentid: options[:enrollmentid] },  **request
         end
 

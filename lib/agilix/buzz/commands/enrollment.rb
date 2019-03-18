@@ -134,11 +134,6 @@ module Agilix
           authenticated_bulk_post cmd: "updateenrollments", root_node: 'enrollment', body: options
         end
 
-
-        # # api.update_users  [{ userid: '57026', username: "BuzzUserTestUpdated1", email: 'buzzusertest1@agilix.com',firstname: 'Buzz', lastname: "ManUpdated"}]
-        # def update_users
-        # end
-
       end
     end
   end

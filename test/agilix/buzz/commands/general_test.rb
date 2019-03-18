@@ -82,7 +82,7 @@ class Agilix::Buzz::Commands::GeneralTest < Minitest::Test
     end
 
     it "Sends an email to enrollees of a group where an enrollee exists with custom strings" do
-      VCR.use_cassette("Commands::General send_mail #{TEST_ENROLLMENT_ID}", match_requests_on: [:query]) do
+      VCR.use_cassette("Commands::General send_mail #{TEST_ENROLLMENT_ID} custom strings", match_requests_on: [:query]) do
         response = api.send_mail subject: "Test email", body: "Did you get this?", enrollmentid: TEST_ENROLLMENT_ID, enrollment_ids: ["all"], strings: {norecipients: "No Recipients match your request"}
         assert response.success?
         assert_equal "OK", response.dig("response", "code")
