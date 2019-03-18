@@ -374,20 +374,129 @@ api.update_courses [{courseid: 60994, title: "Updated Course"}]
 
 ## Enrollments
 
-- [ ] [CreateEnrollments](https://api.agilixbuzz.com/docs/#!/Command/CreateEnrollments)
-- [ ] [DeleteEnrollments](https://api.agilixbuzz.com/docs/#!/Command/DeleteEnrollments)
-- [ ] [GetEnrollment3](https://api.agilixbuzz.com/docs/#!/Command/GetEnrollment3)
-- [ ] [GetEnrollmentActivity](https://api.agilixbuzz.com/docs/#!/Command/GetEnrollmentActivity)
-- [ ] [GetEnrollmentGradebook2](https://api.agilixbuzz.com/docs/#!/Command/GetEnrollmentGradebook2)
-- [ ] [GetEnrollmentGroupList](https://api.agilixbuzz.com/docs/#!/Command/GetEnrollmentGroupList)
-- [ ] [GetEnrollmentMetricsReport](https://api.agilixbuzz.com/docs/#!/Command/GetEnrollmentMetricsReport)
-- [ ] [ListEnrollments](https://api.agilixbuzz.com/docs/#!/Command/ListEnrollments)
-- [ ] [ListEnrollmentsByTeacher](https://api.agilixbuzz.com/docs/#!/Command/ListEnrollmentsByTeacher)
-- [ ] [ListEntityEnrollments](https://api.agilixbuzz.com/docs/#!/Command/ListEntityEnrollments)
-- [ ] [ListUserEnrollments](https://api.agilixbuzz.com/docs/#!/Command/ListUserEnrollments)
-- [ ] [PutSelfAssessment](https://api.agilixbuzz.com/docs/#!/Command/PutSelfAssessment)
-- [ ] [RestoreEnrollment](https://api.agilixbuzz.com/docs/#!/Command/RestoreEnrollment)
-- [ ] [UpdateEnrollments](https://api.agilixbuzz.com/docs/#!/Command/UpdateEnrollments)
+#### [CreateEnrollments](https://api.agilixbuzz.com/docs/#!/Command/CreateEnrollments)
+ISSUE: API format is very inconsistent on this one, requires both query string modification & body modification
+```
+api.create_enrollments [{userid: 57026, entityid: 57025}]
+```
+
+#### [DeleteEnrollments](https://api.agilixbuzz.com/docs/#!/Command/DeleteEnrollments)
+ISSUE: Inconsistent from other delete apis. many are singular, not plural
+```
+api.delete_enrollments [ { enrollmentid: 60997 }]
+```
+
+#### [GetEnrollment3](https://api.agilixbuzz.com/docs/#!/Command/GetEnrollment3)
+This is aliased to `get_enrollment`
+```
+api.get_enrollment enrollmentid: 60997
+```
+
+#### [GetEnrollmentActivity](https://api.agilixbuzz.com/docs/#!/Command/GetEnrollmentActivity)
+```
+api.get_enrollment_activity enrollmentid: 60997
+```
+
+#### [GetEnrollmentGradebook2](https://api.agilixbuzz.com/docs/#!/Command/GetEnrollmentGradebook2)
+```
+api.get_enrollment_gradebook enrollmentid: 60997
+```
+
+#### [GetEnrollmentGroupList](https://api.agilixbuzz.com/docs/#!/Command/GetEnrollmentGroupList)
+```
+api.get_enrollment_group_list enrollmentid: 60997
+```
+
+#### [GetEnrollmentMetricsReport](https://api.agilixbuzz.com/docs/#!/Command/GetEnrollmentMetricsReport)
+This is available in two types:
+Student Report
+```
+api.get_enrollment_metrics_report entityid: 50725, report: "Student"
+```
+Enrollment Report
+```
+api.get_enrollment_metrics_report entityid: 50725, report: "Enrollment"
+```
+
+#### [ListEnrollments](https://api.agilixbuzz.com/docs/#!/Command/ListEnrollments)
+```
+api.list_enrollments domainid: 50725
+```
+
+#### [ListEnrollmentsByTeacher](https://api.agilixbuzz.com/docs/#!/Command/ListEnrollmentsByTeacher)
+```
+api.list_enrollments_by_teacher teacheruserid: 50726
+
+# If you don't pass in a teacher user id, it will default to the logged in API user
+
+api.list_enrollments_by_teacher
+```
+
+#### [ListEntityEnrollments](https://api.agilixbuzz.com/docs/#!/Command/ListEntityEnrollments)
+```
+api.list_entity_enrollments entityid: 60982
+```
+
+#### [ListUserEnrollments](https://api.agilixbuzz.com/docs/#!/Command/ListUserEnrollments)
+```
+api.list_user_enrollments userid: 57181
+```
+
+#### [PutSelfAssessment](https://api.agilixbuzz.com/docs/#!/Command/PutSelfAssessment)
+# ISSUE: this should be a post, not a get
+```
+api.put_self_assessment enrollmentid: 60997, understanding: 200, effort: 220, interest: 100
+```
+
+#### [RestoreEnrollment](https://api.agilixbuzz.com/docs/#!/Command/RestoreEnrollment)
+```
+api.restore_enrollment enrollmentid: 60997
+```
+
+#### [UpdateEnrollments](https://api.agilixbuzz.com/docs/#!/Command/UpdateEnrollments)
+```
+api.update_enrollments [{enrollmentid: 60997, status: 7}]
+```
+
+## General
+
+#### [Echo](https://api.agilixbuzz.com/docs/#!/Command/Echo)
+```
+api.echo test: 'param'
+```
+
+#### [GetCommandList](https://api.agilixbuzz.com/docs/#!/Command/GetCommandList)
+```
+api.get_command_list
+```
+
+#### [GetEntityType](https://api.agilixbuzz.com/docs/#!/Command/GetEntityType)
+ISSUE: nothing saying this is an authenticated call, when others are non-authenticated
+```
+api.get_entity_type entityid: 57025
+```
+
+#### [GetStatus](https://api.agilixbuzz.com/docs/#!/Command/GetStatus)
+ISSUE: docs in getting started reference a `level` param, actual docs suggest using rating
+```
+api.get_status rating: 4, html: true, sms: true
+
+# you can also call this one non-authenticated
+api.get_basic_status
+```
+
+#### [GetUploadLimits](https://api.agilixbuzz.com/docs/#!/Command/GetUploadLimits)
+ISSUE: Docs have cmd spelled wrong, this API doesn't seem to work at all AccessDenied. It did say experimental
+```
+api.get_upload_limits
+api.get_upload_limits domainid: 57025
+```
+
+#### [SendMail](https://api.agilixbuzz.com/docs/#!/Command/SendMail)
+This is one of the more confusing APIs, it allows you to send emails to people in the same enrollment grouping as the person wanting to send the email (`enrollmentid`).
+```
+api.send_mail subject: "Test email", body: "Did you get this?", enrollmentid: 60997, enrollment_ids: ["all"]
+```
 
 ## Rights
 
@@ -433,15 +542,6 @@ api.update_courses [{courseid: 60994, title: "Updated Course"}]
 - [ ] [SaveAttemptAnswers](https://api.agilixbuzz.com/docs/#!/Command/SaveAttemptAnswers)
 - [ ] [SubmitAttemptAnswers](https://api.agilixbuzz.com/docs/#!/Command/SubmitAttemptAnswers)
 - [ ] [SubmitOfflineAttempt](https://api.agilixbuzz.com/docs/#!/Command/SubmitOfflineAttempt)
-
-## General
-
-- [ ] [Echo](https://api.agilixbuzz.com/docs/#!/Command/Echo)
-- [ ] [GetCommandList](https://api.agilixbuzz.com/docs/#!/Command/GetCommandList)
-- [ ] [GetEntityType](https://api.agilixbuzz.com/docs/#!/Command/GetEntityType)
-- [ ] [GetStatus](https://api.agilixbuzz.com/docs/#!/Command/GetStatus)
-- [ ] [GetUploadLimits](https://api.agilixbuzz.com/docs/#!/Command/GetUploadLimits)
-- [ ] [SendMail](https://api.agilixbuzz.com/docs/#!/Command/SendMail)
 
 ## Manifests and Items
 

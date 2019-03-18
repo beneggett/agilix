@@ -42,6 +42,7 @@ module Agilix
           get cmd: "getuploadlimits", **options
         end
 
+        # api.send_mail subject: "Test email", body: "Did you get this?", enrollmentid: 60997, enrollment_ids: ["all"]
         def send_mail(options = {})
           options = argument_cleaner(required_params: %i( subject body enrollmentid enrollment_ids ), optional_params: %i( groups roles strings), options: options )
           request = {email: {
