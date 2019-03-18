@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: api.agilixbuzz.com/cmd?cmd=getuploadlimits
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 17 Mar 2019 23:51:05 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=dc42e514ff8adb8217334ffca47f4c04e1552866665; expires=Mon, 16-Mar-20
+        23:51:05 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000
+      Agilix-Encoding:
+      - gzip
+      Agilix-Server:
+      - xLi_7915 (2)
+      Cache-Control:
+      - no-cache, no-store
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4b92df7308aaa040-SLC
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"response\":{\r\n    \"code\":\"AccessDenied\",\r\n    \"message\":\"Access
+        Denied: userId='-1'\",\r\n    \"errorId\":\"c85cfc302d6c433189d73c38c862d5f9\"\r\n
+        \ }\r\n}"
+    http_version: 
+  recorded_at: Sun, 17 Mar 2019 23:51:03 GMT
+recorded_with: VCR 4.0.0

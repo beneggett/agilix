@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: api.agilixbuzz.com/cmd
+    body:
+      encoding: UTF-8
+      string: '{"request":{"cmd":"echo","domainid":"my-id","username":"user1","data":{"auth":false}}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 17 Mar 2019 23:17:53 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=dd8a7a6a5f223a0fb8b0f977a84f1f2db1552864673; expires=Mon, 16-Mar-20
+        23:17:53 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000
+      Agilix-Server:
+      - xLi_71 (0)
+      Cache-Control:
+      - no-cache, no-store
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4b92aecfaf3ba046-SLC
+    body:
+      encoding: UTF-8
+      string: '{"request":{"cmd":"echo","domainid":"my-id","username":"user1","data":{"auth":false}}}'
+    http_version: 
+  recorded_at: Sun, 17 Mar 2019 23:17:51 GMT
+recorded_with: VCR 4.0.0

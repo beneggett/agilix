@@ -1,0 +1,137 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: api.agilixbuzz.com/cmd
+    body:
+      encoding: UTF-8
+      string: '{"request":{"cmd":"login2","username":"auto-tests/<AGILIX_BUZZ_USERNAME>","password":"<AGILIX_BUZZ_PASSWORD>"}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 18 Mar 2019 06:48:33 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d23b4b02cc2c0dfaff5a96b5058f73d641552891713; expires=Tue, 17-Mar-20
+        06:48:33 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000
+      Agilix-Encoding:
+      - gzip
+      Agilix-Server:
+      - xLi_71 (31)
+      Cache-Control:
+      - no-cache, no-store
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4b9542f7880fa046-SLC
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"response\":{\r\n    \"code\":\"OK\",\r\n    \"user\":{\r\n
+        \     \"userid\":\"57026\",\r\n      \"username\":\"<AGILIX_BUZZ_USERNAME>\",\r\n
+        \     \"firstname\":\"Buzz\",\r\n      \"lastname\":\"Test\",\r\n      \"email\":\"<AGILIX_BUZZ_USERNAME>\",\r\n
+        \     \"domainid\":\"57025\",\r\n      \"domainname\":\"BuzzTestUpdatedName1\",\r\n
+        \     \"userspace\":\"auto-tests\",\r\n      \"token\":\"~0.NVPsJQ0EHm8C7N.L2aYgkBNny4-RBw6wpcmQbY74PXqpiTnWzeYSoEb5ic\",\r\n
+        \     \"authenticationexpirationminutes\":14\r\n    }\r\n  }\r\n}"
+    http_version: 
+  recorded_at: Mon, 18 Mar 2019 06:48:33 GMT
+- request:
+    method: get
+    uri: api.agilixbuzz.com/cmd?_token=~0.NVPsJQ0EHm8C7N.L2aYgkBNny4-RBw6wpcmQbY74PXqpiTnWzeYSoEb5ic&cmd=getenrollmentgradebook2&enrollmentid=60997
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 18 Mar 2019 06:48:33 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=db61aa9d495318bdf34ad5d6f63a0f2101552891713; expires=Tue, 17-Mar-20
+        06:48:33 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000
+      Agilix-Encoding:
+      - gzip
+      Agilix-Server:
+      - xLi_7915 (37)
+      Cache-Control:
+      - no-cache, no-store
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4b9542f8c915a040-SLC
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"response\":{\r\n    \"code\":\"OK\",\r\n    \"enrollment\":{\r\n
+        \     \"id\":\"60997\",\r\n      \"userid\":\"57181\",\r\n      \"entityid\":\"60982\",\r\n
+        \     \"domainid\":\"57025\",\r\n      \"reference\":\"\",\r\n      \"guid\":\"3f75f962-108e-43de-ba63-98c6cfde517f\",\r\n
+        \     \"flags\":\"2228225\",\r\n      \"roleid\":\"116\",\r\n      \"status\":1,\r\n
+        \     \"startdate\":\"2019-03-17T06:00:00Z\",\r\n      \"enddate\":\"2020-03-16T05:59:00Z\",\r\n
+        \     \"data\":{\r\n        \"status\":{\r\n          \"performance\":{\r\n
+        \           \"signal\":\"Green\"\r\n          },\r\n          \"pace\":{\r\n
+        \           \"signal\":\"Green\"\r\n          }\r\n        }\r\n      },\r\n
+        \     \"user\":{\r\n        \"id\":\"57181\",\r\n        \"firstname\":\"Buzz\",\r\n
+        \       \"lastname\":\"ManUpdated\",\r\n        \"reference\":\"\",\r\n        \"guid\":\"5c529a97-ea90-48fe-ac95-52b8993f6bfe\",\r\n
+        \       \"userspace\":\"auto-tests\",\r\n        \"username\":\"BuzzUserUp1\",\r\n
+        \       \"email\":\"ben@beneggett.com\",\r\n        \"lastlogindate\":\"2019-03-15T23:48:23.467Z\"\r\n
+        \     },\r\n      \"entity\":{\r\n        \"id\":\"60982\",\r\n        \"title\":\"Find
+        Your Voice\",\r\n        \"reference\":\"\",\r\n        \"guid\":\"9921b86c-4b51-4403-9f66-90a4110ae0cb\",\r\n
+        \       \"domainid\":\"57025\",\r\n        \"schema\":3,\r\n        \"protection\":0,\r\n
+        \       \"type\":\"Continuous\",\r\n        \"startdate\":\"2018-04-17T06:00:00Z\",\r\n
+        \       \"enddate\":\"2019-04-18T05:59:59Z\",\r\n        \"days\":365,\r\n
+        \       \"term\":\"\",\r\n        \"baseid\":\"0\"\r\n      },\r\n      \"domain\":{\r\n
+        \       \"id\":\"57025\",\r\n        \"name\":\"BuzzTestUpdatedName1\"\r\n
+        \     },\r\n      \"grades\":{\r\n        \"achieved\":0,\r\n        \"possible\":0,\r\n
+        \       \"passingscore\":0.7,\r\n        \"complete\":0,\r\n        \"completedgradable\":0,\r\n
+        \       \"gradable\":2,\r\n        \"completeall\":0,\r\n        \"completable\":247,\r\n
+        \       \"completed\":0,\r\n        \"seconds\":0,\r\n        \"categories\":{\r\n
+        \         \"category\":[{\r\n            \"id\":1,\r\n            \"name\":\"Category
+        1\",\r\n            \"gradeview\":2,\r\n            \"achieved\":0,\r\n            \"possible\":0\r\n
+        \         }]\r\n        }\r\n      }\r\n    }\r\n  }\r\n}"
+    http_version: 
+  recorded_at: Mon, 18 Mar 2019 06:48:33 GMT
+recorded_with: VCR 4.0.0

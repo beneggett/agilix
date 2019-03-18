@@ -1,0 +1,247 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: api.agilixbuzz.com/cmd?cmd=getstatus&html=true&rating=4&sms=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 17 Mar 2019 23:47:48 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=dccc6e340a3dc0066bd151a963bc1d4a41552866468; expires=Mon, 16-Mar-20
+        23:47:48 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000
+      Agilix-Encoding:
+      - gzip
+      Agilix-Server:
+      - xLi_71 (4)
+      Cache-Control:
+      - no-cache, no-store
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4b92daa34c8aa07c-SLC
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"response\":{\r\n    \"code\":\"OK\",\r\n    \"status\":{\r\n
+        \     \"testtime\":\"2019-03-17T23:47:48.4522901Z\",\r\n      \"version\":\"2019.03.13.3665\",\r\n
+        \     \"sharedversion\":\"2019.3.8.467\",\r\n      \"testms\":\"0\",\r\n      \"dlapversion\":\"2\",\r\n
+        \     \"status\":\"OK\",\r\n      \"rating\":\"3\",\r\n      \"ratingtext\":\"Acceptable\",\r\n
+        \     \"excuse\":\"certificates/certificate/expiring\",\r\n      \"certificates\":[{\r\n
+        \       \"earliestexpiration\":\"2019-03-30T21:44:40\",\r\n        \"_earliestexpiringcertificate\":\"BLOCKEDMACHINE\",\r\n
+        \       \"testms\":\"43\",\r\n        \"testtime\":\"2019-03-17T11:37:39.9689403Z\",\r\n
+        \       \"status\":\"OK\",\r\n        \"rating\":\"3\",\r\n        \"ratingtext\":\"Acceptable\",\r\n
+        \       \"excuse\":\"certificate/expiring\",\r\n        \"certificate\":[{\r\n
+        \         \"_name\":\"BLOCKEDMACHINE\",\r\n          \"expires\":\"2019-03-30T21:44:40\",\r\n
+        \         \"status\":\"OK\",\r\n          \"rating\":\"3\",\r\n          \"ratingtext\":\"Acceptable\",\r\n
+        \         \"excuse\":\"expiring\"\r\n        },{\r\n          \"_name\":\"BLOCKEDMACHINE\",\r\n
+        \         \"expires\":\"2020-10-13T17:01:39\",\r\n          \"status\":\"OK\",\r\n
+        \         \"rating\":\"4\",\r\n          \"ratingtext\":\"Ideal\"\r\n        }]\r\n
+        \     }],\r\n      \"localdisk\":[{\r\n        \"testms\":\"0\",\r\n        \"testtime\":\"2019-03-17T23:44:19.9246625Z\",\r\n
+        \       \"secondstonexttest\":\"90\",\r\n        \"status\":\"OK\",\r\n        \"rating\":\"4\",\r\n
+        \       \"ratingtext\":\"Ideal\",\r\n        \"tempvolume\":[{\r\n          \"_path\":\"B:\\\\Blocked\\\\Blocked\\\\\",\r\n
+        \         \"mbavailable\":\"32732\",\r\n          \"mbtotal\":\"51197\",\r\n
+        \         \"pctavailable\":\"63.9324036\",\r\n          \"status\":\"OK\",\r\n
+        \         \"rating\":\"4\",\r\n          \"ratingtext\":\"Ideal\"\r\n        }],\r\n
+        \       \"systemvolume\":[{\r\n          \"_path\":\"B:\\\\Blocked\\\\Blocked\",\r\n
+        \         \"mbavailable\":\"32732\",\r\n          \"mbtotal\":\"51197\",\r\n
+        \         \"pctavailable\":\"63.9324036\",\r\n          \"status\":\"OK\",\r\n
+        \         \"rating\":\"4\",\r\n          \"ratingtext\":\"Ideal\"\r\n        }]\r\n
+        \     }],\r\n      \"misc\":[{\r\n        \"testms\":\"0\",\r\n        \"testtime\":\"2019-03-17T23:47:48.1017075Z\",\r\n
+        \       \"secondstonexttest\":\"3\",\r\n        \"status\":\"OK\",\r\n        \"rating\":\"4\",\r\n
+        \       \"ratingtext\":\"Ideal\"\r\n      }],\r\n      \"search\":[{\r\n        \"_searchdomain\":\"6SkEzA\",\r\n
+        \       \"testms\":\"63\",\r\n        \"testtime\":\"2019-03-17T23:39:42.63424Z\",\r\n
+        \       \"secondstonexttest\":\"113\",\r\n        \"status\":\"OK\",\r\n        \"rating\":\"4\",\r\n
+        \       \"ratingtext\":\"Ideal\"\r\n      }],\r\n      \"queueaccess\":[{\r\n
+        \       \"testms\":\"39\",\r\n        \"testtime\":\"2019-03-17T23:47:31.0803014Z\",\r\n
+        \       \"secondstonexttest\":\"42\",\r\n        \"status\":\"OK\",\r\n        \"rating\":\"4\",\r\n
+        \       \"ratingtext\":\"Ideal\",\r\n        \"low\":[{\r\n          \"_url\":\"https://blockedhost.net/blocked/blocked\",\r\n
+        \         \"status\":\"OK\",\r\n          \"rating\":\"4\",\r\n          \"ratingtext\":\"Ideal\"\r\n
+        \       }],\r\n        \"high\":[{\r\n          \"_url\":\"https://blockedhost.net/blocked/blocked\",\r\n
+        \         \"status\":\"OK\",\r\n          \"rating\":\"4\",\r\n          \"ratingtext\":\"Ideal\"\r\n
+        \       }]\r\n      }],\r\n      \"emailaccess\":[{\r\n        \"_server\":\"BLOCKEDMACHINE\",\r\n
+        \       \"port\":\"587\",\r\n        \"testms\":\"205\",\r\n        \"testtime\":\"2019-03-17T23:47:31.0812209Z\",\r\n
+        \       \"secondstonexttest\":\"42\",\r\n        \"status\":\"OK\",\r\n        \"rating\":\"4\",\r\n
+        \       \"ratingtext\":\"Ideal\"\r\n      }],\r\n      \"fileaccess\":[{\r\n
+        \       \"testms\":\"144\",\r\n        \"testtime\":\"2019-03-17T23:47:31.0821917Z\",\r\n
+        \       \"secondstonexttest\":\"42\",\r\n        \"status\":\"OK\",\r\n        \"rating\":\"4\",\r\n
+        \       \"ratingtext\":\"Ideal\",\r\n        \"slices\":[{\r\n          \"status\":\"OK\",\r\n
+        \         \"rating\":\"4\",\r\n          \"ratingtext\":\"Ideal\",\r\n          \"slice\":[{\r\n
+        \           \"id\":\"1\",\r\n            \"_storage\":\"s3://blockedhost.net/blocked/blocked/blocked/\",\r\n
+        \           \"writeallowed\":\"true\",\r\n            \"deleteallowed\":\"false\",\r\n
+        \           \"encrypted\":\"true\",\r\n            \"status\":\"OK\",\r\n
+        \           \"rating\":\"4\",\r\n            \"ratingtext\":\"Ideal\",\r\n
+        \           \"backup\":[{\r\n              \"_storage\":\"s3://blockedhost.net/blocked/blocked/blocked/\",\r\n
+        \             \"encrypted\":\"true\",\r\n              \"status\":\"OK\",\r\n
+        \             \"rating\":\"4\",\r\n              \"ratingtext\":\"Ideal\"\r\n
+        \           }]\r\n          },{\r\n            \"id\":\"2\",\r\n            \"_storage\":\"s3://blockedhost.net/blocked/blocked/blocked/\",\r\n
+        \           \"writeallowed\":\"true\",\r\n            \"deleteallowed\":\"true\",\r\n
+        \           \"encrypted\":\"true\",\r\n            \"status\":\"OK\",\r\n
+        \           \"rating\":\"4\",\r\n            \"ratingtext\":\"Ideal\",\r\n
+        \           \"backup\":[{\r\n              \"_storage\":\"s3://blockedhost.net/blocked/blocked/blocked/\",\r\n
+        \             \"encrypted\":\"true\",\r\n              \"status\":\"OK\",\r\n
+        \             \"rating\":\"4\",\r\n              \"ratingtext\":\"Ideal\"\r\n
+        \           }]\r\n          }]\r\n        }],\r\n        \"categories\":[{\r\n
+        \         \"status\":\"OK\",\r\n          \"rating\":\"4\",\r\n          \"ratingtext\":\"Ideal\",\r\n
+        \         \"versioned\":[{\r\n            \"id\":\"1\",\r\n            \"_storage\":\"s3://blockedhost.net/blocked/blocked/blocked/\",\r\n
+        \           \"writeallowed\":\"true\",\r\n            \"deleteallowed\":\"false\",\r\n
+        \           \"encrypted\":\"true\",\r\n            \"status\":\"OK\",\r\n
+        \           \"rating\":\"4\",\r\n            \"ratingtext\":\"Ideal\"\r\n
+        \         }],\r\n          \"nonversioned\":[{\r\n            \"id\":\"2\",\r\n
+        \           \"_storage\":\"s3://blockedhost.net/blocked/blocked/blocked/\",\r\n
+        \           \"writeallowed\":\"true\",\r\n            \"deleteallowed\":\"true\",\r\n
+        \           \"encrypted\":\"true\",\r\n            \"writepossible\":\"true\",\r\n
+        \           \"readpossible\":\"true\",\r\n            \"status\":\"OK\",\r\n
+        \           \"rating\":\"4\",\r\n            \"ratingtext\":\"Ideal\"\r\n
+        \         }]\r\n        }]\r\n      }],\r\n      \"mediastreaming\":[{\r\n
+        \       \"_mediastorage\":\"s3://blockedhost.net/blocked/blocked/\",\r\n        \"testms\":\"0\",\r\n
+        \       \"testtime\":\"2019-03-17T23:38:31.6531534Z\",\r\n        \"secondstonexttest\":\"42\",\r\n
+        \       \"status\":\"OK\",\r\n        \"rating\":\"4\",\r\n        \"ratingtext\":\"Ideal\"\r\n
+        \     }],\r\n      \"sharedcacheaccess\":[{\r\n        \"testms\":\"64\",\r\n
+        \       \"testtime\":\"2019-03-17T23:47:46.0939019Z\",\r\n        \"secondstonexttest\":\"12\",\r\n
+        \       \"status\":\"OK\",\r\n        \"rating\":\"4\",\r\n        \"ratingtext\":\"Ideal\",\r\n
+        \       \"node\":[{\r\n          \"_id\":\"BLOCKEDMACHINE6\",\r\n          \"status\":\"OK\",\r\n
+        \         \"rating\":\"4\",\r\n          \"ratingtext\":\"Ideal\"\r\n        },{\r\n
+        \         \"_id\":\"BLOCKEDMACHINE6\",\r\n          \"status\":\"OK\",\r\n
+        \         \"rating\":\"4\",\r\n          \"ratingtext\":\"Ideal\"\r\n        },{\r\n
+        \         \"_id\":\"BLOCKEDMACHINE6\",\r\n          \"status\":\"OK\",\r\n
+        \         \"rating\":\"4\",\r\n          \"ratingtext\":\"Ideal\"\r\n        },{\r\n
+        \         \"_id\":\"BLOCKEDMACHINE6\",\r\n          \"status\":\"OK\",\r\n
+        \         \"rating\":\"4\",\r\n          \"ratingtext\":\"Ideal\"\r\n        },{\r\n
+        \         \"_id\":\"BLOCKEDMACHINE6\",\r\n          \"status\":\"OK\",\r\n
+        \         \"rating\":\"4\",\r\n          \"ratingtext\":\"Ideal\"\r\n        },{\r\n
+        \         \"_id\":\"BLOCKEDMACHINE6\",\r\n          \"status\":\"OK\",\r\n
+        \         \"rating\":\"4\",\r\n          \"ratingtext\":\"Ideal\"\r\n        }]\r\n
+        \     }],\r\n      \"networkaccess\":[{\r\n        \"testms\":\"30\",\r\n
+        \       \"testtime\":\"2019-03-17T23:44:32.0588457Z\",\r\n        \"secondstonexttest\":\"162\",\r\n
+        \       \"status\":\"OK\",\r\n        \"rating\":\"4\",\r\n        \"ratingtext\":\"Ideal\",\r\n
+        \       \"destination\":[{\r\n          \"_url\":\"http://blockedhost.net/\",\r\n
+        \         \"status\":\"OK\",\r\n          \"rating\":\"4\",\r\n          \"ratingtext\":\"Ideal\"\r\n
+        \       }]\r\n      }],\r\n      \"databaseaccess\":[{\r\n        \"testms\":\"33\",\r\n
+        \       \"testtime\":\"2019-03-17T23:47:46.0939019Z\",\r\n        \"secondstonexttest\":\"12\",\r\n
+        \       \"status\":\"OK\",\r\n        \"rating\":\"4\",\r\n        \"ratingtext\":\"Ideal\",\r\n
+        \       \"main\":[{\r\n          \"_server\":\"BLOCKEDMACHINE4\",\r\n          \"_db\":\"Blocked\",\r\n
+        \         \"status\":\"OK\",\r\n          \"rating\":\"4\",\r\n          \"ratingtext\":\"Ideal\",\r\n
+        \         \"sosconnection\":[{\r\n            \"status\":\"OK\",\r\n            \"rating\":\"4\",\r\n
+        \           \"ratingtext\":\"Ideal\",\r\n            \"currentconnection\":[{\r\n
+        \             \"_server\":\"BLOCKEDMACHINE4\",\r\n              \"time\":\"2019-03-17T23:47:46.137\",\r\n
+        \             \"status\":\"OK\",\r\n              \"rating\":\"4\",\r\n              \"ratingtext\":\"Ideal\"\r\n
+        \           }],\r\n            \"alternateconnection\":[{\r\n              \"_server\":\"BLOCKEDMACHINE3\",\r\n
+        \             \"time\":\"2019-03-17T23:47:45.997\",\r\n              \"status\":\"OK\",\r\n
+        \             \"rating\":\"4\",\r\n              \"ratingtext\":\"Ideal\"\r\n
+        \           }]\r\n          }],\r\n          \"clockdrift\":[{\r\n            \"dbclockaheadseconds\":\"0.0458425\",\r\n
+        \           \"dbclockbehindseconds\":\"-0.0458425\",\r\n            \"status\":\"OK\",\r\n
+        \           \"rating\":\"4\",\r\n            \"ratingtext\":\"Ideal\"\r\n
+        \         }],\r\n          \"redundancy\":[{\r\n            \"type\":\"mirroring\",\r\n
+        \           \"status\":\"OK\",\r\n            \"rating\":\"4\",\r\n            \"ratingtext\":\"Ideal\",\r\n
+        \           \"mirror\":[{\r\n              \"state\":\"Synchronized\",\r\n
+        \             \"role\":\"Principal\",\r\n              \"safetylevel\":\"Synchronous\",\r\n
+        \             \"_configuredpartner\":\"BLOCKEDMACHINE3\",\r\n              \"_actualpartner\":\"BLOCKEDMACHINE3\",\r\n
+        \             \"mirrored\":\"true\",\r\n              \"failedover\":\"false\",\r\n
+        \             \"status\":\"OK\",\r\n              \"rating\":\"4\",\r\n              \"ratingtext\":\"Ideal\"\r\n
+        \           }]\r\n          }]\r\n        }]\r\n      }],\r\n      \"overall\":{\r\n
+        \       \"unit\":\"dlapserver\",\r\n        \"status\":\"OK\",\r\n        \"rating\":\"3\",\r\n
+        \       \"ratingtext\":\"Acceptable\",\r\n        \"sms\":\"certificates:\\r\\n-BLOCKEDMACHINE:CertExpiring\\r\\ndatabaseaccess:Ideal\\r\\nemailaccess:Ideal\\r\\nfileaccess:Ideal\\r\\nlocaldisk:Ideal\\r\\nmediastreaming:Ideal\\r\\nmisc:Ideal\\r\\nnetworkaccess:Ideal\\r\\nqueueaccess:Ideal\\r\\nsearch:Ideal\\r\\nsharedcacheaccess:Ideal\\r\\n\",\r\n
+        \       \"$xml\":\"<div style=\\\"text-indent:0em\\\"><h1>certificates: <div
+        style=\\\"display:inline;color:#F0F000\\\">Acceptable</div></h1><div style=\\\"text-indent:1em\\\"><h2>certificate
+        (BLOCKEDMACHINE)</h2><div style=\\\"text-indent:2em\\\">The certificate is
+        expiring soon.  If it is still in use, renew the certificate and replace it.
+        \ If it is not still in use, remove the certificate.</div></div></div><div
+        style=\\\"text-indent:0em\\\"><h1>databaseaccess: <div style=\\\"display:inline;color:#009900\\\">Ideal</div></h1></div><div
+        style=\\\"text-indent:0em\\\"><h1>emailaccess (BLOCKEDMACHINE/587): <div style=\\\"display:inline;color:#009900\\\">Ideal</div></h1></div><div
+        style=\\\"text-indent:0em\\\"><h1>fileaccess: <div style=\\\"display:inline;color:#009900\\\">Ideal</div></h1></div><div
+        style=\\\"text-indent:0em\\\"><h1>localdisk: <div style=\\\"display:inline;color:#009900\\\">Ideal</div></h1></div><div
+        style=\\\"text-indent:0em\\\"><h1>mediastreaming: <div style=\\\"display:inline;color:#009900\\\">Ideal</div></h1></div><div
+        style=\\\"text-indent:0em\\\"><h1>misc: <div style=\\\"display:inline;color:#009900\\\">Ideal</div></h1></div><div
+        style=\\\"text-indent:0em\\\"><h1>networkaccess: <div style=\\\"display:inline;color:#009900\\\">Ideal</div></h1></div><div
+        style=\\\"text-indent:0em\\\"><h1>queueaccess: <div style=\\\"display:inline;color:#009900\\\">Ideal</div></h1></div><div
+        style=\\\"text-indent:0em\\\"><h1>search: <div style=\\\"display:inline;color:#009900\\\">Ideal</div></h1></div><div
+        style=\\\"text-indent:0em\\\"><h1>sharedcacheaccess: <div style=\\\"display:inline;color:#009900\\\">Ideal</div></h1></div>\"\r\n
+        \     }\r\n    }\r\n  }\r\n}"
+    http_version: 
+  recorded_at: Sun, 17 Mar 2019 23:47:46 GMT
+- request:
+    method: get
+    uri: api.agilixbuzz.com/cmd?cmd=getstatus
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 17 Mar 2019 23:48:09 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d12fe04a8aacb1ee54df109efc48ea4921552866489; expires=Mon, 16-Mar-20
+        23:48:09 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000
+      Agilix-Encoding:
+      - gzip
+      Agilix-Server:
+      - xLi_7915 (2)
+      Cache-Control:
+      - no-cache, no-store
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4b92db291b59a070-SLC
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"response\":{\r\n    \"code\":\"OK\",\r\n    \"status\":{\r\n
+        \     \"testtime\":\"2019-03-17T23:48:09.851615Z\",\r\n      \"version\":\"2019.03.13.3665\",\r\n
+        \     \"sharedversion\":\"2019.3.8.467\",\r\n      \"testms\":\"0\",\r\n      \"dlapversion\":\"2\",\r\n
+        \     \"status\":\"OK\",\r\n      \"rating\":\"3\",\r\n      \"ratingtext\":\"Acceptable\",\r\n
+        \     \"excuse\":\"certificates/certificate/expiring\",\r\n      \"overall\":{\r\n
+        \       \"unit\":\"dlapserver\",\r\n        \"status\":\"OK\",\r\n        \"rating\":\"3\",\r\n
+        \       \"ratingtext\":\"Acceptable\"\r\n      }\r\n    }\r\n  }\r\n}"
+    http_version: 
+  recorded_at: Sun, 17 Mar 2019 23:48:07 GMT
+recorded_with: VCR 4.0.0

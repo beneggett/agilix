@@ -1,0 +1,153 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: api.agilixbuzz.com/cmd
+    body:
+      encoding: UTF-8
+      string: '{"request":{"cmd":"login2","username":"auto-tests/<AGILIX_BUZZ_USERNAME>","password":"<AGILIX_BUZZ_PASSWORD>"}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 18 Mar 2019 07:23:31 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=deaaa81428068633073f174bbaced1bc01552893810; expires=Tue, 17-Mar-20
+        07:23:30 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000
+      Agilix-Encoding:
+      - gzip
+      Agilix-Server:
+      - xLi_71 (65)
+      Cache-Control:
+      - no-cache, no-store
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4b95762d886da070-SLC
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"response\":{\r\n    \"code\":\"OK\",\r\n    \"user\":{\r\n
+        \     \"userid\":\"57026\",\r\n      \"username\":\"<AGILIX_BUZZ_USERNAME>\",\r\n
+        \     \"firstname\":\"Buzz\",\r\n      \"lastname\":\"Test\",\r\n      \"email\":\"<AGILIX_BUZZ_USERNAME>\",\r\n
+        \     \"domainid\":\"57025\",\r\n      \"domainname\":\"BuzzTestUpdatedName1\",\r\n
+        \     \"userspace\":\"auto-tests\",\r\n      \"token\":\"~0.ztR2VD1ckRoC7N.v1OXu4USXFFjlXS41imCLj_ZkaftSJE3AghpADdEgxg\",\r\n
+        \     \"authenticationexpirationminutes\":14\r\n    }\r\n  }\r\n}"
+    http_version: 
+  recorded_at: Mon, 18 Mar 2019 07:23:31 GMT
+- request:
+    method: get
+    uri: api.agilixbuzz.com/cmd?_token=~0.ztR2VD1ckRoC7N.v1OXu4USXFFjlXS41imCLj_ZkaftSJE3AghpADdEgxg&cmd=listenrollments&domainid=57025
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 18 Mar 2019 07:23:31 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=df95ecb39e40d58493bb3b1a13d0f91ab1552893811; expires=Tue, 17-Mar-20
+        07:23:31 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000
+      Agilix-Encoding:
+      - gzip
+      Agilix-Server:
+      - xLi_7915 (125)
+      Cache-Control:
+      - no-cache, no-store
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4b9576302c65a06a-SLC
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"response\":{\r\n    \"code\":\"OK\",\r\n    \"enrollments\":{\r\n
+        \     \"enrollment\":[{\r\n        \"id\":\"60983\",\r\n        \"userid\":\"4305\",\r\n
+        \       \"courseid\":\"60982\",\r\n        \"roleid\":\"0\",\r\n        \"domainid\":\"57025\",\r\n
+        \       \"reference\":\"\",\r\n        \"guid\":\"8ff0508f-6b78-4a82-872e-1693244c7319\",\r\n
+        \       \"privileges\":\"4950739255296\",\r\n        \"status\":10,\r\n        \"startdate\":\"2018-04-17T06:00:00Z\",\r\n
+        \       \"enddate\":\"2019-04-18T05:59:59Z\",\r\n        \"flags\":0,\r\n
+        \       \"firstactivitydate\":\"0001-01-01T00:00:00Z\",\r\n        \"lastactivitydate\":\"0001-01-01T00:00:00Z\",\r\n
+        \       \"creationdate\":\"2019-03-17T05:37:21.623Z\",\r\n        \"creationby\":\"4305\",\r\n
+        \       \"modifieddate\":\"2019-03-17T05:37:21.623Z\",\r\n        \"modifiedby\":\"4305\",\r\n
+        \       \"version\":\"1\"\r\n      },{\r\n        \"id\":\"60991\",\r\n        \"userid\":\"57026\",\r\n
+        \       \"courseid\":\"60990\",\r\n        \"roleid\":\"0\",\r\n        \"domainid\":\"57025\",\r\n
+        \       \"reference\":\"\",\r\n        \"guid\":\"3afcd03b-28ad-4883-8088-b97beb958a7f\",\r\n
+        \       \"privileges\":\"4950739255296\",\r\n        \"status\":1,\r\n        \"startdate\":\"1753-01-01T00:00:00Z\",\r\n
+        \       \"enddate\":\"9999-12-31T00:00:00Z\",\r\n        \"flags\":0,\r\n
+        \       \"firstactivitydate\":\"0001-01-01T00:00:00Z\",\r\n        \"lastactivitydate\":\"0001-01-01T00:00:00Z\",\r\n
+        \       \"creationdate\":\"2019-03-17T06:06:55.717Z\",\r\n        \"creationby\":\"57026\",\r\n
+        \       \"modifieddate\":\"2019-03-17T06:06:55.717Z\",\r\n        \"modifiedby\":\"57026\",\r\n
+        \       \"version\":\"1\"\r\n      },{\r\n        \"id\":\"60996\",\r\n        \"userid\":\"57026\",\r\n
+        \       \"courseid\":\"60995\",\r\n        \"roleid\":\"0\",\r\n        \"domainid\":\"57025\",\r\n
+        \       \"reference\":\"\",\r\n        \"guid\":\"75700018-c8c3-40ee-8ee0-efff58be8945\",\r\n
+        \       \"privileges\":\"4950739255296\",\r\n        \"status\":10,\r\n        \"startdate\":\"2018-06-16T06:00:00Z\",\r\n
+        \       \"enddate\":\"2019-06-17T05:59:59Z\",\r\n        \"flags\":0,\r\n
+        \       \"firstactivitydate\":\"0001-01-01T00:00:00Z\",\r\n        \"lastactivitydate\":\"0001-01-01T00:00:00Z\",\r\n
+        \       \"creationdate\":\"2019-03-17T08:15:16.79Z\",\r\n        \"creationby\":\"57026\",\r\n
+        \       \"modifieddate\":\"2019-03-17T08:15:16.79Z\",\r\n        \"modifiedby\":\"57026\",\r\n
+        \       \"version\":\"1\"\r\n      },{\r\n        \"id\":\"60997\",\r\n        \"userid\":\"57181\",\r\n
+        \       \"courseid\":\"60982\",\r\n        \"roleid\":\"116\",\r\n        \"domainid\":\"57025\",\r\n
+        \       \"reference\":\"\",\r\n        \"guid\":\"3f75f962-108e-43de-ba63-98c6cfde517f\",\r\n
+        \       \"privileges\":\"2228225\",\r\n        \"status\":1,\r\n        \"startdate\":\"2019-03-17T06:00:00Z\",\r\n
+        \       \"enddate\":\"2020-03-16T05:59:00Z\",\r\n        \"flags\":0,\r\n
+        \       \"firstactivitydate\":\"0001-01-01T00:00:00Z\",\r\n        \"lastactivitydate\":\"0001-01-01T00:00:00Z\",\r\n
+        \       \"creationdate\":\"2019-03-18T00:11:20.223Z\",\r\n        \"creationby\":\"4305\",\r\n
+        \       \"modifieddate\":\"2019-03-18T06:41:36.093Z\",\r\n        \"modifiedby\":\"57026\",\r\n
+        \       \"version\":\"5\"\r\n      },{\r\n        \"id\":\"60998\",\r\n        \"userid\":\"57181\",\r\n
+        \       \"courseid\":\"60982\",\r\n        \"roleid\":\"0\",\r\n        \"domainid\":\"57025\",\r\n
+        \       \"reference\":\"\",\r\n        \"guid\":\"a4fdcefa-0b9c-46ea-8523-6b33cef7e001\",\r\n
+        \       \"privileges\":\"0\",\r\n        \"status\":1,\r\n        \"startdate\":\"2019-03-18T06:17:21.217Z\",\r\n
+        \       \"enddate\":\"2020-03-17T06:17:21.217Z\",\r\n        \"flags\":0,\r\n
+        \       \"firstactivitydate\":\"0001-01-01T00:00:00Z\",\r\n        \"lastactivitydate\":\"0001-01-01T00:00:00Z\",\r\n
+        \       \"creationdate\":\"2019-03-18T06:17:21.217Z\",\r\n        \"creationby\":\"57026\",\r\n
+        \       \"modifieddate\":\"2019-03-18T06:17:21.217Z\",\r\n        \"modifiedby\":\"57026\",\r\n
+        \       \"version\":\"1\"\r\n      }]\r\n    }\r\n  }\r\n}"
+    http_version: 
+  recorded_at: Mon, 18 Mar 2019 07:23:31 GMT
+recorded_with: VCR 4.0.0
