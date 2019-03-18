@@ -32,6 +32,11 @@ module Agilix
         post query
       end
 
+      def authenticated_query_post(query = {})
+        check_authentication unless query.delete(:bypass_authentication_check)
+        query_post query
+      end
+
       def authenticated_bulk_post(query = {})
         check_authentication
         bulk_post query
@@ -43,6 +48,16 @@ module Agilix
 
       def post(query = {})
         response = self.class.post(URL_BASE, body: modify_body(query), timeout: 60, headers: headers)
+      end
+
+      # For when the api is super unconventional & you need to modify both query params & body params in a custom fashion
+      def query_post(query = {})
+        url = URL_BASE
+        query_params = query.delete(:query_params)
+        if query_params
+          url += "?&_token=#{token}" + query_params.map {|k,v| "&#{k}=#{v}" }.join("")
+        end
+        response = self.class.post(url, body: query.to_json, timeout: 60, headers: headers)
       end
 
       def bulk_post(query = {})

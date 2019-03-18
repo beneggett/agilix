@@ -1,0 +1,291 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: api.agilixbuzz.com/cmd?cmd=getcommandlist
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 17 Mar 2019 23:21:10 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=dff9033284757b893761d822dafe54fe31552864870; expires=Mon, 16-Mar-20
+        23:21:10 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000
+      Agilix-Encoding:
+      - gzip
+      Agilix-Server:
+      - xLi_7915 (6)
+      Cache-Control:
+      - no-cache, no-store
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4b92b39e9963a05e-SLC
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"response\":{\r\n    \"code\":\"OK\",\r\n    \"commands\":{\r\n
+        \     \"command\":[{\r\n        \"name\":\"aborttask\"\r\n      },{\r\n        \"name\":\"addgroupmembers\"\r\n
+        \     },{\r\n        \"name\":\"assignitem\"\r\n      },{\r\n        \"name\":\"calculateenrollmentscenario\"\r\n
+        \     },{\r\n        \"name\":\"canproxy\"\r\n      },{\r\n        \"name\":\"checkpasswordpwnage\"\r\n
+        \     },{\r\n        \"name\":\"checkpasswordquality\"\r\n      },{\r\n        \"name\":\"computehmac\"\r\n
+        \     },{\r\n        \"name\":\"copycommunitycatalogitem\"\r\n      },{\r\n
+        \       \"name\":\"copycourses\"\r\n      },{\r\n        \"name\":\"copygoogledrivefile\"\r\n
+        \     },{\r\n        \"name\":\"copyitems\"\r\n      },{\r\n        \"name\":\"copyresources\"\r\n
+        \     },{\r\n        \"name\":\"copywikipages\"\r\n      },{\r\n        \"name\":\"createbadge\"\r\n
+        \     },{\r\n        \"name\":\"createbank\"\r\n      },{\r\n        \"name\":\"createcommandtokens\"\r\n
+        \     },{\r\n        \"name\":\"createconversationmessage\"\r\n      },{\r\n
+        \       \"name\":\"createcourses\"\r\n      },{\r\n        \"name\":\"createcustomers\"\r\n
+        \     },{\r\n        \"name\":\"createdemocourse\"\r\n      },{\r\n        \"name\":\"createdomains\"\r\n
+        \     },{\r\n        \"name\":\"createdualgradingcourses\"\r\n      },{\r\n
+        \       \"name\":\"createenrollments\"\r\n      },{\r\n        \"name\":\"createfile\"\r\n
+        \     },{\r\n        \"name\":\"creategoogledrivefile\"\r\n      },{\r\n        \"name\":\"creategroups\"\r\n
+        \     },{\r\n        \"name\":\"createlibrarypage\"\r\n      },{\r\n        \"name\":\"createlibrarypagebookmark\"\r\n
+        \     },{\r\n        \"name\":\"createlicense\"\r\n      },{\r\n        \"name\":\"createlimitedusetoken\"\r\n
+        \     },{\r\n        \"name\":\"createobjectivesets\"\r\n      },{\r\n        \"name\":\"createreports\"\r\n
+        \     },{\r\n        \"name\":\"createrole\"\r\n      },{\r\n        \"name\":\"createsections\"\r\n
+        \     },{\r\n        \"name\":\"createsignal\"\r\n      },{\r\n        \"name\":\"createtasks2\"\r\n
+        \     },{\r\n        \"name\":\"createteam\"\r\n      },{\r\n        \"name\":\"createusernote\"\r\n
+        \     },{\r\n        \"name\":\"createusers\"\r\n      },{\r\n        \"name\":\"createusers2\"\r\n
+        \     },{\r\n        \"name\":\"deactivatecourse\"\r\n      },{\r\n        \"name\":\"deleteannouncements\"\r\n
+        \     },{\r\n        \"name\":\"deletebadge\"\r\n      },{\r\n        \"name\":\"deletebank\"\r\n
+        \     },{\r\n        \"name\":\"deleteblogs\"\r\n      },{\r\n        \"name\":\"deletecommandtokens\"\r\n
+        \     },{\r\n        \"name\":\"deletecommunitycatalogitem\"\r\n      },{\r\n
+        \       \"name\":\"deleteconversationmessage\"\r\n      },{\r\n        \"name\":\"deletecourses\"\r\n
+        \     },{\r\n        \"name\":\"deletecustomers\"\r\n      },{\r\n        \"name\":\"deletedictionaryword\"\r\n
+        \     },{\r\n        \"name\":\"deletedocuments\"\r\n      },{\r\n        \"name\":\"deletedomain\"\r\n
+        \     },{\r\n        \"name\":\"deleteenrollments\"\r\n      },{\r\n        \"name\":\"deletefile\"\r\n
+        \     },{\r\n        \"name\":\"deletegroups\"\r\n      },{\r\n        \"name\":\"deleteitems\"\r\n
+        \     },{\r\n        \"name\":\"deletelibrarypage\"\r\n      },{\r\n        \"name\":\"deletelibrarypagebookmark\"\r\n
+        \     },{\r\n        \"name\":\"deletelicense\"\r\n      },{\r\n        \"name\":\"deletemedia\"\r\n
+        \     },{\r\n        \"name\":\"deletemessage\"\r\n      },{\r\n        \"name\":\"deletemessagepart\"\r\n
+        \     },{\r\n        \"name\":\"deletemessages\"\r\n      },{\r\n        \"name\":\"deleteobjectivemaps\"\r\n
+        \     },{\r\n        \"name\":\"deleteobjectives\"\r\n      },{\r\n        \"name\":\"deleteobjectivesets\"\r\n
+        \     },{\r\n        \"name\":\"deletepwnedpassword\"\r\n      },{\r\n        \"name\":\"deletequestions\"\r\n
+        \     },{\r\n        \"name\":\"deletereports\"\r\n      },{\r\n        \"name\":\"deleteresources\"\r\n
+        \     },{\r\n        \"name\":\"deleterole\"\r\n      },{\r\n        \"name\":\"deletesearch\"\r\n
+        \     },{\r\n        \"name\":\"deletesections\"\r\n      },{\r\n        \"name\":\"deletesubscriptions\"\r\n
+        \     },{\r\n        \"name\":\"deletetasks\"\r\n      },{\r\n        \"name\":\"deleteteam\"\r\n
+        \     },{\r\n        \"name\":\"deleteusernote\"\r\n      },{\r\n        \"name\":\"deleteusers\"\r\n
+        \     },{\r\n        \"name\":\"deletewikipages\"\r\n      },{\r\n        \"name\":\"deleteworkinprogress\"\r\n
+        \     },{\r\n        \"name\":\"echo\"\r\n      },{\r\n        \"name\":\"exportdata\"\r\n
+        \     },{\r\n        \"name\":\"extendsession\"\r\n      },{\r\n        \"name\":\"findpersonalizedentities\"\r\n
+        \     },{\r\n        \"name\":\"forcepasswordchange\"\r\n      },{\r\n        \"name\":\"generateattempt\"\r\n
+        \     },{\r\n        \"name\":\"generatesubmission\"\r\n      },{\r\n        \"name\":\"getactiveusercount\"\r\n
+        \     },{\r\n        \"name\":\"getactivitytrends\"\r\n      },{\r\n        \"name\":\"getactorrights\"\r\n
+        \     },{\r\n        \"name\":\"getannouncement\"\r\n      },{\r\n        \"name\":\"getannouncementinfo\"\r\n
+        \     },{\r\n        \"name\":\"getannouncementlist\"\r\n      },{\r\n        \"name\":\"getattempt\"\r\n
+        \     },{\r\n        \"name\":\"getattemptreview\"\r\n      },{\r\n        \"name\":\"getbadge\"\r\n
+        \     },{\r\n        \"name\":\"getbadgeassertion\"\r\n      },{\r\n        \"name\":\"getbadgelist\"\r\n
+        \     },{\r\n        \"name\":\"getbank\"\r\n      },{\r\n        \"name\":\"getbank2\"\r\n
+        \     },{\r\n        \"name\":\"getbanklist\"\r\n      },{\r\n        \"name\":\"getblog\"\r\n
+        \     },{\r\n        \"name\":\"getbloglist\"\r\n      },{\r\n        \"name\":\"getblogsummary\"\r\n
+        \     },{\r\n        \"name\":\"getcalendar\"\r\n      },{\r\n        \"name\":\"getcalendaritems\"\r\n
+        \     },{\r\n        \"name\":\"getcalendartoken\"\r\n      },{\r\n        \"name\":\"getcertificates\"\r\n
+        \     },{\r\n        \"name\":\"getcommandlist\"\r\n      },{\r\n        \"name\":\"getcommandtoken\"\r\n
+        \     },{\r\n        \"name\":\"getcommandtokeninfo\"\r\n      },{\r\n        \"name\":\"getcommunitycatalogitem\"\r\n
+        \     },{\r\n        \"name\":\"getconversationmessage\"\r\n      },{\r\n
+        \       \"name\":\"getconverteddata\"\r\n      },{\r\n        \"name\":\"getcookie\"\r\n
+        \     },{\r\n        \"name\":\"getcourse\"\r\n      },{\r\n        \"name\":\"getcourse2\"\r\n
+        \     },{\r\n        \"name\":\"getcoursecontent\"\r\n      },{\r\n        \"name\":\"getcoursehistory\"\r\n
+        \     },{\r\n        \"name\":\"getcourselist\"\r\n      },{\r\n        \"name\":\"getcourserights\"\r\n
+        \     },{\r\n        \"name\":\"getcreditbalance\"\r\n      },{\r\n        \"name\":\"getcredithistory\"\r\n
+        \     },{\r\n        \"name\":\"getcustomer\"\r\n      },{\r\n        \"name\":\"getdocument\"\r\n
+        \     },{\r\n        \"name\":\"getdocumentinfo\"\r\n      },{\r\n        \"name\":\"getdomain\"\r\n
+        \     },{\r\n        \"name\":\"getdomain2\"\r\n      },{\r\n        \"name\":\"getdomainactivity\"\r\n
+        \     },{\r\n        \"name\":\"getdomaincontent\"\r\n      },{\r\n        \"name\":\"getdomainenrollmentmetrics\"\r\n
+        \     },{\r\n        \"name\":\"getdomaininactivity\"\r\n      },{\r\n        \"name\":\"getdomainlist\"\r\n
+        \     },{\r\n        \"name\":\"getdomainparentlist\"\r\n      },{\r\n        \"name\":\"getdomainrights\"\r\n
+        \     },{\r\n        \"name\":\"getdomainsettings\"\r\n      },{\r\n        \"name\":\"getdomainstats\"\r\n
+        \     },{\r\n        \"name\":\"getduesoonlist\"\r\n      },{\r\n        \"name\":\"geteffectiverights\"\r\n
+        \     },{\r\n        \"name\":\"geteffectivesubscriptionlist\"\r\n      },{\r\n
+        \       \"name\":\"getenrollment\"\r\n      },{\r\n        \"name\":\"getenrollment2\"\r\n
+        \     },{\r\n        \"name\":\"getenrollment3\"\r\n      },{\r\n        \"name\":\"getenrollmentactivity\"\r\n
+        \     },{\r\n        \"name\":\"getenrollmentgradebook\"\r\n      },{\r\n
+        \       \"name\":\"getenrollmentgradebook2\"\r\n      },{\r\n        \"name\":\"getenrollmentgrouplist\"\r\n
+        \     },{\r\n        \"name\":\"getenrollmentlist2\"\r\n      },{\r\n        \"name\":\"getenrollmentmetricsreport\"\r\n
+        \     },{\r\n        \"name\":\"getenrollmentrights\"\r\n      },{\r\n        \"name\":\"getentityenrollmentlist\"\r\n
+        \     },{\r\n        \"name\":\"getentityenrollmentlist2\"\r\n      },{\r\n
+        \       \"name\":\"getentitygradebook2\"\r\n      },{\r\n        \"name\":\"getentitygradebook3\"\r\n
+        \     },{\r\n        \"name\":\"getentitygradebooksummary\"\r\n      },{\r\n
+        \       \"name\":\"getentityresourceid\"\r\n      },{\r\n        \"name\":\"getentityrights\"\r\n
+        \     },{\r\n        \"name\":\"getentitysubscriptionlist\"\r\n      },{\r\n
+        \       \"name\":\"getentitytype\"\r\n      },{\r\n        \"name\":\"getentitywork2\"\r\n
+        \     },{\r\n        \"name\":\"getexam\"\r\n      },{\r\n        \"name\":\"getexternaldomainrights\"\r\n
+        \     },{\r\n        \"name\":\"getfileurl\"\r\n      },{\r\n        \"name\":\"getforummessages\"\r\n
+        \     },{\r\n        \"name\":\"getgrade\"\r\n      },{\r\n        \"name\":\"getgradebookdetail\"\r\n
+        \     },{\r\n        \"name\":\"getgradebooklist\"\r\n      },{\r\n        \"name\":\"getgradebooksummary\"\r\n
+        \     },{\r\n        \"name\":\"getgradebookweights\"\r\n      },{\r\n        \"name\":\"getgradehistory\"\r\n
+        \     },{\r\n        \"name\":\"getgroup\"\r\n      },{\r\n        \"name\":\"getgroupenrollmentlist\"\r\n
+        \     },{\r\n        \"name\":\"getgrouplist\"\r\n      },{\r\n        \"name\":\"getitem\"\r\n
+        \     },{\r\n        \"name\":\"getitemanalysis\"\r\n      },{\r\n        \"name\":\"getitemanalysis2\"\r\n
+        \     },{\r\n        \"name\":\"getiteminfo\"\r\n      },{\r\n        \"name\":\"getitemlinks\"\r\n
+        \     },{\r\n        \"name\":\"getitemlist\"\r\n      },{\r\n        \"name\":\"getitemrating\"\r\n
+        \     },{\r\n        \"name\":\"getitemratingsummary\"\r\n      },{\r\n        \"name\":\"getitemreport\"\r\n
+        \     },{\r\n        \"name\":\"getkey\"\r\n      },{\r\n        \"name\":\"getlastsignalid\"\r\n
+        \     },{\r\n        \"name\":\"getlb\"\r\n      },{\r\n        \"name\":\"getlibrarypage\"\r\n
+        \     },{\r\n        \"name\":\"getlicense\"\r\n      },{\r\n        \"name\":\"getlicenseconsumption\"\r\n
+        \     },{\r\n        \"name\":\"getlicenses\"\r\n      },{\r\n        \"name\":\"getloginactivity\"\r\n
+        \     },{\r\n        \"name\":\"getmanagedresource\"\r\n      },{\r\n        \"name\":\"getmanifest\"\r\n
+        \     },{\r\n        \"name\":\"getmanifestdata\"\r\n      },{\r\n        \"name\":\"getmanifestinfo\"\r\n
+        \     },{\r\n        \"name\":\"getmanifestitem\"\r\n      },{\r\n        \"name\":\"getmasterydetail\"\r\n
+        \     },{\r\n        \"name\":\"getmasterysummary\"\r\n      },{\r\n        \"name\":\"getmediaurls\"\r\n
+        \     },{\r\n        \"name\":\"getmessage\"\r\n      },{\r\n        \"name\":\"getmessagelist\"\r\n
+        \     },{\r\n        \"name\":\"getnextquestion\"\r\n      },{\r\n        \"name\":\"getobjectivelist\"\r\n
+        \     },{\r\n        \"name\":\"getobjectivemaplist\"\r\n      },{\r\n        \"name\":\"getobjectivemastery\"\r\n
+        \     },{\r\n        \"name\":\"getobjectiveset\"\r\n      },{\r\n        \"name\":\"getobjectiveset2\"\r\n
+        \     },{\r\n        \"name\":\"getobjectivesetlist\"\r\n      },{\r\n        \"name\":\"getobjectivesubjectlist\"\r\n
+        \     },{\r\n        \"name\":\"getpasswordloginattempthistory\"\r\n      },{\r\n
+        \       \"name\":\"getpasswordpolicy\"\r\n      },{\r\n        \"name\":\"getpasswordquestion\"\r\n
+        \     },{\r\n        \"name\":\"getpeerresponse\"\r\n      },{\r\n        \"name\":\"getpeerresponselist\"\r\n
+        \     },{\r\n        \"name\":\"getpeerreviewlist\"\r\n      },{\r\n        \"name\":\"getpeerreviewsummary\"\r\n
+        \     },{\r\n        \"name\":\"getpersonas\"\r\n      },{\r\n        \"name\":\"getprofilepicture\"\r\n
+        \     },{\r\n        \"name\":\"getquestion\"\r\n      },{\r\n        \"name\":\"getquestionanalysis\"\r\n
+        \     },{\r\n        \"name\":\"getquestionlist\"\r\n      },{\r\n        \"name\":\"getquestionscores\"\r\n
+        \     },{\r\n        \"name\":\"getquestionstats\"\r\n      },{\r\n        \"name\":\"getrandomdata\"\r\n
+        \     },{\r\n        \"name\":\"getrecentposts\"\r\n      },{\r\n        \"name\":\"getrecord\"\r\n
+        \     },{\r\n        \"name\":\"getrecordlist\"\r\n      },{\r\n        \"name\":\"getreportdefinitionlist\"\r\n
+        \     },{\r\n        \"name\":\"getreportinfo\"\r\n      },{\r\n        \"name\":\"getreportlist\"\r\n
+        \     },{\r\n        \"name\":\"getresource\"\r\n      },{\r\n        \"name\":\"getresourceinfo\"\r\n
+        \     },{\r\n        \"name\":\"getresourceinfo2\"\r\n      },{\r\n        \"name\":\"getresourcelist\"\r\n
+        \     },{\r\n        \"name\":\"getresourcelist2\"\r\n      },{\r\n        \"name\":\"getrights\"\r\n
+        \     },{\r\n        \"name\":\"getrightslist\"\r\n      },{\r\n        \"name\":\"getrole\"\r\n
+        \     },{\r\n        \"name\":\"getrolestatus\"\r\n      },{\r\n        \"name\":\"getrubricmastery\"\r\n
+        \     },{\r\n        \"name\":\"getrubricstats\"\r\n      },{\r\n        \"name\":\"getrunnablereportlist\"\r\n
+        \     },{\r\n        \"name\":\"getscodata\"\r\n      },{\r\n        \"name\":\"getscorehistory\"\r\n
+        \     },{\r\n        \"name\":\"getsection\"\r\n      },{\r\n        \"name\":\"getsectioncontent\"\r\n
+        \     },{\r\n        \"name\":\"getsectiongradebook\"\r\n      },{\r\n        \"name\":\"getsectionlist\"\r\n
+        \     },{\r\n        \"name\":\"getsectionrights\"\r\n      },{\r\n        \"name\":\"getsectionwork\"\r\n
+        \     },{\r\n        \"name\":\"getsettings\"\r\n      },{\r\n        \"name\":\"getsignallist\"\r\n
+        \     },{\r\n        \"name\":\"getsignallist2\"\r\n      },{\r\n        \"name\":\"getstatus\"\r\n
+        \     },{\r\n        \"name\":\"getstatushtml\"\r\n      },{\r\n        \"name\":\"getstatusimage\"\r\n
+        \     },{\r\n        \"name\":\"getstatusjson\"\r\n      },{\r\n        \"name\":\"getstatustext\"\r\n
+        \     },{\r\n        \"name\":\"getstudentsubmission\"\r\n      },{\r\n        \"name\":\"getstudentsubmissionhistory\"\r\n
+        \     },{\r\n        \"name\":\"getstudentsubmissioninfo\"\r\n      },{\r\n
+        \       \"name\":\"getsubmissionstate\"\r\n      },{\r\n        \"name\":\"getsubscriptionlist\"\r\n
+        \     },{\r\n        \"name\":\"gettasklist2\"\r\n      },{\r\n        \"name\":\"gettaskrunhistory2\"\r\n
+        \     },{\r\n        \"name\":\"getteacheractivity\"\r\n      },{\r\n        \"name\":\"getteacherresponse\"\r\n
+        \     },{\r\n        \"name\":\"getteacherresponseinfo\"\r\n      },{\r\n
+        \       \"name\":\"getteam\"\r\n      },{\r\n        \"name\":\"getuploadlimits\"\r\n
+        \     },{\r\n        \"name\":\"getuser\"\r\n      },{\r\n        \"name\":\"getuser2\"\r\n
+        \     },{\r\n        \"name\":\"getuseractivity\"\r\n      },{\r\n        \"name\":\"getuseractivitystream\"\r\n
+        \     },{\r\n        \"name\":\"getuserannouncementlist\"\r\n      },{\r\n
+        \       \"name\":\"getuserenrollmentlist\"\r\n      },{\r\n        \"name\":\"getuserenrollmentlist2\"\r\n
+        \     },{\r\n        \"name\":\"getusergradebook\"\r\n      },{\r\n        \"name\":\"getusergradebook2\"\r\n
+        \     },{\r\n        \"name\":\"getuserlist\"\r\n      },{\r\n        \"name\":\"getusernote\"\r\n
+        \     },{\r\n        \"name\":\"getusernotecounts\"\r\n      },{\r\n        \"name\":\"getuserrights\"\r\n
+        \     },{\r\n        \"name\":\"getwikipage\"\r\n      },{\r\n        \"name\":\"getwikipagelist\"\r\n
+        \     },{\r\n        \"name\":\"getworkinprogress\"\r\n      },{\r\n        \"name\":\"getworkinprogress2\"\r\n
+        \     },{\r\n        \"name\":\"grantallocation\"\r\n      },{\r\n        \"name\":\"importdata\"\r\n
+        \     },{\r\n        \"name\":\"importdictionarywords\"\r\n      },{\r\n        \"name\":\"importpwnedpasswords\"\r\n
+        \     },{\r\n        \"name\":\"indexcommunitycatalog\"\r\n      },{\r\n        \"name\":\"inferroles\"\r\n
+        \     },{\r\n        \"name\":\"issuecredits\"\r\n      },{\r\n        \"name\":\"linkdomains\"\r\n
+        \     },{\r\n        \"name\":\"listassignableitems\"\r\n      },{\r\n        \"name\":\"listbanks\"\r\n
+        \     },{\r\n        \"name\":\"listcommandtokens\"\r\n      },{\r\n        \"name\":\"listcommunityusercourses\"\r\n
+        \     },{\r\n        \"name\":\"listconversationmessages\"\r\n      },{\r\n
+        \       \"name\":\"listcourses\"\r\n      },{\r\n        \"name\":\"listcustomers\"\r\n
+        \     },{\r\n        \"name\":\"listdomains\"\r\n      },{\r\n        \"name\":\"listenrollments\"\r\n
+        \     },{\r\n        \"name\":\"listenrollmentsbyteacher\"\r\n      },{\r\n
+        \       \"name\":\"listentityenrollments\"\r\n      },{\r\n        \"name\":\"listlibrarypagebookmarks\"\r\n
+        \     },{\r\n        \"name\":\"listlibrarypages\"\r\n      },{\r\n        \"name\":\"listmoderatedpeerresponses\"\r\n
+        \     },{\r\n        \"name\":\"listobjectivesets\"\r\n      },{\r\n        \"name\":\"listobservers\"\r\n
+        \     },{\r\n        \"name\":\"listquestions\"\r\n      },{\r\n        \"name\":\"listrestorableannouncements\"\r\n
+        \     },{\r\n        \"name\":\"listrestorablebanks\"\r\n      },{\r\n        \"name\":\"listrestorablecourses\"\r\n
+        \     },{\r\n        \"name\":\"listrestorabledocuments\"\r\n      },{\r\n
+        \       \"name\":\"listrestorabledomains\"\r\n      },{\r\n        \"name\":\"listrestorableenrollments\"\r\n
+        \     },{\r\n        \"name\":\"listrestorableitems\"\r\n      },{\r\n        \"name\":\"listrestorablemessages\"\r\n
+        \     },{\r\n        \"name\":\"listrestorablequestions\"\r\n      },{\r\n
+        \       \"name\":\"listrestorableresources\"\r\n      },{\r\n        \"name\":\"listrestorablesections\"\r\n
+        \     },{\r\n        \"name\":\"listrestorableusers\"\r\n      },{\r\n        \"name\":\"listrestorablewikipages\"\r\n
+        \     },{\r\n        \"name\":\"listroles\"\r\n      },{\r\n        \"name\":\"listuserenrollments\"\r\n
+        \     },{\r\n        \"name\":\"listusernotes\"\r\n      },{\r\n        \"name\":\"listusers\"\r\n
+        \     },{\r\n        \"name\":\"login\"\r\n      },{\r\n        \"name\":\"login2\"\r\n
+        \     },{\r\n        \"name\":\"logout\"\r\n      },{\r\n        \"name\":\"makesamlauthnrequest\"\r\n
+        \     },{\r\n        \"name\":\"makesamlmetadata\"\r\n      },{\r\n        \"name\":\"makesamlsplogoutrequest\"\r\n
+        \     },{\r\n        \"name\":\"mergecourses\"\r\n      },{\r\n        \"name\":\"navigateitem\"\r\n
+        \     },{\r\n        \"name\":\"populatelibrarypageedits\"\r\n      },{\r\n
+        \       \"name\":\"prepareofflineattempt\"\r\n      },{\r\n        \"name\":\"processsamlauthnresponse\"\r\n
+        \     },{\r\n        \"name\":\"processsamlsplogoutrequest\"\r\n      },{\r\n
+        \       \"name\":\"processsamlsplogoutresponse\"\r\n      },{\r\n        \"name\":\"proxy\"\r\n
+        \     },{\r\n        \"name\":\"putannouncement\"\r\n      },{\r\n        \"name\":\"putblog\"\r\n
+        \     },{\r\n        \"name\":\"putcommunitycatalogitem\"\r\n      },{\r\n
+        \       \"name\":\"putdocument\"\r\n      },{\r\n        \"name\":\"putitemactivity\"\r\n
+        \     },{\r\n        \"name\":\"putitemrating\"\r\n      },{\r\n        \"name\":\"putitems\"\r\n
+        \     },{\r\n        \"name\":\"putitemstatus\"\r\n      },{\r\n        \"name\":\"putkey\"\r\n
+        \     },{\r\n        \"name\":\"putmedia\"\r\n      },{\r\n        \"name\":\"putmessage\"\r\n
+        \     },{\r\n        \"name\":\"putmessagepart\"\r\n      },{\r\n        \"name\":\"putobjectivemaps\"\r\n
+        \     },{\r\n        \"name\":\"putobjectivemastery\"\r\n      },{\r\n        \"name\":\"putobjectives\"\r\n
+        \     },{\r\n        \"name\":\"putpeerresponse\"\r\n      },{\r\n        \"name\":\"putquestions\"\r\n
+        \     },{\r\n        \"name\":\"putrandomdata\"\r\n      },{\r\n        \"name\":\"putresource\"\r\n
+        \     },{\r\n        \"name\":\"putresourcefolders\"\r\n      },{\r\n        \"name\":\"putscodata\"\r\n
+        \     },{\r\n        \"name\":\"putselfassessment\"\r\n      },{\r\n        \"name\":\"putstudentsubmission\"\r\n
+        \     },{\r\n        \"name\":\"putteacherresponse\"\r\n      },{\r\n        \"name\":\"putteacherresponses\"\r\n
+        \     },{\r\n        \"name\":\"putwikipage\"\r\n      },{\r\n        \"name\":\"putworkinprogress\"\r\n
+        \     },{\r\n        \"name\":\"redeemcommandtoken\"\r\n      },{\r\n        \"name\":\"reindexlibrarypages\"\r\n
+        \     },{\r\n        \"name\":\"reindexusernotes\"\r\n      },{\r\n        \"name\":\"removegroupmembers\"\r\n
+        \     },{\r\n        \"name\":\"resetlockout\"\r\n      },{\r\n        \"name\":\"resetpassword\"\r\n
+        \     },{\r\n        \"name\":\"restoreannouncements\"\r\n      },{\r\n        \"name\":\"restorebank\"\r\n
+        \     },{\r\n        \"name\":\"restorecourse\"\r\n      },{\r\n        \"name\":\"restorecourses\"\r\n
+        \     },{\r\n        \"name\":\"restoredocuments\"\r\n      },{\r\n        \"name\":\"restoredomain\"\r\n
+        \     },{\r\n        \"name\":\"restoredomains\"\r\n      },{\r\n        \"name\":\"restoreenrollment\"\r\n
+        \     },{\r\n        \"name\":\"restoreenrollments\"\r\n      },{\r\n        \"name\":\"restoreitems\"\r\n
+        \     },{\r\n        \"name\":\"restoremessages\"\r\n      },{\r\n        \"name\":\"restoreobjectiveset\"\r\n
+        \     },{\r\n        \"name\":\"restorequestions\"\r\n      },{\r\n        \"name\":\"restoreresources\"\r\n
+        \     },{\r\n        \"name\":\"restorerole\"\r\n      },{\r\n        \"name\":\"restoresections\"\r\n
+        \     },{\r\n        \"name\":\"restoreuser\"\r\n      },{\r\n        \"name\":\"restoreusers\"\r\n
+        \     },{\r\n        \"name\":\"restorewikipages\"\r\n      },{\r\n        \"name\":\"revokeallocation\"\r\n
+        \     },{\r\n        \"name\":\"runreport\"\r\n      },{\r\n        \"name\":\"runstatustest\"\r\n
+        \     },{\r\n        \"name\":\"runtask2\"\r\n      },{\r\n        \"name\":\"saveattemptanswers\"\r\n
+        \     },{\r\n        \"name\":\"search\"\r\n      },{\r\n        \"name\":\"search2\"\r\n
+        \     },{\r\n        \"name\":\"searchcommunitycatalog\"\r\n      },{\r\n
+        \       \"name\":\"searchlibrarypages\"\r\n      },{\r\n        \"name\":\"searchusernotes\"\r\n
+        \     },{\r\n        \"name\":\"sendmail\"\r\n      },{\r\n        \"name\":\"setlotpriority\"\r\n
+        \     },{\r\n        \"name\":\"spendcredits\"\r\n      },{\r\n        \"name\":\"submitattemptanswers\"\r\n
+        \     },{\r\n        \"name\":\"submitmessage\"\r\n      },{\r\n        \"name\":\"submitofflineattempt\"\r\n
+        \     },{\r\n        \"name\":\"submitworkinprogress\"\r\n      },{\r\n        \"name\":\"testkey\"\r\n
+        \     },{\r\n        \"name\":\"transfercredits\"\r\n      },{\r\n        \"name\":\"unassignitem\"\r\n
+        \     },{\r\n        \"name\":\"unlinkdomains\"\r\n      },{\r\n        \"name\":\"unproxy\"\r\n
+        \     },{\r\n        \"name\":\"updateannouncementviewed\"\r\n      },{\r\n
+        \       \"name\":\"updatebank\"\r\n      },{\r\n        \"name\":\"updateblogviewed\"\r\n
+        \     },{\r\n        \"name\":\"updatecommandtokens\"\r\n      },{\r\n        \"name\":\"updateconversationmessage\"\r\n
+        \     },{\r\n        \"name\":\"updatecourses\"\r\n      },{\r\n        \"name\":\"updatecustomers\"\r\n
+        \     },{\r\n        \"name\":\"updatedomains\"\r\n      },{\r\n        \"name\":\"updateenrollments\"\r\n
+        \     },{\r\n        \"name\":\"updategroups\"\r\n      },{\r\n        \"name\":\"updatelibrarypage\"\r\n
+        \     },{\r\n        \"name\":\"updatelicense\"\r\n      },{\r\n        \"name\":\"updatemanifestdata\"\r\n
+        \     },{\r\n        \"name\":\"updatemessageviewed\"\r\n      },{\r\n        \"name\":\"updateobjectivesets\"\r\n
+        \     },{\r\n        \"name\":\"updatepassword\"\r\n      },{\r\n        \"name\":\"updatepasswordquestionanswer\"\r\n
+        \     },{\r\n        \"name\":\"updatereports\"\r\n      },{\r\n        \"name\":\"updaterights\"\r\n
+        \     },{\r\n        \"name\":\"updaterole\"\r\n      },{\r\n        \"name\":\"updatesections\"\r\n
+        \     },{\r\n        \"name\":\"updatesettings\"\r\n      },{\r\n        \"name\":\"updatesubscriptions\"\r\n
+        \     },{\r\n        \"name\":\"updatetasks2\"\r\n      },{\r\n        \"name\":\"updateteam\"\r\n
+        \     },{\r\n        \"name\":\"updateusernote\"\r\n      },{\r\n        \"name\":\"updateusers\"\r\n
+        \     },{\r\n        \"name\":\"updatewikipageviewed\"\r\n      },{\r\n        \"name\":\"upsertcustomers\"\r\n
+        \     }]\r\n    }\r\n  }\r\n}"
+    http_version: 
+  recorded_at: Sun, 17 Mar 2019 23:21:08 GMT
+recorded_with: VCR 4.0.0
