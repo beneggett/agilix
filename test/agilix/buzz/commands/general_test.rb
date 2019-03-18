@@ -2,8 +2,6 @@ require "test_helper"
 
 class Agilix::Buzz::Commands::GeneralTest < Minitest::Test
 
-  ENROLLMENT_ID     = 60997
-
   describe "#echo" do
     it "echos post commands to server" do
       VCR.use_cassette("Commands::General echo test", match_requests_on: [:query]) do
@@ -76,16 +74,16 @@ class Agilix::Buzz::Commands::GeneralTest < Minitest::Test
 
   describe "#send_mail" do
     it "Sends an email to enrollees of a group where an enrollee exists" do
-      VCR.use_cassette("Commands::General send_mail #{ENROLLMENT_ID}", match_requests_on: [:query]) do
-        response = api.send_mail subject: "Test email", body: "Did you get this?", enrollmentid: ENROLLMENT_ID, enrollment_ids: ["all"]
+      VCR.use_cassette("Commands::General send_mail #{TEST_ENROLLMENT_ID}", match_requests_on: [:query]) do
+        response = api.send_mail subject: "Test email", body: "Did you get this?", enrollmentid: TEST_ENROLLMENT_ID, enrollment_ids: ["all"]
         assert response.success?
         assert_equal "OK", response.dig("response", "code")
       end
     end
 
     it "Sends an email to enrollees of a group where an enrollee exists with custom strings" do
-      VCR.use_cassette("Commands::General send_mail #{ENROLLMENT_ID}", match_requests_on: [:query]) do
-        response = api.send_mail subject: "Test email", body: "Did you get this?", enrollmentid: ENROLLMENT_ID, enrollment_ids: ["all"], strings: {norecipients: "No Recipients match your request"}
+      VCR.use_cassette("Commands::General send_mail #{TEST_ENROLLMENT_ID}", match_requests_on: [:query]) do
+        response = api.send_mail subject: "Test email", body: "Did you get this?", enrollmentid: TEST_ENROLLMENT_ID, enrollment_ids: ["all"], strings: {norecipients: "No Recipients match your request"}
         assert response.success?
         assert_equal "OK", response.dig("response", "code")
       end

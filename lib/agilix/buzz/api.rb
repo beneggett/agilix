@@ -8,6 +8,7 @@ module Agilix
       include Agilix::Buzz::Commands::Authentication
       include Agilix::Buzz::Commands::Course
       include Agilix::Buzz::Commands::Domain
+      include Agilix::Buzz::Commands::Enrollment
       include Agilix::Buzz::Commands::General
       include Agilix::Buzz::Commands::Report
       include Agilix::Buzz::Commands::User
@@ -63,6 +64,10 @@ module Agilix
       def bulk_post(query = {})
         cmd = query.delete(:cmd)
         url = URL_BASE + "?cmd=#{cmd}&_token=#{token}"
+        query_params = query.delete(:query_params)
+        if query_params
+          url += query_params.map {|k,v| "&#{k}=#{v}" }.join("")
+        end
         response = self.class.post(url, body: modify_bulk_body(query), timeout: 60, headers: headers)
       end
 

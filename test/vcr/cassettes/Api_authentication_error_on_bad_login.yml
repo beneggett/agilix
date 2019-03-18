@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: api.agilixbuzz.com/cmd
+    body:
+      encoding: UTF-8
+      string: '{"request":{"cmd":"login2","username":"domain/bad","password":"test"}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 18 Mar 2019 06:32:07 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=da283df95a6cde89dad0da693b5e8cb8f1552890727; expires=Tue, 17-Mar-20
+        06:32:07 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000
+      Agilix-Encoding:
+      - gzip
+      Agilix-Server:
+      - xLi_7915 (6)
+      Cache-Control:
+      - no-cache, no-store
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4b952ae88af0a08e-SLC
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"response\":{\r\n    \"code\":\"InvalidCredentials\",\r\n    \"message\":\"Invalid
+        username or password: Username='domain/bad'\",\r\n    \"errorId\":\"07e5f130eb1f419eb6c99e15a8a0c209\"\r\n
+        \ }\r\n}"
+    http_version: 
+  recorded_at: Mon, 18 Mar 2019 06:32:07 GMT
+recorded_with: VCR 4.0.0

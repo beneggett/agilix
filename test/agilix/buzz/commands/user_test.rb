@@ -144,7 +144,7 @@ class Agilix::Buzz::Commands::UserTest < Minitest::Test
 
   describe "#update_users" do
     it "updates user attributes" do
-      VCR.use_cassette("Commands::Domain update_users #{TEST_USER_ID}", match_requests_on: [:query]) do
+      VCR.use_cassette("Commands::User update_users #{TEST_USER_ID}", match_requests_on: [:query]) do
         response = api.update_users [{ userid: TEST_USER_ID, username: "BuzzUserUp1", email: 'buzzusertest1@agilix.com', firstname: 'Buzz', lastname: "ManUpdated"}]
         assert response.success?
         updated_users = response.dig("response", "responses", "response")
