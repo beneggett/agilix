@@ -11,6 +11,7 @@ TEST_DEACTIVATE_COURSE_ID = '60990'
 TEST_DELETE_COURSE_ID     = '60994'
 TEST_MERGE_COURSE_ID      = '60995'
 TEST_ENROLLMENT_ID        = '60997'
+TEST_ROLE_ID              = '61316'
 
 require 'simplecov'
 require 'pry'

@@ -9,6 +9,7 @@ require "agilix/buzz/commands/domain"
 require "agilix/buzz/commands/enrollment"
 require "agilix/buzz/commands/general"
 require "agilix/buzz/commands/report"
+require "agilix/buzz/commands/right"
 require "agilix/buzz/commands/user"
 
 require "agilix/buzz/api"
@@ -23,6 +24,6 @@ module Agilix
         super
       end
     end
-    # Your code goes here...
+
   end
 end
