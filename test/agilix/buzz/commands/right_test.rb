@@ -36,6 +36,17 @@ class Agilix::Buzz::Commands::RightTest < Minitest::Test
     end
   end
 
+  describe "#delete_subscriptions" do
+    it "deletes a subscriptions" do
+      skip
+      VCR.use_cassette("Commands::Right delete_subscriptions for subscriptions #{TEST_ROLE_ID}", match_requests_on: [:query]) do
+        response = api.delete_subscriptions sx xcv: TEST_ROLE_ID
+        assert response.success?
+        assert_equal "OK", response.dig("response", "code")
+      end
+    end
+  end
+
   describe "#restore_role" do
     it "restores a roles" do
       VCR.use_cassette("Commands::Right restore_role for role #{TEST_ROLE_ID}", match_requests_on: [:query]) do

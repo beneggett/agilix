@@ -17,15 +17,18 @@ module Agilix
           authenticated_get cmd: "deleterole", **options
         end
 
-        # api.delete_subscriptions
-        def delete_subscriptions(options = {})
-          options = argument_cleaner(required_params: %i( rightid ), optional_params: %i( ), options: options )
-          authenticated_get cmd: "deletesubscriptions", **options
+        # api.delete_subscriptions subscriberid: 1, entityid: 2
+        def delete_subscriptions(items = [])
+          options = items.map do |item|
+            argument_cleaner(required_params: %i( subscriberid entityid ), optional_params: %i( flags ), options: item )
+          end
+          authenticated_bulk_post cmd: "deletesubscriptions", root_node: 'subscription', body: options
         end
 
-        # api.get_actor_rights
+        # api.get_actor_rights actorid: 57181
         def get_actor_rights(options = {})
-          options = argument_cleaner(required_params: %i( rightid ), optional_params: %i( ), options: options )
+          options = argument_cleaner(required_params: %i( actorid ), optional_params: %i( entitytypes ), options: options )
+
           authenticated_get cmd: "getactorrights", **options
         end
 
@@ -37,7 +40,7 @@ module Agilix
 
         # api.get_effective_subscription_list
         def get_effective_subscription_list(options = {})
-          options = argument_cleaner(required_params: %i( rightid ), optional_params: %i( ), options: options )
+          options = argument_cleaner(required_params: %i( ), optional_params: %i( select ), options: options )
           authenticated_get cmd: "geteffectivesubscriptionlist", **options
         end
 
