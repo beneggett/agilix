@@ -11,6 +11,7 @@ module Agilix
       include Agilix::Buzz::Commands::Enrollment
       include Agilix::Buzz::Commands::General
       include Agilix::Buzz::Commands::Report
+      include Agilix::Buzz::Commands::Right
       include Agilix::Buzz::Commands::User
 
       attr_accessor :username, :password, :domain, :token, :token_expiration

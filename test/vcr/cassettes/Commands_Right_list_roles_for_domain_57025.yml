@@ -1,0 +1,191 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: api.agilixbuzz.com/cmd
+    body:
+      encoding: UTF-8
+      string: '{"request":{"cmd":"login2","username":"auto-tests/<AGILIX_BUZZ_USERNAME>","password":"<AGILIX_BUZZ_PASSWORD>"}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 21 Mar 2019 07:46:56 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d6ea069fefbaa7e21aea8ff0a0754ea891553154416; expires=Fri, 20-Mar-20
+        07:46:56 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000
+      Agilix-Encoding:
+      - gzip
+      Agilix-Server:
+      - xLi_474 (22)
+      Cache-Control:
+      - no-cache, no-store
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4bae509e5d62a040-SLC
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"response\":{\r\n    \"code\":\"OK\",\r\n    \"user\":{\r\n
+        \     \"userid\":\"57026\",\r\n      \"username\":\"<AGILIX_BUZZ_USERNAME>\",\r\n
+        \     \"firstname\":\"Buzz\",\r\n      \"lastname\":\"Test\",\r\n      \"email\":\"<AGILIX_BUZZ_USERNAME>\",\r\n
+        \     \"domainid\":\"57025\",\r\n      \"domainname\":\"BuzzTestUpdatedName1\",\r\n
+        \     \"userspace\":\"auto-tests\",\r\n      \"token\":\"~0.cdkqmPCfvSEC7N.Z0UwPy3_wZ5XQDJ-q7fHfKXGXGmwDfoI5xTvLVyDZQQ\",\r\n
+        \     \"authenticationexpirationminutes\":14\r\n    }\r\n  }\r\n}"
+    http_version: 
+  recorded_at: Thu, 21 Mar 2019 07:46:56 GMT
+- request:
+    method: get
+    uri: api.agilixbuzz.com/cmd?_token=~0.cdkqmPCfvSEC7N.Z0UwPy3_wZ5XQDJ-q7fHfKXGXGmwDfoI5xTvLVyDZQQ&cmd=listroles&domainid=57025
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 21 Mar 2019 07:46:56 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d4c54c8bc8854e6186a0d2786608c7f871553154416; expires=Fri, 20-Mar-20
+        07:46:56 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000
+      Agilix-Encoding:
+      - gzip
+      Agilix-Server:
+      - xLi_66352 (19)
+      Cache-Control:
+      - no-cache, no-store
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4bae509f9927a046-SLC
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"response\":{\r\n    \"code\":\"OK\",\r\n    \"roles\":{\r\n
+        \     \"role\":[{\r\n        \"id\":\"61315\",\r\n        \"name\":\"Test
+        Role\",\r\n        \"domainid\":\"57025\",\r\n        \"domainname\":\"BuzzTestUpdatedName1\",\r\n
+        \       \"reference\":\"\",\r\n        \"guid\":\"09d49eb7-0beb-4a36-a1a4-59a9ed16afc1\",\r\n
+        \       \"privileges\":\"16\",\r\n        \"flags\":8,\r\n        \"creationdate\":\"2019-03-21T07:45:30.76Z\",\r\n
+        \       \"creationby\":\"57026\",\r\n        \"modifieddate\":\"2019-03-21T07:45:30.76Z\",\r\n
+        \       \"modifiedby\":\"57026\",\r\n        \"version\":\"1\",\r\n        \"entitytype\":\"\"\r\n
+        \     },{\r\n        \"id\":\"109\",\r\n        \"name\":\"FC Admin\",\r\n
+        \       \"domainid\":\"5\",\r\n        \"domainname\":\"FranklinCovey\",\r\n
+        \       \"reference\":\"2\",\r\n        \"guid\":\"f2104da2-95ef-4152-9168-7eb72ac9a4d1\",\r\n
+        \       \"privileges\":\"61416676459040\",\r\n        \"flags\":8,\r\n        \"creationdate\":\"2018-10-22T20:43:58.523Z\",\r\n
+        \       \"creationby\":\"7\",\r\n        \"modifieddate\":\"2018-12-04T19:14:55.873Z\",\r\n
+        \       \"modifiedby\":\"7\",\r\n        \"version\":\"3\",\r\n        \"entitytype\":\"D\"\r\n
+        \     },{\r\n        \"id\":\"110\",\r\n        \"name\":\"Partner Admin\",\r\n
+        \       \"domainid\":\"5\",\r\n        \"domainname\":\"FranklinCovey\",\r\n
+        \       \"reference\":\"3\",\r\n        \"guid\":\"9f2dc54e-c763-49fe-8534-4d9e1704eec9\",\r\n
+        \       \"privileges\":\"69663029923696\",\r\n        \"flags\":8,\r\n        \"creationdate\":\"2018-10-22T20:47:05.213Z\",\r\n
+        \       \"creationby\":\"7\",\r\n        \"modifieddate\":\"2019-01-03T16:59:31.127Z\",\r\n
+        \       \"modifiedby\":\"107\",\r\n        \"version\":\"15\",\r\n        \"entitytype\":\"D\"\r\n
+        \     },{\r\n        \"id\":\"111\",\r\n        \"name\":\"Coach Admin\",\r\n
+        \       \"domainid\":\"5\",\r\n        \"domainname\":\"FranklinCovey\",\r\n
+        \       \"reference\":\"4\",\r\n        \"guid\":\"de0f1dcd-2cf9-4311-87ab-5f8d189c5358\",\r\n
+        \       \"privileges\":\"4398049001984\",\r\n        \"flags\":8,\r\n        \"creationdate\":\"2018-10-22T21:00:42.353Z\",\r\n
+        \       \"creationby\":\"7\",\r\n        \"modifieddate\":\"2019-02-22T21:22:46.493Z\",\r\n
+        \       \"modifiedby\":\"7\",\r\n        \"version\":\"18\",\r\n        \"entitytype\":\"D\"\r\n
+        \     },{\r\n        \"id\":\"112\",\r\n        \"name\":\"District Admin\",\r\n
+        \       \"domainid\":\"5\",\r\n        \"domainname\":\"FranklinCovey\",\r\n
+        \       \"reference\":\"5\",\r\n        \"guid\":\"c27b86c7-2f32-4491-a08b-b4f1a58e6958\",\r\n
+        \       \"privileges\":\"3612067496480\",\r\n        \"flags\":8,\r\n        \"creationdate\":\"2018-10-22T21:01:53.25Z\",\r\n
+        \       \"creationby\":\"7\",\r\n        \"modifieddate\":\"2018-10-22T21:08:36.623Z\",\r\n
+        \       \"modifiedby\":\"7\",\r\n        \"version\":\"2\",\r\n        \"entitytype\":\"D\"\r\n
+        \     },{\r\n        \"id\":\"113\",\r\n        \"name\":\"School Admin\",\r\n
+        \       \"domainid\":\"5\",\r\n        \"domainname\":\"FranklinCovey\",\r\n
+        \       \"reference\":\"6\",\r\n        \"guid\":\"2deaf525-3421-4cbe-b07f-f1c73a858b0f\",\r\n
+        \       \"privileges\":\"4398049001472\",\r\n        \"flags\":8,\r\n        \"creationdate\":\"2018-10-22T21:02:50.803Z\",\r\n
+        \       \"creationby\":\"7\",\r\n        \"modifieddate\":\"2019-03-11T21:09:19.25Z\",\r\n
+        \       \"modifiedby\":\"7\",\r\n        \"version\":\"24\",\r\n        \"entitytype\":\"D\"\r\n
+        \     },{\r\n        \"id\":\"114\",\r\n        \"name\":\"Teacher Admin\",\r\n
+        \       \"domainid\":\"5\",\r\n        \"domainname\":\"FranklinCovey\",\r\n
+        \       \"reference\":\"7\",\r\n        \"guid\":\"f4e0be4e-391e-4545-acf1-aa45ed91b635\",\r\n
+        \       \"privileges\":\"4398049001472\",\r\n        \"flags\":8,\r\n        \"creationdate\":\"2018-10-22T21:03:55.633Z\",\r\n
+        \       \"creationby\":\"7\",\r\n        \"modifieddate\":\"2019-03-11T19:22:34.97Z\",\r\n
+        \       \"modifiedby\":\"7\",\r\n        \"version\":\"24\",\r\n        \"entitytype\":\"D\"\r\n
+        \     },{\r\n        \"id\":\"115\",\r\n        \"name\":\"Teacher\",\r\n
+        \       \"domainid\":\"5\",\r\n        \"domainname\":\"FranklinCovey\",\r\n
+        \       \"reference\":\"8\",\r\n        \"guid\":\"99bb4a5f-256f-491b-81fd-4d4b4071221a\",\r\n
+        \       \"privileges\":\"4950203957248\",\r\n        \"flags\":8,\r\n        \"creationdate\":\"2018-10-22T21:06:18.427Z\",\r\n
+        \       \"creationby\":\"7\",\r\n        \"modifieddate\":\"2018-10-22T21:09:15.867Z\",\r\n
+        \       \"modifiedby\":\"7\",\r\n        \"version\":\"2\",\r\n        \"entitytype\":\"C\"\r\n
+        \     },{\r\n        \"id\":\"116\",\r\n        \"name\":\"Student\",\r\n
+        \       \"domainid\":\"5\",\r\n        \"domainname\":\"FranklinCovey\",\r\n
+        \       \"reference\":\"10\",\r\n        \"guid\":\"53ad2315-57ac-4d8d-b7c8-b05c7ec29631\",\r\n
+        \       \"privileges\":\"2228225\",\r\n        \"flags\":8,\r\n        \"creationdate\":\"2018-10-22T21:06:35.837Z\",\r\n
+        \       \"creationby\":\"7\",\r\n        \"modifieddate\":\"2018-10-22T21:09:25.507Z\",\r\n
+        \       \"modifiedby\":\"7\",\r\n        \"version\":\"2\",\r\n        \"entitytype\":\"C\"\r\n
+        \     },{\r\n        \"id\":\"117\",\r\n        \"name\":\"Teacher Student\",\r\n
+        \       \"domainid\":\"5\",\r\n        \"domainname\":\"FranklinCovey\",\r\n
+        \       \"reference\":\"9\",\r\n        \"guid\":\"3bfa27c9-830b-4d28-b337-e82d9fc1713f\",\r\n
+        \       \"privileges\":\"4400196222976\",\r\n        \"flags\":8,\r\n        \"creationdate\":\"2018-10-22T21:07:43.417Z\",\r\n
+        \       \"creationby\":\"7\",\r\n        \"modifieddate\":\"2018-10-22T21:09:20.423Z\",\r\n
+        \       \"modifiedby\":\"7\",\r\n        \"version\":\"2\",\r\n        \"entitytype\":\"C\"\r\n
+        \     },{\r\n        \"id\":\"143\",\r\n        \"name\":\"Development Admin\",\r\n
+        \       \"domainid\":\"5\",\r\n        \"domainname\":\"FranklinCovey\",\r\n
+        \       \"reference\":\"11\",\r\n        \"guid\":\"0966c350-4dbe-44fd-98aa-81439db333df\",\r\n
+        \       \"privileges\":\"61416676460064\",\r\n        \"flags\":8,\r\n        \"creationdate\":\"2018-10-26T21:15:08.667Z\",\r\n
+        \       \"creationby\":\"107\",\r\n        \"modifieddate\":\"2019-03-11T20:27:00.983Z\",\r\n
+        \       \"modifiedby\":\"7\",\r\n        \"version\":\"3\",\r\n        \"entitytype\":\"D\"\r\n
+        \     },{\r\n        \"id\":\"4811\",\r\n        \"name\":\"User\",\r\n        \"domainid\":\"5\",\r\n
+        \       \"domainname\":\"FranklinCovey\",\r\n        \"reference\":\"12\",\r\n
+        \       \"guid\":\"1eb910d8-7faa-415f-af7c-b6ed7db64e3d\",\r\n        \"privileges\":\"19791209431584\",\r\n
+        \       \"flags\":8,\r\n        \"creationdate\":\"2018-12-19T20:40:48.237Z\",\r\n
+        \       \"creationby\":\"107\",\r\n        \"modifieddate\":\"2018-12-19T20:41:12.193Z\",\r\n
+        \       \"modifiedby\":\"107\",\r\n        \"version\":\"2\",\r\n        \"entitytype\":\"D\"\r\n
+        \     },{\r\n        \"id\":\"12\",\r\n        \"name\":\"Administrator\",\r\n
+        \       \"domainid\":\"1\",\r\n        \"domainname\":\"Root\",\r\n        \"reference\":\"administrator\",\r\n
+        \       \"guid\":\"5634f171-8ea1-45db-9b6a-89bd38ee25a7\",\r\n        \"privileges\":\"-1\",\r\n
+        \       \"flags\":8,\r\n        \"creationdate\":\"2018-10-18T19:45:49.57Z\",\r\n
+        \       \"creationby\":\"11\",\r\n        \"modifieddate\":\"2018-10-18T19:45:49.57Z\",\r\n
+        \       \"modifiedby\":\"11\",\r\n        \"version\":\"1\",\r\n        \"entitytype\":\"D\"\r\n
+        \     }]\r\n    }\r\n  }\r\n}"
+    http_version: 
+  recorded_at: Thu, 21 Mar 2019 07:46:56 GMT
+recorded_with: VCR 4.0.0

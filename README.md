@@ -63,43 +63,53 @@ Below are instructions for basic invocation of the api methods. For additional i
 ```
 api.create_domains [{name: "BuzzTest1", userspace: 'buzz-test-fc-1', parentid: '57025'}]
 ```
+
 #### [DeleteDomain](https://api.agilixbuzz.com/docs/#!/Command/DeleteDomain)
 ```
 api.delete_domain domainid: '57027'
 ```
+
 #### [GetDomain2](https://api.agilixbuzz.com/docs/#!/Command/GetDomain2)
 This is aliased to `get_domain`
 ```
 api.get_domain domainid: '57025'
 ```
+
 #### [GetDomainContent](https://api.agilixbuzz.com/docs/#!/Command/GetDomainContent)
 ```
 api.get_domain_content domainid: '57025'
 ```
+
 #### [GetDomainEnrollmentMetrics](https://api.agilixbuzz.com/docs/#!/Command/GetDomainEnrollmentMetrics)
 ```
 api.get_domain_enrollment_metrics domainid: '57025'
 ```
+
 #### [GetDomainParentList](https://api.agilixbuzz.com/docs/#!/Command/GetDomainParentList)
 ```
 api.get_domain_parent_list domainid: '57025'
 ```
+
 #### [GetDomainSettings](https://api.agilixbuzz.com/docs/#!/Command/GetDomainSettings)
 ```
 api.get_domain_settings domainid: '57025', path: "AgilixBuzzSettings.xml"
 ```
+
 #### [GetDomainStats](https://api.agilixbuzz.com/docs/#!/Command/GetDomainStats)
 ```
 api.get_domain_stats domainid: '57025', options: "users|courses"
 ```
+
 #### [ListDomains](https://api.agilixbuzz.com/docs/#!/Command/ListDomains)
 ```
 api.list_domains domainid: '57025'
 ```
+
 #### [RestoreDomain](https://api.agilixbuzz.com/docs/#!/Command/RestoreDomain)
 ```
 api.restore_domain domainid: '57027'
 ```
+
 #### [UpdateDomains](https://api.agilixbuzz.com/docs/#!/Command/UpdateDomains)
 ```
 api.update_domains [{ domainid: "57027", name: "BuzzTestUpdated1", userspace: 'buzz-test-fc-1', parentid: '57025'}]
@@ -113,14 +123,17 @@ api.update_domains [{ domainid: "57027", name: "BuzzTestUpdated1", userspace: 'b
 ```
 api.get_report_info reportid: 127
 ```
+
 #### [GetReportList](https://api.agilixbuzz.com/docs/#!/Command/GetReportList)
 ```
 api.get_report_list domainid: 1
 ```
+
 #### [GetRunnableReportList](https://api.agilixbuzz.com/docs/#!/Command/GetRunnableReportList)
 ```
 api.get_runnable_report_list domainid: 57025
 ```
+
 #### [RunReport](https://api.agilixbuzz.com/docs/#!/Command/RunReport)
 ```
 api.run_report reportid: 127, entityid: 57025, format: 'json'
@@ -284,6 +297,7 @@ proxy_api.unproxy userid: 57181
 ```
 api.reset_lockout userid: 57181
 ```
+
 #### [ResetPassword](https://api.agilixbuzz.com/docs/#!/Command/ResetPassword)
 ```
 api.reset_password username:'auto-tests/BuzzUserUp1'
@@ -500,24 +514,102 @@ api.send_mail subject: "Test email", body: "Did you get this?", enrollmentid: 60
 
 ## Rights
 
-- [ ] [CreateRole](https://api.agilixbuzz.com/docs/#!/Command/CreateRole)
-- [ ] [DeleteRole](https://api.agilixbuzz.com/docs/#!/Command/DeleteRole)
-- [ ] [DeleteSubscriptions](https://api.agilixbuzz.com/docs/#!/Command/DeleteSubscriptions)
-- [ ] [GetActorRights](https://api.agilixbuzz.com/docs/#!/Command/GetActorRights)
-- [ ] [GetEffectiveRights](https://api.agilixbuzz.com/docs/#!/Command/GetEffectiveRights)
-- [ ] [GetEffectiveSubscriptionList](https://api.agilixbuzz.com/docs/#!/Command/GetEffectiveSubscriptionList)
-- [ ] [GetEntityRights](https://api.agilixbuzz.com/docs/#!/Command/GetEntityRights)
-- [ ] [GetEntitySubscriptionList](https://api.agilixbuzz.com/docs/#!/Command/GetEntitySubscriptionList)
-- [ ] [GetPersonas](https://api.agilixbuzz.com/docs/#!/Command/GetPersonas)
-- [ ] [GetRights](https://api.agilixbuzz.com/docs/#!/Command/GetRights)
-- [ ] [GetRightsList](https://api.agilixbuzz.com/docs/#!/Command/GetRightsList)
-- [ ] [GetRole](https://api.agilixbuzz.com/docs/#!/Command/GetRole)
-- [ ] [GetSubscriptionList](https://api.agilixbuzz.com/docs/#!/Command/GetSubscriptionList)
-- [ ] [ListRoles](https://api.agilixbuzz.com/docs/#!/Command/ListRoles)
-- [ ] [RestoreRole](https://api.agilixbuzz.com/docs/#!/Command/RestoreRole)
-- [ ] [UpdateRights](https://api.agilixbuzz.com/docs/#!/Command/UpdateRights)
-- [ ] [UpdateRole](https://api.agilixbuzz.com/docs/#!/Command/UpdateRole)
-- [ ] [UpdateSubscriptions](https://api.agilixbuzz.com/docs/#!/Command/UpdateSubscriptions)
+#### [CreateRole](https://api.agilixbuzz.com/docs/#!/Command/CreateRole)
+ISSUE: Why is this create singular, not multiple?
+```
+api.create_role domainid: 57025, name: "Test Role", privileges: api.right_flags[:create_domain]
+```
+
+#### [DeleteRole](https://api.agilixbuzz.com/docs/#!/Command/DeleteRole)
+```
+api.delete_role roleid: 61316
+```
+
+#### [DeleteSubscriptions](https://api.agilixbuzz.com/docs/#!/Command/DeleteSubscriptions)
+ISSUE: Why is this create singular, not multiple?
+```
+api.delete_subscriptions subscriberid: 57181, entityid: 57025
+```
+
+#### [GetActorRights](https://api.agilixbuzz.com/docs/#!/Command/GetActorRights)
+ISSUE: Why is this create singular, not multiple?
+```
+api.create_role domainid: 57025, name: "Test Role", privileges: api.right_flags[:create_domain]
+```
+
+#### [GetEffectiveRights](https://api.agilixbuzz.com/docs/#!/Command/GetEffectiveRights)
+```
+api.get_effective_rights entityid: 57025
+```
+
+#### [GetEffectiveSubscriptionList](https://api.agilixbuzz.com/docs/#!/Command/GetEffectiveSubscriptionList)
+```
+api.get_effective_subscription_list
+```
+
+#### [GetEntityRights](https://api.agilixbuzz.com/docs/#!/Command/GetEntityRights)
+```
+api.get_entity_rights entityid: 57025
+```
+
+#### [GetEntitySubscriptionList](https://api.agilixbuzz.com/docs/#!/Command/GetEntitySubscriptionList)
+```
+api.get_entity_subscription_list entityid: 57025
+```
+
+#### [GetPersonas](https://api.agilixbuzz.com/docs/#!/Command/GetPersonas)
+```
+api.get_personas userid: 57026
+```
+
+#### [GetRights](https://api.agilixbuzz.com/docs/#!/Command/GetRights)
+```
+api.get_rights actorid: 57026, entityid: 57025
+```
+
+#### [GetRightsList](https://api.agilixbuzz.com/docs/#!/Command/GetRightsList)
+```
+api.get_rights_list domainid: 57025
+```
+
+#### [GetRole](https://api.agilixbuzz.com/docs/#!/Command/GetRole)
+```
+api.get_role roleid: 61316
+```
+
+#### [GetSubscriptionList](https://api.agilixbuzz.com/docs/#!/Command/GetSubscriptionList)
+```
+# Get for a domain
+api.get_subscription_list subscriberid: 57025
+# Get for a user
+api.get_subscription_list subscriberid: 57026
+```
+
+#### [ListRoles](https://api.agilixbuzz.com/docs/#!/Command/ListRoles)
+```
+api.list_roles domainid: 57025
+```
+
+#### [RestoreRole](https://api.agilixbuzz.com/docs/#!/Command/RestoreRole)
+```
+api.restore_role roleid: 61316
+```
+
+#### [UpdateRights](https://api.agilixbuzz.com/docs/#!/Command/UpdateRights)
+```
+api.update_rights [ {actorid: 57026, entityid: 57025, roleid: 61316}]
+```
+
+#### [UpdateRole](https://api.agilixbuzz.com/docs/#!/Command/UpdateRole)
+```
+api.update_role roleid: 61316, name: "Test Role Updates", privileges: api.right_flags[:update_domain]
+```
+
+#### [UpdateSubscriptions](https://api.agilixbuzz.com/docs/#!/Command/UpdateSubscriptions)
+ISSUE: Why is this root node singular?
+```
+api.update_subscriptions subscriberid: 57181, entityid: 60982, startdate: "2019-03-15", enddate: "2019-03-15"
+```
 
 ---
 
