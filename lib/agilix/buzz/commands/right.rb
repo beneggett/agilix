@@ -17,7 +17,7 @@ module Agilix
           authenticated_get cmd: "deleterole", **options
         end
 
-        # api.delete_subscriptions subscriberid: 1, entityid: 2
+        # api.delete_subscriptions subscriberid: 57181, entityid: 57025
         def delete_subscriptions(items = [])
           options = items.map do |item|
             argument_cleaner(required_params: %i( subscriberid entityid ), optional_params: %i( flags ), options: item )
@@ -25,16 +25,15 @@ module Agilix
           authenticated_bulk_post cmd: "deletesubscriptions", root_node: 'subscription', body: options
         end
 
-        # api.get_actor_rights actorid: 57181
+        # api.get_actor_rights actorid: 5000, entitytypes: "U|S|D"
         def get_actor_rights(options = {})
           options = argument_cleaner(required_params: %i( actorid ), optional_params: %i( entitytypes ), options: options )
-
           authenticated_get cmd: "getactorrights", **options
         end
 
-        # api.get_effective_rights
+        # api.get_effective_rights entityid: 57025
         def get_effective_rights(options = {})
-          options = argument_cleaner(required_params: %i( rightid ), optional_params: %i( ), options: options )
+          options = argument_cleaner(required_params: %i( entityid ), optional_params: %i( ), options: options )
           authenticated_get cmd: "geteffectiverights", **options
         end
 
@@ -44,45 +43,48 @@ module Agilix
           authenticated_get cmd: "geteffectivesubscriptionlist", **options
         end
 
-        # api.get_entity_rights
+        # api.get_entity_rights entityid: 57025
         def get_entity_rights(options = {})
-          options = argument_cleaner(required_params: %i( rightid ), optional_params: %i( ), options: options )
+          options = argument_cleaner(required_params: %i( entityid ), optional_params: %i( ), options: options )
           authenticated_get cmd: "getentityrights", **options
         end
 
-        # api.get_entity_subscription_list
+        # api.get_entity_subscription_list entityid: 57025
         def get_entity_subscription_list(options = {})
-          options = argument_cleaner(required_params: %i( rightid ), optional_params: %i( ), options: options )
+          options = argument_cleaner(required_params: %i( entityid ), optional_params: %i( subscriberid), options: options )
           authenticated_get cmd: "getentitysubscriptionlist", **options
         end
 
-        # api.get_personas
+        # api.get_personas userid: 57026
         def get_personas(options = {})
-          options = argument_cleaner(required_params: %i( rightid ), optional_params: %i( ), options: options )
+          options = argument_cleaner(required_params: %i( ), optional_params: %i( userid domainid ), options: options )
           authenticated_get cmd: "getpersonas", **options
         end
 
-        # api.get_rights
+        # api.get_rights actorid: 57026, entityid: 57025
         def get_rights(options = {})
-          options = argument_cleaner(required_params: %i( rightid ), optional_params: %i( ), options: options )
+          options = argument_cleaner(required_params: %i( actorid entityid ), optional_params: %i( ), options: options )
           authenticated_get cmd: "getrights", **options
         end
 
-        # api.get_rights_list
+        # api.get_rights_list domainid: 57025
         def get_rights_list(options = {})
-          options = argument_cleaner(required_params: %i( rightid ), optional_params: %i( ), options: options )
+          options = argument_cleaner(required_params: %i(  ), optional_params: %i( domainid restrictdomain ), options: options )
           authenticated_get cmd: "getrightslist", **options
         end
 
-        # api.get_role
+        # api.get_role roleid: 61316
         def get_role(options = {})
-          options = argument_cleaner(required_params: %i( rightid ), optional_params: %i( ), options: options )
+          options = argument_cleaner(required_params: %i( roleid ), optional_params: %i( ), options: options )
           authenticated_get cmd: "getrole", **options
         end
 
-        # api.get_subscription_list
+        # Get for a domain
+        # api.get_subscription_list subscriberid: 57025
+        # Get for a user
+        # api.get_subscription_list subscriberid: 57026
         def get_subscription_list(options = {})
-          options = argument_cleaner(required_params: %i( rightid ), optional_params: %i( ), options: options )
+          options = argument_cleaner(required_params: %i( subscriberid ), optional_params: %i( entityid ), options: options )
           authenticated_get cmd: "getsubscriptionlist", **options
         end
 
@@ -98,10 +100,12 @@ module Agilix
           authenticated_get cmd: "restorerole", **options
         end
 
-        # api.update_rights
-        def update_rights(options = {})
-          options = argument_cleaner(required_params: %i( rightid ), optional_params: %i( ), options: options )
-          authenticated_get cmd: "updaterights", **options
+        # api.update_rights [ {actorid: 57026, entityid: 57025, roleid: 61316}]
+        def update_rights(items = [])
+          options = items.map do |item|
+            argument_cleaner(required_params: %i( actorid entityid ), optional_params: %i( roleid flags schema ), options: item )
+          end
+          authenticated_bulk_post cmd: "updaterights", root_node: 'rights', body: options
         end
 
         # api.update_role roleid: 61316, name: "Test Role Updates", privileges: api.right_flags[:update_domain]
@@ -112,12 +116,14 @@ module Agilix
           authenticated_post cmd: "updaterole", **options
         end
 
-        # api.update_subscriptions
-        def update_subscriptions(options = {})
-          options = argument_cleaner(required_params: %i( rightid ), optional_params: %i( ), options: options )
-          authenticated_get cmd: "updatesubscriptions", **options
+        # ISSUE: Why is this root node singular?
+        # api.update_subscriptions subscriberid: 57181, entityid: 60982, startdate: "2019-03-15", enddate: "2019-03-15"
+        def update_subscriptions(items = [])
+          options = items.map do |item|
+            argument_cleaner(required_params: %i( subscriberid entityid startdate enddate ), optional_params: %i( subscriptionflags ), options: item )
+          end
+          authenticated_bulk_post cmd: "updatesubscriptions", root_node: 'subscription', body: options
         end
-
 
         def right_flags
           {

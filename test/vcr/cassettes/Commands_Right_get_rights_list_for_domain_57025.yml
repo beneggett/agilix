@@ -1,0 +1,121 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: api.agilixbuzz.com/cmd
+    body:
+      encoding: UTF-8
+      string: '{"request":{"cmd":"login2","username":"auto-tests/<AGILIX_BUZZ_USERNAME>","password":"<AGILIX_BUZZ_PASSWORD>"}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 22 Mar 2019 09:47:57 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d2713d45fb8de1fcb70a0e23aa45820d71553248077; expires=Sat, 21-Mar-20
+        09:47:57 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000
+      Agilix-Encoding:
+      - gzip
+      Agilix-Server:
+      - xLi_683 (23)
+      Cache-Control:
+      - no-cache, no-store
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4bb73f45ab5ea028-SLC
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"response\":{\r\n    \"code\":\"OK\",\r\n    \"user\":{\r\n
+        \     \"userid\":\"57026\",\r\n      \"username\":\"<AGILIX_BUZZ_USERNAME>\",\r\n
+        \     \"firstname\":\"Buzz\",\r\n      \"lastname\":\"Test\",\r\n      \"email\":\"<AGILIX_BUZZ_USERNAME>\",\r\n
+        \     \"domainid\":\"57025\",\r\n      \"domainname\":\"BuzzTestUpdatedName1\",\r\n
+        \     \"userspace\":\"auto-tests\",\r\n      \"token\":\"~0.Xa2KcQYcIn4C7N.3s8_agMRfqLXvwGVuFPaLnC1bDLvWVwuN4frdEsnvcc\",\r\n
+        \     \"authenticationexpirationminutes\":14\r\n    }\r\n  }\r\n}"
+    http_version: 
+  recorded_at: Fri, 22 Mar 2019 09:47:57 GMT
+- request:
+    method: get
+    uri: api.agilixbuzz.com/cmd?_token=~0.Xa2KcQYcIn4C7N.3s8_agMRfqLXvwGVuFPaLnC1bDLvWVwuN4frdEsnvcc&cmd=getrightslist&domainid=57025
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 22 Mar 2019 09:47:58 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d658afeccee8c6e7923d1a8fb46aa5f7a1553248077; expires=Sat, 21-Mar-20
+        09:47:57 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000
+      Agilix-Encoding:
+      - gzip
+      Agilix-Server:
+      - xLi_683 (59)
+      Cache-Control:
+      - no-cache, no-store
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4bb73f46ed0da076-SLC
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"response\":{\r\n    \"code\":\"OK\",\r\n    \"list\":{\r\n
+        \     \"rights\":[{\r\n        \"actorid\":\"57026\",\r\n        \"entityid\":\"57025\",\r\n
+        \       \"roleid\":\"12\",\r\n        \"flags\":\"-1\",\r\n        \"actorreference\":\"\",\r\n
+        \       \"actorguid\":\"dbe7aac4-5502-4445-a592-ee40a550fd89\",\r\n        \"actorusername\":\"<AGILIX_BUZZ_USERNAME>\",\r\n
+        \       \"entitytype\":\"D\",\r\n        \"entityreference\":\"\",\r\n        \"entityguid\":\"d3cf72b4-9700-4832-8932-bde3eedce3a2\",\r\n
+        \       \"creationdate\":\"2019-03-11T02:16:40.8Z\",\r\n        \"creationby\":\"4305\",\r\n
+        \       \"modifieddate\":\"2019-03-11T02:16:40.8Z\",\r\n        \"modifiedby\":\"4305\",\r\n
+        \       \"version\":\"1\",\r\n        \"actordomainid\":\"57025\",\r\n        \"entitydomainid\":\"57025\",\r\n
+        \       \"entitydomainuserspace\":\"auto-tests\"\r\n      }]\r\n    }\r\n
+        \ }\r\n}"
+    http_version: 
+  recorded_at: Fri, 22 Mar 2019 09:47:58 GMT
+recorded_with: VCR 4.0.0

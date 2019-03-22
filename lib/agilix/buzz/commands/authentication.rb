@@ -23,7 +23,7 @@ module Agilix
         def extend_session
           response = authenticated_post cmd: "extendsession", bypass_authentication_check: true
           @token_expiration = set_token_expiration(response.dig("response", "session", "authenticationexpirationminutes"))
-          authenticate! if response['code'] == 'NoAuthentication'
+          authenticate! if response.dig("response", "code") == "NoAuthentication"
           response
         end
 

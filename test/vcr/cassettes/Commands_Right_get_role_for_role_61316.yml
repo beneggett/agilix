@@ -1,0 +1,119 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: api.agilixbuzz.com/cmd
+    body:
+      encoding: UTF-8
+      string: '{"request":{"cmd":"login2","username":"auto-tests/<AGILIX_BUZZ_USERNAME>","password":"<AGILIX_BUZZ_PASSWORD>"}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 22 Mar 2019 09:51:15 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=dbf3938432748ecea6f9c70638120664b1553248275; expires=Sat, 21-Mar-20
+        09:51:15 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000
+      Agilix-Encoding:
+      - gzip
+      Agilix-Server:
+      - xLi_683 (39)
+      Cache-Control:
+      - no-cache, no-store
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4bb7441ace0aa05e-SLC
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"response\":{\r\n    \"code\":\"OK\",\r\n    \"user\":{\r\n
+        \     \"userid\":\"57026\",\r\n      \"username\":\"<AGILIX_BUZZ_USERNAME>\",\r\n
+        \     \"firstname\":\"Buzz\",\r\n      \"lastname\":\"Test\",\r\n      \"email\":\"<AGILIX_BUZZ_USERNAME>\",\r\n
+        \     \"domainid\":\"57025\",\r\n      \"domainname\":\"BuzzTestUpdatedName1\",\r\n
+        \     \"userspace\":\"auto-tests\",\r\n      \"token\":\"~0.rjZmfB70TUIC7N.lyrogbpOl1Btj9AOe8ZxFO_EhXkQtUehQEDnQ4SE02M\",\r\n
+        \     \"authenticationexpirationminutes\":14\r\n    }\r\n  }\r\n}"
+    http_version: 
+  recorded_at: Fri, 22 Mar 2019 09:51:15 GMT
+- request:
+    method: get
+    uri: api.agilixbuzz.com/cmd?_token=~0.rjZmfB70TUIC7N.lyrogbpOl1Btj9AOe8ZxFO_EhXkQtUehQEDnQ4SE02M&cmd=getrole&roleid=61316
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 22 Mar 2019 09:51:15 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d704d1852c12ddc01be551135979df06f1553248275; expires=Sat, 21-Mar-20
+        09:51:15 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000
+      Agilix-Encoding:
+      - gzip
+      Agilix-Server:
+      - xLi_565 (14)
+      Cache-Control:
+      - no-cache, no-store
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4bb7441c0e0ea040-SLC
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"response\":{\r\n    \"code\":\"OK\",\r\n    \"role\":{\r\n
+        \     \"id\":\"61316\",\r\n      \"name\":\"Test Role Updates\",\r\n      \"domainid\":\"57025\",\r\n
+        \     \"domainname\":\"BuzzTestUpdatedName1\",\r\n      \"reference\":\"\",\r\n
+        \     \"guid\":\"9b58af9d-56d3-494e-8c49-c267bf6c5f65\",\r\n      \"privileges\":\"64\",\r\n
+        \     \"flags\":8,\r\n      \"creationdate\":\"2019-03-21T07:48:41.16Z\",\r\n
+        \     \"creationby\":\"57026\",\r\n      \"modifieddate\":\"2019-03-21T07:57:13.027Z\",\r\n
+        \     \"modifiedby\":\"57026\",\r\n      \"version\":\"7\",\r\n      \"entitytype\":\"\"\r\n
+        \   }\r\n  }\r\n}"
+    http_version: 
+  recorded_at: Fri, 22 Mar 2019 09:51:15 GMT
+recorded_with: VCR 4.0.0
