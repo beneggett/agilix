@@ -11,6 +11,7 @@ module Agilix
       include Agilix::Buzz::Commands::Enrollment
       include Agilix::Buzz::Commands::General
       include Agilix::Buzz::Commands::Report
+      include Agilix::Buzz::Commands::Resource
       include Agilix::Buzz::Commands::Right
       include Agilix::Buzz::Commands::User
 
@@ -50,6 +51,22 @@ module Agilix
 
       def post(query = {})
         response = self.class.post(URL_BASE, body: modify_body(query), timeout: 60, headers: headers)
+      end
+
+      # Not sure if I want to use this yet
+      # api.response_parser response: response, path_to_parse: ['response', 'users', 'user'], collection_name: 'users'
+      def response_parser(path_to_parse: nil, collection_name: nil, response: )
+        if path_to_parse
+          result = response.dig(*path_to_parse)
+          ostruct = JSON::parse({collection_name => result}.to_json, object_class: OpenStruct)
+          ostruct.result_count = result.size
+          ostruct.collection_name = collection_name
+        else
+          ostruct = JSON::parse(response.body, object_class: OpenStruct)
+        end
+        ostruct.code = response['code']
+        ostruct.response = response
+        ostruct
       end
 
       # For when the api is super unconventional & you need to modify both query params & body params in a custom fashion
