@@ -41,16 +41,19 @@ module Agilix
           authenticated_get cmd: "getentityresourceid", **options
         end
 
-        # api.get_resource
+        # api.get_resource entityid: 57031, path: "banner.css"
         def get_resource(options = {})
           options = argument_cleaner(required_params: %i( entityid path ), optional_params: %i( version packagetype attachment class ), options: options )
           authenticated_get cmd: "getresource", **options
         end
 
-        # api.get_resource_info2
-        def get_resource_info2(options = {})
-          options = argument_cleaner(required_params: %i( resourceid ), optional_params: %i( ), options: options )
-          authenticated_get cmd: "getresourceinfo2", **options
+        # ISSUE: This is a get request with a POST verb. The documentation only suggests getting a single resoure, so I'm not sure why it would be a bulk post syntax. it does seem to respond to multiple resources though,so we'll adapt
+        # api.get_resource_info  [{entityid: 57031, path: "banner.css"}]
+        def get_resource_info2(items = [])
+          options = items.map do |item|
+            argument_cleaner(required_params: %i( entityid path ), optional_params: %i( class ), options: item )
+          end
+          authenticated_bulk_post cmd: "getresourceinfo2", root_node: "resource", body: options
         end
         alias_method :get_resource_info, :get_resource_info2
 

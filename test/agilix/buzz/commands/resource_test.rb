@@ -47,17 +47,21 @@ class Agilix::Buzz::Commands::ResourceTest < Minitest::Test
       VCR.use_cassette("Commands::Resource get_resource for domain #{TEST_SUBDOMAIN_ID} file #{TEST_FILE_NAME}", match_requests_on: [:query]) do
         response = api.get_resource entityid: TEST_SUBDOMAIN_ID, path: TEST_FILE_NAME
         assert response.success?
-        binding.pry
-        resources =  response.dig('response', 'resources', 'resource')
-        assert_kind_of Array, resources
-        assert_equal TEST_SUBDOMAIN_ID, resources.sample["entityid"]
+        assert response.body
       end
     end
   end
 
   describe "#get_resource_info2" do
     it "get_resource_info2" do
-      skip
+      VCR.use_cassette("Commands::Resource get_resource_indo for domain #{TEST_SUBDOMAIN_ID} file #{TEST_FILE_NAME}", match_requests_on: [:query]) do
+        response = api.get_resource_info [{entityid: TEST_SUBDOMAIN_ID, path: TEST_FILE_NAME}]
+        assert response.success?
+        responses =  response.dig('response', 'responses', 'response')
+        assert_kind_of Array, responses
+        assert_equal TEST_SUBDOMAIN_ID, responses.sample["resource"]["entityid"]
+        assert_equal TEST_FILE_NAME, responses.sample["resource"]["path"]
+      end
     end
   end
 
