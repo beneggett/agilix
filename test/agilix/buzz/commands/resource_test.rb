@@ -59,8 +59,8 @@ class Agilix::Buzz::Commands::ResourceTest < Minitest::Test
         assert response.success?
         responses =  response.dig('response', 'responses', 'response')
         assert_kind_of Array, responses
-        assert_equal TEST_SUBDOMAIN_ID, responses.sample["resource"]["entityid"]
-        assert_equal TEST_FILE_NAME, responses.sample["resource"]["path"]
+        assert_equal TEST_SUBDOMAIN_ID, responses.sample.dig("resource", "entityid")
+        assert_equal TEST_FILE_NAME, responses.sample.dig("resource", "path")
       end
     end
   end
