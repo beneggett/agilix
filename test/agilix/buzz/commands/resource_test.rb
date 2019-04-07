@@ -20,7 +20,12 @@ class Agilix::Buzz::Commands::ResourceTest < Minitest::Test
 
   describe "#delete_resources" do
     it "delete_resources" do
-      skip
+      VCR.use_cassette("Commands::Resource delete_resources for domain #{TEST_SUBDOMAIN_ID} file #{TEST_FILE_NAME}", match_requests_on: [:query]) do
+        response = api.delete_resources [{entityid: TEST_SUBDOMAIN_ID, path: TEST_FILE_NAME}]
+        assert response.success?
+        responses =  response.dig('response', 'responses', 'response')
+        assert_equal "OK", responses.sample.dig("code")
+      end
     end
   end
 
@@ -38,7 +43,11 @@ class Agilix::Buzz::Commands::ResourceTest < Minitest::Test
 
   describe "#get_entity_resource_id" do
     it "get_entity_resource_id" do
-      skip
+      VCR.use_cassette("Commands::Resource get_entity_resource_id for domain #{TEST_SUBDOMAIN_ID}", match_requests_on: [:query]) do
+        response = api.get_entity_resource_id entityid: TEST_SUBDOMAIN_ID
+        assert response.success?
+        assert_equal TEST_SUBDOMAIN_ID, response.dig("response", "resourceentityid", "$value")
+      end
     end
   end
 
@@ -54,7 +63,7 @@ class Agilix::Buzz::Commands::ResourceTest < Minitest::Test
 
   describe "#get_resource_info2" do
     it "get_resource_info2" do
-      VCR.use_cassette("Commands::Resource get_resource_indo for domain #{TEST_SUBDOMAIN_ID} file #{TEST_FILE_NAME}", match_requests_on: [:query]) do
+      VCR.use_cassette("Commands::Resource get_resource_info for domain #{TEST_SUBDOMAIN_ID} file #{TEST_FILE_NAME}", match_requests_on: [:query]) do
         response = api.get_resource_info [{entityid: TEST_SUBDOMAIN_ID, path: TEST_FILE_NAME}]
         assert response.success?
         responses =  response.dig('response', 'responses', 'response')

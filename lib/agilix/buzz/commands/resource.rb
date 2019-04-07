@@ -1,4 +1,4 @@
-module Agilix
+  module Agilix
   module Buzz
     module Commands
       module Resource
@@ -17,10 +17,12 @@ module Agilix
           authenticated_get cmd: "deletedocuments", **options
         end
 
-        # api.delete_resources
-        def delete_resources(options = {})
-          options = argument_cleaner(required_params: %i( resourceid ), optional_params: %i( ), options: options )
-          authenticated_get cmd: "deleteresources", **options
+          # api.delete_resources [{entityid: 57031, path: 'banner.css'}]
+        def delete_resources(items = [])
+          options = items.map do |item|
+            argument_cleaner(required_params: %i( entityid path ), optional_params: %i( class ), options: item )
+          end
+          authenticated_bulk_post cmd: "deleteresources", root_node: "resource", body: options
         end
 
         # api.get_document
@@ -35,9 +37,9 @@ module Agilix
           authenticated_get cmd: "getdocumentinfo", **options
         end
 
-        # api.get_entity_resource_id
+        # api.get_entity_resource_id entityid: 57025
         def get_entity_resource_id(options = {})
-          options = argument_cleaner(required_params: %i( resourceid ), optional_params: %i( ), options: options )
+          options = argument_cleaner(required_params: %i( entityid ), optional_params: %i( ), options: options )
           authenticated_get cmd: "getentityresourceid", **options
         end
 
