@@ -17,7 +17,7 @@
           authenticated_get cmd: "deletedocuments", **options
         end
 
-          # api.delete_resources [{entityid: 57031, path: 'banner.css'}]
+        # api.delete_resources [{entityid: 57031, path: 'banner.css'}]
         def delete_resources(items = [])
           options = items.map do |item|
             argument_cleaner(required_params: %i( entityid path ), optional_params: %i( class ), options: item )
@@ -72,16 +72,17 @@
           authenticated_get cmd: "listrestorabledocuments", **options
         end
 
-        # api.list_restorable_resources
+        # api.list_restorable_resources entityid: 57025
         def list_restorable_resources(options = {})
-          options = argument_cleaner(required_params: %i( resourceid ), optional_params: %i( ), options: options )
+          options = argument_cleaner(required_params: %i( entityid ), optional_params: %i( ), options: options )
           authenticated_get cmd: "listrestorableresources", **options
         end
 
         # api.put_resource
-        def put_resource(options = {})
-          options = argument_cleaner(required_params: %i( resourceid ), optional_params: %i( ), options: options )
-          authenticated_get cmd: "putresource", **options
+        def put_resource(file, options = {})
+          options = argument_cleaner(required_params: %i( entityid path ), optional_params: %i( status class drophistory contenttype ), options: options )
+          # authenticated_query_post cmd: "putresource", **options
+          authenticated_query_post query_params: {cmd: "putresource", **options }, file: file
         end
 
         # api.put_resource_folders
@@ -96,10 +97,12 @@
           authenticated_get cmd: "restoredocuments", **options
         end
 
-        # api.restore_resources
-        def restore_resources(options = {})
-          options = argument_cleaner(required_params: %i( resourceid ), optional_params: %i( ), options: options )
-          authenticated_get cmd: "restoreresources", **options
+        # api.restore_resources [{entityid: 57031, path: 'banner.css'}]
+        def restore_resources(items = [])
+          options = items.map do |item|
+            argument_cleaner(required_params: %i( entityid path ), optional_params: %i( class ), options: item )
+          end
+          authenticated_bulk_post cmd: "restoreresources", root_node: "resource", body: options
         end
 
       end

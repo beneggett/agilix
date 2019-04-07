@@ -94,13 +94,27 @@ class Agilix::Buzz::Commands::ResourceTest < Minitest::Test
 
   describe "#list_restorable_resources" do
     it "list_restorable_resources" do
-      skip
+      VCR.use_cassette("Commands::Resource list_restorable_resources for domain #{TEST_SUBDOMAIN_ID}", match_requests_on: [:query]) do
+        response = api.list_restorable_resources entityid: TEST_SUBDOMAIN_ID
+        assert response.success?
+        resources = response.dig('response', 'resources', 'resource')
+        assert_kind_of Array, resources
+        assert_equal TEST_SUBDOMAIN_ID, resources.sample["entityid"]
+      end
     end
   end
 
   describe "#put_resource" do
     it "put_resource" do
-      skip
+      VCR.use_cassette("Commands::Resource put_resource for domain #{TEST_DOMAIN_ID} file #{TEST_FILE_UPLOAD.gsub("/","_")}", match_requests_on: [:query], preserve_exact_body_bytes: true) do
+        file_name = TEST_FILE_UPLOAD
+        file = File.open file_name
+        response = api.put_resource file, {entityid: TEST_DOMAIN_ID, path: file_name}
+        assert response.success?
+        binding.pry
+        resource =  response.dig('response', 'resource')
+        assert resource['version']
+      end
     end
   end
 
@@ -118,7 +132,13 @@ class Agilix::Buzz::Commands::ResourceTest < Minitest::Test
 
   describe "#restore_resources" do
     it "restore_resources" do
-      skip
+      VCR.use_cassette("Commands::Resource restore_resources for domain #{TEST_SUBDOMAIN_ID} file #{TEST_FILE_NAME}", match_requests_on: [:query]) do
+        response = api.restore_resources [{entityid: TEST_SUBDOMAIN_ID, path: TEST_FILE_NAME}]
+        assert response.success?
+        responses =  response.dig('response', 'responses', 'response')
+        assert_kind_of Array, responses
+        assert_equal "OK", responses.sample.dig("code")
+      end
     end
   end
 

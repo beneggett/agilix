@@ -15,6 +15,7 @@ TEST_ENROLLMENT_ID        = '60997'
 TEST_ROLE_ID              = '61316'
 TEST_SUBSCRIBER_ID        = '57181'
 TEST_FILE_NAME            = 'banner.css'
+TEST_FILE_UPLOAD          = "test/agilix-logo.png"
 
 require 'simplecov'
 require 'pry'

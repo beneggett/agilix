@@ -76,7 +76,14 @@ module Agilix
         if query_params
           url += "?&_token=#{token}" + query_params.map {|k,v| "&#{k}=#{v}" }.join("")
         end
-        response = self.class.post(url, body: query.to_json, timeout: 60, headers: headers)
+        file = query.delete(:file)
+        if file
+          new_headers = headers
+          new_headers["Content-Type"] = "multipart/form-data"
+          response = self.class.post(url, multipart: true, body: {file: file}, timeout: 60, headers: new_headers)
+        else
+          response = self.class.post(url, body: query.to_json, timeout: 60, headers: headers)
+        end
       end
 
       def bulk_post(query = {})
@@ -136,7 +143,7 @@ module Agilix
       end
 
       def headers
-        {
+        @headers = {
           "Accept" => "application/json",
           "Content-Type" => "application/json",
         }
