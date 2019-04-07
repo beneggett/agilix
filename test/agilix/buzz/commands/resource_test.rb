@@ -111,7 +111,6 @@ class Agilix::Buzz::Commands::ResourceTest < Minitest::Test
         file = File.open file_name
         response = api.put_resource file, {entityid: TEST_DOMAIN_ID, path: file_name}
         assert response.success?
-        binding.pry
         resource =  response.dig('response', 'resource')
         assert resource['version']
       end

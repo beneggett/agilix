@@ -69,7 +69,7 @@ module Agilix
         ostruct
       end
 
-      # For when the api is super unconventional & you need to modify both query params & body params in a custom fashion
+      # For when the api is super unconventional & you need to modify both query params & body params in a custom fashion, and upload a file even!
       def query_post(query = {})
         url = URL_BASE
         query_params = query.delete(:query_params)
