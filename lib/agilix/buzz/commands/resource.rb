@@ -3,7 +3,6 @@
     module Commands
       module Resource
 
-        # "Discuss.png"
         # api.copy_resources [ {sourceentityid: 57025, destinationentityid: 57031, sourcepath: "banner.css" }]
         def copy_resources(items = [])
           options = items.map do |item|
@@ -55,7 +54,9 @@
           authenticated_get cmd: "listrestorableresources", **options
         end
 
-        # api.put_resource
+        # file_name = "my-file.pdf"
+        # file = File.open file_name
+        # api.put_resource file, {entityid: 57025, path: file_name}
         def put_resource(file, options = {})
           options = argument_cleaner(required_params: %i( entityid path ), optional_params: %i( status class drophistory contenttype ), options: options )
           # authenticated_query_post cmd: "putresource", **options
