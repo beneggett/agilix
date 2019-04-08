@@ -12,12 +12,6 @@ class Agilix::Buzz::Commands::ResourceTest < Minitest::Test
     end
   end
 
-  describe "#delete_documents" do
-    it "delete_documents" do
-      skip
-    end
-  end
-
   describe "#delete_resources" do
     it "delete_resources" do
       VCR.use_cassette("Commands::Resource delete_resources for domain #{TEST_SUBDOMAIN_ID} file #{TEST_FILE_NAME}", match_requests_on: [:query]) do
@@ -26,18 +20,6 @@ class Agilix::Buzz::Commands::ResourceTest < Minitest::Test
         responses =  response.dig('response', 'responses', 'response')
         assert_equal "OK", responses.sample.dig("code")
       end
-    end
-  end
-
-  describe "#get_document" do
-    it "get_document" do
-      skip
-    end
-  end
-
-  describe "#get_document_info" do
-    it "get_document_info" do
-      skip
     end
   end
 
@@ -86,12 +68,6 @@ class Agilix::Buzz::Commands::ResourceTest < Minitest::Test
     end
   end
 
-  describe "#list_restorable_documents" do
-    it "list_restorable_documents" do
-      skip
-    end
-  end
-
   describe "#list_restorable_resources" do
     it "list_restorable_resources" do
       VCR.use_cassette("Commands::Resource list_restorable_resources for domain #{TEST_SUBDOMAIN_ID}", match_requests_on: [:query]) do
@@ -119,13 +95,12 @@ class Agilix::Buzz::Commands::ResourceTest < Minitest::Test
 
   describe "#put_resource_folders" do
     it "put_resource_folders" do
-      skip
-    end
-  end
-
-  describe "#restore_documents" do
-    it "restore_documents" do
-      skip
+      VCR.use_cassette("Commands::Resource put_resource_folders for domain #{TEST_SUBDOMAIN_ID}", match_requests_on: [:query]) do
+        response = api.put_resource_folders [{entityid: TEST_SUBDOMAIN_ID, path: 'test/folder-1'}]
+        assert response.success?
+        responses =  response.dig('response', 'responses', 'response')
+        assert responses.sample.dig("folder", "version")
+      end
     end
   end
 
@@ -138,6 +113,37 @@ class Agilix::Buzz::Commands::ResourceTest < Minitest::Test
         assert_kind_of Array, responses
         assert_equal "OK", responses.sample.dig("code")
       end
+    end
+  end
+
+  describe "#delete_documents" do
+    it "delete_documents" do
+      skip
+    end
+  end
+
+  describe "#get_document" do
+    it "get_document" do
+      skip
+    end
+  end
+
+
+  describe "#get_document_info" do
+    it "get_document_info" do
+      skip
+    end
+  end
+
+  describe "#list_restorable_documents" do
+    it "list_restorable_documents" do
+      skip
+    end
+  end
+
+  describe "#restore_documents" do
+    it "restore_documents" do
+      skip
     end
   end
 

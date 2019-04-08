@@ -4,17 +4,12 @@
       module Resource
 
         # "Discuss.png"
+        # api.copy_resources [ {sourceentityid: 57025, destinationentityid: 57031, sourcepath: "banner.css" }]
         def copy_resources(items = [])
           options = items.map do |item|
             argument_cleaner(required_params: %i( sourceentityid destinationentityid ), optional_params: %i( sourcepath destinationpath ), options: item )
           end
           authenticated_bulk_post cmd: "copyresources", root_node: "resource", body: options
-        end
-
-        # api.delete_documents
-        def delete_documents(options = {})
-          options = argument_cleaner(required_params: %i( resourceid ), optional_params: %i( ), options: options )
-          authenticated_get cmd: "deletedocuments", **options
         end
 
         # api.delete_resources [{entityid: 57031, path: 'banner.css'}]
@@ -23,18 +18,6 @@
             argument_cleaner(required_params: %i( entityid path ), optional_params: %i( class ), options: item )
           end
           authenticated_bulk_post cmd: "deleteresources", root_node: "resource", body: options
-        end
-
-        # api.get_document
-        def get_document(options = {})
-          options = argument_cleaner(required_params: %i( resourceid ), optional_params: %i( ), options: options )
-          authenticated_get cmd: "getdocument", **options
-        end
-
-        # api.get_document_info
-        def get_document_info(options = {})
-          options = argument_cleaner(required_params: %i( resourceid ), optional_params: %i( ), options: options )
-          authenticated_get cmd: "getdocumentinfo", **options
         end
 
         # api.get_entity_resource_id entityid: 57025
@@ -66,12 +49,6 @@
         end
         alias_method :get_resource_list, :get_resource_list2
 
-        # api.list_restorable_documents
-        def list_restorable_documents(options = {})
-          options = argument_cleaner(required_params: %i( resourceid ), optional_params: %i( ), options: options )
-          authenticated_get cmd: "listrestorabledocuments", **options
-        end
-
         # api.list_restorable_resources entityid: 57025
         def list_restorable_resources(options = {})
           options = argument_cleaner(required_params: %i( entityid ), optional_params: %i( ), options: options )
@@ -85,16 +62,12 @@
           authenticated_query_post query_params: {cmd: "putresource", **options }, file: file
         end
 
-        # api.put_resource_folders
-        def put_resource_folders(options = {})
-          options = argument_cleaner(required_params: %i( resourceid ), optional_params: %i( ), options: options )
-          authenticated_get cmd: "putresourcefolders", **options
-        end
-
-        # api.restore_documents
-        def restore_documents(options = {})
-          options = argument_cleaner(required_params: %i( resourceid ), optional_params: %i( ), options: options )
-          authenticated_get cmd: "restoredocuments", **options
+        # api.put_resource_folders [{entityid: 57031, path: 'test/folder-1'}]
+        def put_resource_folders(items = [])
+          options = items.map do |item|
+            argument_cleaner(required_params: %i( entityid path ), optional_params: %i( ), options: item )
+          end
+          authenticated_bulk_post cmd: "putresourcefolders", root_node: "folder", body: options
         end
 
         # api.restore_resources [{entityid: 57031, path: 'banner.css'}]
@@ -103,6 +76,45 @@
             argument_cleaner(required_params: %i( entityid path ), optional_params: %i( class ), options: item )
           end
           authenticated_bulk_post cmd: "restoreresources", root_node: "resource", body: options
+        end
+
+        # api.delete_documents
+        def delete_documents(items = [])
+          options = items.map do |item|
+            argument_cleaner(required_params: %i( enrollmentid itemid path ), optional_params: %i( ), options: item )
+          end
+          authenticated_bulk_post cmd: "deletedocuments", root_node: "document", body: options
+        end
+
+        # api.get_document enrollmentid: 60997
+        def get_document(options = {})
+          options = argument_cleaner(required_params: %i( enrollmentid itemid path ), optional_params: %i( version ), options: options )
+          authenticated_get cmd: "getdocument", **options
+        end
+
+        # ISSUE: Why is get command a bulk POST request
+        # api.get_document_info
+        def get_document_info(items = [])
+          options = items.map do |item|
+            argument_cleaner(required_params: %i( enrollmentid itemid path ), optional_params: %i( ), options: item )
+          end
+          authenticated_bulk_post cmd: "getdocumentinfo", root_node: "document", body: options
+          authenticated_get cmd: "", **options
+        end
+
+        # api.list_restorable_documents enrollmentid: 64001
+        def list_restorable_documents(options = {})
+          options = argument_cleaner(required_params: %i( enrollmentid itemid ), optional_params: %i( ), options: options )
+          authenticated_get cmd: "listrestorabledocuments", **options
+        end
+
+
+        # api.restore_documents
+        def restore_documents(items = [])
+          options = items.map do |item|
+            argument_cleaner(required_params: %i(  enrollmentid itemid path), optional_params: %i( version ), options: item )
+          end
+          authenticated_bulk_post cmd: "restoredocuments", root_node: "document", body: options
         end
 
       end

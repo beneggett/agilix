@@ -66,6 +66,7 @@ module Agilix
         end
         ostruct.code = response['code']
         ostruct.response = response
+        ostruct.request = request
         ostruct
       end
 
