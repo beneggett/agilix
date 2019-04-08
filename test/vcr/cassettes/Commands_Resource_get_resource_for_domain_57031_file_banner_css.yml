@@ -1,0 +1,164 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: api.agilixbuzz.com/cmd
+    body:
+      encoding: UTF-8
+      string: '{"request":{"cmd":"login2","username":"auto-tests/<AGILIX_BUZZ_USERNAME>","password":"<AGILIX_BUZZ_PASSWORD>"}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 26 Mar 2019 07:39:57 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d3b0c5e2766af1a1a9c9f2413fb3b6fd71553585997; expires=Wed, 25-Mar-20
+        07:39:57 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000
+      Agilix-Encoding:
+      - gzip
+      Agilix-Server:
+      - xLi_6215 (31)
+      Cache-Control:
+      - no-cache, no-store
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4bd779431c68a082-SLC
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"response\":{\r\n    \"code\":\"OK\",\r\n    \"user\":{\r\n
+        \     \"userid\":\"57026\",\r\n      \"username\":\"<AGILIX_BUZZ_USERNAME>\",\r\n
+        \     \"firstname\":\"Buzz\",\r\n      \"lastname\":\"Test\",\r\n      \"email\":\"<AGILIX_BUZZ_USERNAME>\",\r\n
+        \     \"domainid\":\"57025\",\r\n      \"domainname\":\"BuzzTestUpdatedName1\",\r\n
+        \     \"userspace\":\"auto-tests\",\r\n      \"token\":\"~0.63fNLgC4rH0C7N.oAJvkqenbfiCHGqNvWXe-mmjQh3pffHWqobae56we08\",\r\n
+        \     \"authenticationexpirationminutes\":14\r\n    }\r\n  }\r\n}"
+    http_version: 
+  recorded_at: Tue, 26 Mar 2019 07:39:57 GMT
+- request:
+    method: get
+    uri: api.agilixbuzz.com/cmd?_token=~0.63fNLgC4rH0C7N.oAJvkqenbfiCHGqNvWXe-mmjQh3pffHWqobae56we08&cmd=getresource&entityid=57031&path=banner.css
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 26 Mar 2019 07:39:57 GMT
+      Content-Type:
+      - text/css; charset=utf-8
+      Content-Length:
+      - '3612'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d4559814d518c9ac3ef98b32c91a686061553585997; expires=Wed, 25-Mar-20
+        07:39:57 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
+      Expires:
+      - Tue, 26 Mar 2019 07:39:57 GMT
+      Last-Modified:
+      - Tue, 26 Mar 2019 07:31:04 GMT
+      Etag:
+      - '"V1"'
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000
+      Agilix-Server:
+      - xLi_6215 (11)
+      Cache-Control:
+      - max-age=0, public
+      Accept-Ranges:
+      - bytes
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4bd779445ca1a04c-SLC
+    body:
+      encoding: UTF-8
+      string: "@charset \"UTF-8\";\r\n/* CSS Document */\r\n\r\n\r\n\r\nh1 {\r\n\tfont-family:
+        'Open Sans', sans-serif;\r\n\tcolor: #001d48;\r\n\tfont-size: 36px;\r\n\tfont-weight:
+        400;\r\n\tmargin-bottom: 25px;\r\n}\r\n\r\n\r\nul{\r\n  line-height: .2;\r\n}\r\n\r\n\r\nhr
+        {\r\n\t/*size: 30px;*/\r\n\tmargin-top: 30px;\r\n\tmargin-bottom: 30px;\r\n\tcolor:
+        #707070;\r\n}\r\n\r\n.mainTitleHeader {\r\n\r\n\tbackground-color: #001d48;\r\n\tpadding:
+        15px 15px 20px 15px;\r\n\tborder-radius: 6px;\r\n\r\n}\r\n\r\n.mainTitleHeader2
+        {\r\n\tbackground-color: white;\r\n\tpadding: 15px 15px 20px 15px;\r\n\tborder-radius:
+        6px;\r\n\r\n}\r\n.title {\r\n\tfont-family: 'Ideal Sans', sans-serif;\r\n\tcolor:
+        #001B49;\r\n\tfont-size: 15px;\r\n\tfont-weight: 300;\r\n\tmargin-bottom:
+        5px;\r\n\r\n}\r\n\r\n.headline {\r\n\tfont-family: 'Ideal Sans Extra', sans-serif;\r\n\tcolor:
+        white;\r\n\tfont-size: 40px;\r\n\tfont-weight: 400;\r\n}\r\n\r\n.headline2
+        {\r\n\tfont-family: 'Ideal Sans Extra', sans-serif;\r\n\tcolor: #001B49;\r\n\tfont-size:
+        40px;\r\n\tfont-weight: 400;\r\n\tfloat: right;\r\n\r\n\r\n}\r\n\r\n.bannerLeft{\r\nfloat:
+        left;\r\n\r\n}\r\n\r\n.bannerRight{\r\nfloat: left;\r\n}\r\n\r\n.columnWide
+        {\r\n\t/*background-color: red;*/\r\n\tpadding-top: 20px;\r\n\tpadding-bottom:
+        20px;\r\n  float: left;\r\n  width: 66%;\r\n  height: 200px;\r\n}\r\n\r\n.columnSmall
+        {\r\n  /*background-color: red;*/\r\n  padding-top: 20px;\r\n  padding-bottom:
+        20px;\r\n  float: left;\r\n  width: 33%;\r\n  height: 200px;\r\n}\r\n\r\n.row{\r\n
+        \ display: inline-flex;\r\n  align-items: center;\r\n  padding-bottom: 20px;\r\n
+        \ width: 100%;\r\n  max-width: 750px;\r\n}\r\n\r\n.row:after {\r\n  content:
+        \"\";\r\n  display: inline-block;\r\n  display: table;\r\n  clear: both;\r\n
+        \ align-items: center;\r\n\r\n}\r\n\r\n.row2 {\r\n  display: flex;\r\n}\r\n\r\n.row3{\r\n
+        \ display: flex;\r\n\r\n}\r\n\r\n.column2 {\r\n  flex: 50%;\r\n  padding:
+        2px;\r\n  display: flex;\r\n   align-items:center;\r\n\r\n}\r\n\r\n.row2 {\r\n
+        \   margin: 0 auto;\r\n    width: 75%;\r\n    overflow: hidden;\r\n    float:
+        left;\r\n}\r\n\r\n.row2 div {\r\n    width: 25%;\r\n    float: left;\r\n}\r\n\r\nimg.column2
+        {\r\n    display: block;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n}\r\n\r\np.column2
+        {\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n    width: 4em;\r\n}\r\n\r\n\r\n\r\n\r\n.page{\r\n\r\n
+        \ top: 0;\r\n  left: 0;\r\n  right: 0;\r\n  border: 0px solid #000;\r\n/*
+        \ width: 80%;*/\r\n  height: 100%;\r\n  margin-left: auto;\r\n  margin-right:
+        auto;\r\n  /*padding: 0;*/\r\n  box-sizing: border-box;\r\n}\r\n\r\n\r\n.image1
+        {\r\n\tdisplay: block;\r\n  margin-left: auto;\r\n  margin-right: auto;\r\n
+        \ width: 50%;\r\n}\r\n.topbanner {\r\n  display: inline-flex;\r\n  align-items:
+        center;\r\n  width: 100%;\r\n  max-width: 750px;\r\n}\r\n.topvideo {\r\n  padding-top:
+        5px;\r\n  display: inline-flex;\r\n  align-items: center;\r\n  padding-bottom:
+        20px;\r\n  width: 100%;\r\n  max-width: 750px;\r\n}\r\n.imageColumn1 {\r\n\tdisplay:
+        inline-flex;\r\n  margin-left: auto;\r\n  margin-right: auto;\r\n  width:
+        66%;\r\n  margin-top: -20px;\r\n  padding-top: 10px;\r\n  padding-right: 10px;\r\n
+        \ padding-bottom: 10px;\r\n}\r\n.imageColumn1-2 {\r\n  display: inline-flex;\r\n
+        \ margin-left: auto;\r\n  margin-right: auto;\r\n  width: 66%;\r\n  margin-top:
+        -20px;\r\n  padding-left:10px;\r\n}\r\n.imageColumn2 {\r\n  display: inline-flex;\r\n
+        \ margin-left: auto;\r\n  margin-right: auto;\r\n  width: 33%;\r\n  margin-top:
+        -20px;\r\n  padding-left: 7px;\r\n}\r\n.imageColumn2-2 {\r\n  display: inline-flex;\r\n
+        \ margin-left: auto;\r\n  margin-right: auto;\r\n  width: 33%;\r\n  margin-top:
+        -20px;\r\n}\r\n.imageColumn3 {\r\n  display: inline-flex;\r\n  margin-left:
+        auto;\r\n  margin-right: auto;\r\n  width: 100%;\r\n  margin-top: -20px;\r\n
+        \ padding: 10px;\r\n}\r\n.imageColumnRound {\r\n\tdisplay: block;\r\n  margin-left:
+        auto;\r\n  margin-right: left;\r\n  width: 75%;\r\n  border-radius: 50%;\r\n
+        \ display: table;\r\n  margin: auto;\r\n}\r\n\r\n.imageBanner {\r\n\tdisplay:
+        block;\r\n  margin-left: auto;\r\n  margin-right: auto;\r\n  margin-top: 20px;\r\n
+        \ width: 100%;\r\n}\r\n\r\n"
+    http_version: 
+  recorded_at: Tue, 26 Mar 2019 07:39:57 GMT
+recorded_with: VCR 4.0.0

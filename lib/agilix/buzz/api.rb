@@ -11,6 +11,7 @@ module Agilix
       include Agilix::Buzz::Commands::Enrollment
       include Agilix::Buzz::Commands::General
       include Agilix::Buzz::Commands::Report
+      include Agilix::Buzz::Commands::Resource
       include Agilix::Buzz::Commands::Right
       include Agilix::Buzz::Commands::User
 
@@ -52,14 +53,38 @@ module Agilix
         response = self.class.post(URL_BASE, body: modify_body(query), timeout: 60, headers: headers)
       end
 
-      # For when the api is super unconventional & you need to modify both query params & body params in a custom fashion
+      # Not sure if I want to use this yet
+      # api.response_parser response: response, path_to_parse: ['response', 'users', 'user'], collection_name: 'users'
+      def response_parser(path_to_parse: nil, collection_name: nil, response: )
+        if path_to_parse
+          result = response.dig(*path_to_parse)
+          ostruct = JSON::parse({collection_name => result}.to_json, object_class: OpenStruct)
+          ostruct.result_count = result.size
+          ostruct.collection_name = collection_name
+        else
+          ostruct = JSON::parse(response.body, object_class: OpenStruct)
+        end
+        ostruct.code = response['code']
+        ostruct.response = response
+        ostruct.request = request
+        ostruct
+      end
+
+      # For when the api is super unconventional & you need to modify both query params & body params in a custom fashion, and upload a file even!
       def query_post(query = {})
         url = URL_BASE
         query_params = query.delete(:query_params)
         if query_params
           url += "?&_token=#{token}" + query_params.map {|k,v| "&#{k}=#{v}" }.join("")
         end
-        response = self.class.post(url, body: query.to_json, timeout: 60, headers: headers)
+        file = query.delete(:file)
+        if file
+          new_headers = headers
+          new_headers["Content-Type"] = "multipart/form-data"
+          response = self.class.post(url, multipart: true, body: {file: file}, timeout: 60, headers: new_headers)
+        else
+          response = self.class.post(url, body: query.to_json, timeout: 60, headers: headers)
+        end
       end
 
       def bulk_post(query = {})
@@ -119,7 +144,7 @@ module Agilix
       end
 
       def headers
-        {
+        @headers = {
           "Accept" => "application/json",
           "Content-Type" => "application/json",
         }

@@ -512,6 +512,74 @@ This is one of the more confusing APIs, it allows you to send emails to people i
 api.send_mail subject: "Test email", body: "Did you get this?", enrollmentid: 60997, enrollment_ids: ["all"]
 ```
 
+## Resources
+
+
+#### [CopyResources](https://api.agilixbuzz.com/docs/#!/Command/CopyResources)
+
+```
+api.copy_resources [ {sourceentityid: 57025, destinationentityid: 57031, sourcepath: "banner.css" }]
+```
+
+#### [DeleteResources](https://api.agilixbuzz.com/docs/#!/Command/DeleteResources)
+
+```
+api.delete_resources [{entityid: 57031, path: 'banner.css'}]
+```
+
+#### [GetEntityResourceId](https://api.agilixbuzz.com/docs/#!/Command/GetEntityResourceId)
+
+```
+api.get_entity_resource_id entityid: 57025
+```
+
+#### [GetResource](https://api.agilixbuzz.com/docs/#!/Command/GetResource)
+
+```
+api.get_resource entityid: 57031, path: "banner.css"
+```
+
+#### [GetResourceInfo2](https://api.agilixbuzz.com/docs/#!/Command/GetResourceInfo2)
+
+ISSUE: This is a get request with a POST verb. The documentation only suggests getting a single resoure, so I'm not sure why it would be a bulk post syntax. it does seem to respond to multiple resources though,so we'll adapt
+
+```
+api.get_resource_info  [{entityid: 57031, path: "banner.css"}]
+```
+
+#### [GetResourceList2](https://api.agilixbuzz.com/docs/#!/Command/GetResourceList2)
+
+```
+api.get_resource_list entityid: 57025
+```
+
+#### [ListRestorableResources](https://api.agilixbuzz.com/docs/#!/Command/ListRestorableResources)
+
+```
+api.list_restorable_resources entityid: 57025
+```
+
+#### [PutResource](https://api.agilixbuzz.com/docs/#!/Command/PutResource)
+
+```
+file_name = "my-file.pdf"
+file = File.open file_name
+api.put_resource file, {entityid: 57025, path: file_name}
+```
+
+#### [PutResourceFolders](https://api.agilixbuzz.com/docs/#!/Command/PutResourceFolders)
+
+```
+api.put_resource_folders [{entityid: 57031, path: 'test/folder-1'}]
+```
+
+#### [RestoreResources](https://api.agilixbuzz.com/docs/#!/Command/RestoreResources)
+
+```
+api.restore_resources [{entityid: 57031, path: 'banner.css'}]
+```
+
+
 ## Rights
 
 #### [CreateRole](https://api.agilixbuzz.com/docs/#!/Command/CreateRole)
@@ -667,22 +735,11 @@ api.update_subscriptions subscriberid: 57181, entityid: 60982, startdate: "2019-
 
 ## Resources
 
-- [ ] [CopyResources](https://api.agilixbuzz.com/docs/#!/Command/CopyResources)
 - [ ] [DeleteDocuments](https://api.agilixbuzz.com/docs/#!/Command/DeleteDocuments)
-- [ ] [DeleteResources](https://api.agilixbuzz.com/docs/#!/Command/DeleteResources)
 - [ ] [GetDocument](https://api.agilixbuzz.com/docs/#!/Command/GetDocument)
 - [ ] [GetDocumentInfo](https://api.agilixbuzz.com/docs/#!/Command/GetDocumentInfo)
-- [ ] [GetEntityResourceId](https://api.agilixbuzz.com/docs/#!/Command/GetEntityResourceId)
-- [ ] [GetResource](https://api.agilixbuzz.com/docs/#!/Command/GetResource)
-- [ ] [GetResourceInfo2](https://api.agilixbuzz.com/docs/#!/Command/GetResourceInfo2)
-- [ ] [GetResourceList2](https://api.agilixbuzz.com/docs/#!/Command/GetResourceList2)
 - [ ] [ListRestorableDocuments](https://api.agilixbuzz.com/docs/#!/Command/ListRestorableDocuments)
-- [ ] [ListRestorableResources](https://api.agilixbuzz.com/docs/#!/Command/ListRestorableResources)
-- [ ] [PutResource](https://api.agilixbuzz.com/docs/#!/Command/PutResource)
-- [ ] [PutResourceFolders](https://api.agilixbuzz.com/docs/#!/Command/PutResourceFolders)
 - [ ] [RestoreDocuments](https://api.agilixbuzz.com/docs/#!/Command/RestoreDocuments)
-- [ ] [RestoreResources](https://api.agilixbuzz.com/docs/#!/Command/RestoreResources)
-
 ---
 
 # Not Prioritized
@@ -896,6 +953,3 @@ The gem is available as open source under the terms of the [MIT License](https:/
 ## Code of Conduct
 
 Everyone interacting in the Agilix::Buzz project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/agilix/blob/master/CODE_OF_CONDUCT.md).
-
-
-
