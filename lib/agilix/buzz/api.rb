@@ -1,8 +1,6 @@
 module Agilix
   module Buzz
     class Api
-      AGILIX_URL_ENDPOINT = ENV.fetch("AGILIX_BUZZ_URL", "https://api.agilixbuzz.com")
-      AGILIX_URL_BASE = "#{AGILIX_URL_ENDPOINT}/cmd"
       include HTTParty
 
       include Agilix::Buzz::Commands::Authentication
@@ -46,11 +44,11 @@ module Agilix
       end
 
       def get(query = {})
-        response = self.class.get(AGILIX_URL_BASE, query: modify_query(query), timeout: 60, headers: headers)
+        response = self.class.get(agilix_url_base, query: modify_query(query), timeout: 60, headers: headers)
       end
 
       def post(query = {})
-        response = self.class.post(AGILIX_URL_BASE, body: modify_body(query), timeout: 60, headers: headers)
+        response = self.class.post(agilix_url_base, body: modify_body(query), timeout: 60, headers: headers)
       end
 
       # Not sure if I want to use this yet
@@ -72,7 +70,7 @@ module Agilix
 
       # For when the api is super unconventional & you need to modify both query params & body params in a custom fashion, and upload a file even!
       def query_post(query = {})
-        url = AGILIX_URL_BASE
+        url = agilix_url_base
         query_params = query.delete(:query_params)
         if query_params
           url += "?&_token=#{token}" + query_params.map {|k,v| "&#{k}=#{v}" }.join("")
@@ -89,7 +87,7 @@ module Agilix
 
       def bulk_post(query = {})
         cmd = query.delete(:cmd)
-        url = AGILIX_URL_BASE + "?cmd=#{cmd}&_token=#{token}"
+        url = agilix_url_base + "?cmd=#{cmd}&_token=#{token}"
         query_params = query.delete(:query_params)
         if query_params
           url += query_params.map {|k,v| "&#{k}=#{v}" }.join("")
@@ -162,6 +160,14 @@ module Agilix
         ENV["AGILIX_BUZZ_DEFAULT_DOMAIN"]
       end
 
+      def agilix_url_endpoint 
+        @agilix_url_endpoint ||= ENV.fetch("AGILIX_BUZZ_URL", "https://api.agilixbuzz.com")
+      end
+
+      def agilix_url_base
+        @agilix_url_base ||= "#{agilix_url_endpoint}/cmd"
+      end      
+      
     end
   end
 end
