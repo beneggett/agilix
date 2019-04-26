@@ -1,7 +1,7 @@
 module Agilix
   module Buzz
     class Api
-      AGILIX_URL_ENDPOINT = ENV.fetch("AGILIX_BUZZ_URL", "https://api.schooldigger.com")
+      AGILIX_URL_ENDPOINT = ENV.fetch("AGILIX_BUZZ_URL", "https://api.agilixbuzz.com")
       AGILIX_URL_BASE = "#{AGILIX_URL_ENDPOINT}/cmd"
       include HTTParty
 
