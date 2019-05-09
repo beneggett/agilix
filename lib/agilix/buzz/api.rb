@@ -1,8 +1,6 @@
 module Agilix
   module Buzz
     class Api
-      URL_ENDPOINT = ENV.fetch("AGILIX_BUZZ_URL", "https://api.schooldigger.com")
-      URL_BASE = "#{URL_ENDPOINT}/cmd"
       include HTTParty
 
       include Agilix::Buzz::Commands::Authentication
@@ -10,6 +8,7 @@ module Agilix
       include Agilix::Buzz::Commands::Domain
       include Agilix::Buzz::Commands::Enrollment
       include Agilix::Buzz::Commands::General
+      include Agilix::Buzz::Commands::Library
       include Agilix::Buzz::Commands::Report
       include Agilix::Buzz::Commands::Resource
       include Agilix::Buzz::Commands::Right
@@ -46,33 +45,33 @@ module Agilix
       end
 
       def get(query = {})
-        response = self.class.get(URL_BASE, query: modify_query(query), timeout: 60, headers: headers)
+        response = self.class.get(agilix_url_base, query: modify_query(query), timeout: 60, headers: headers)
       end
 
       def post(query = {})
-        response = self.class.post(URL_BASE, body: modify_body(query), timeout: 60, headers: headers)
+        response = self.class.post(agilix_url_base, body: modify_body(query), timeout: 60, headers: headers)
       end
 
       # Not sure if I want to use this yet
       # api.response_parser response: response, path_to_parse: ['response', 'users', 'user'], collection_name: 'users'
-      def response_parser(path_to_parse: nil, collection_name: nil, response: )
-        if path_to_parse
-          result = response.dig(*path_to_parse)
-          ostruct = JSON::parse({collection_name => result}.to_json, object_class: OpenStruct)
-          ostruct.result_count = result.size
-          ostruct.collection_name = collection_name
-        else
-          ostruct = JSON::parse(response.body, object_class: OpenStruct)
-        end
-        ostruct.code = response['code']
-        ostruct.response = response
-        ostruct.request = request
-        ostruct
-      end
+      # def response_parser(path_to_parse: nil, collection_name: nil, response: )
+      #   if path_to_parse
+      #     result = response.dig(*path_to_parse)
+      #     ostruct = JSON::parse({collection_name => result}.to_json, object_class: OpenStruct)
+      #     ostruct.result_count = result.size
+      #     ostruct.collection_name = collection_name
+      #   else
+      #     ostruct = JSON::parse(response.body, object_class: OpenStruct)
+      #   end
+      #   ostruct.code = response['code']
+      #   ostruct.response = response
+      #   ostruct.request = request
+      #   ostruct
+      # end
 
       # For when the api is super unconventional & you need to modify both query params & body params in a custom fashion, and upload a file even!
       def query_post(query = {})
-        url = URL_BASE
+        url = agilix_url_base
         query_params = query.delete(:query_params)
         if query_params
           url += "?&_token=#{token}" + query_params.map {|k,v| "&#{k}=#{v}" }.join("")
@@ -89,7 +88,7 @@ module Agilix
 
       def bulk_post(query = {})
         cmd = query.delete(:cmd)
-        url = URL_BASE + "?cmd=#{cmd}&_token=#{token}"
+        url = agilix_url_base + "?cmd=#{cmd}&_token=#{token}"
         query_params = query.delete(:query_params)
         if query_params
           url += query_params.map {|k,v| "&#{k}=#{v}" }.join("")
@@ -160,6 +159,14 @@ module Agilix
 
       def default_domain
         ENV["AGILIX_BUZZ_DEFAULT_DOMAIN"]
+      end
+
+      def agilix_url_endpoint
+        @agilix_url_endpoint ||= ENV.fetch("AGILIX_BUZZ_URL", "https://api.agilixbuzz.com")
+      end
+
+      def agilix_url_base
+        @agilix_url_base ||= "#{agilix_url_endpoint}/cmd"
       end
 
     end
