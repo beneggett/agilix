@@ -8,6 +8,7 @@ module Agilix
       include Agilix::Buzz::Commands::Domain
       include Agilix::Buzz::Commands::Enrollment
       include Agilix::Buzz::Commands::General
+      include Agilix::Buzz::Commands::Library
       include Agilix::Buzz::Commands::Report
       include Agilix::Buzz::Commands::Resource
       include Agilix::Buzz::Commands::Right
@@ -160,14 +161,14 @@ module Agilix
         ENV["AGILIX_BUZZ_DEFAULT_DOMAIN"]
       end
 
-      def agilix_url_endpoint 
+      def agilix_url_endpoint
         @agilix_url_endpoint ||= ENV.fetch("AGILIX_BUZZ_URL", "https://api.agilixbuzz.com")
       end
 
       def agilix_url_base
         @agilix_url_base ||= "#{agilix_url_endpoint}/cmd"
-      end      
-      
+      end
+
     end
   end
 end
