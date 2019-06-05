@@ -124,6 +124,23 @@ class Agilix::Buzz::Commands::AuthenticationTest < Minitest::Test
     end
   end
 
+  describe "#proxy_sso_link" do
+    it "starts a proxy api session for a user" do
+      VCR.use_cassette("Commands::Authentication proxy_sso_link #{TEST_USER_ID}", match_requests_on: [:query]) do
+        proxy_sso_link = api.proxy_sso_link userid: TEST_USER_ID
+        assert proxy_sso_link
+      end
+    end
+    it "starts a proxy api session for a user with custom path" do
+      VCR.use_cassette("Commands::Authentication proxy_sso_link #{TEST_USER_ID} with custom path", match_requests_on: [:query]) do
+        path = "student/home/courses"
+        proxy_sso_link = api.proxy_sso_link userid: TEST_USER_ID, redirect_url: path
+        assert proxy_sso_link
+        assert_includes proxy_sso_link, "url=/#{path}"
+      end
+    end
+  end
+
   describe "#unproxy" do
     it "does not unproxy a user if they aren't using current api" do
       VCR.use_cassette("Commands::Authentication unproxy fail #{TEST_USER_ID}", match_requests_on: [:query]) do

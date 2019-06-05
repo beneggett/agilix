@@ -81,10 +81,8 @@ module Agilix
           self.class.new username: response.dig('response', 'user', 'username'), token: response.dig('response', 'user', 'token'), domain: response.dig('response', 'user', 'userspace'), token_expiration: set_token_expiration(response.dig('response', 'user', 'authenticationexpirationminutes'))
         end
 
-
-        # :skip_test_coverage:
         # api.proxy_sso_link userid: 57181
-        def proxy_sso_link(userid: )
+        def proxy_sso_link(userid: , redirect_url: "home")
           response = proxy userid: userid
           sso =  {
              "customization": {
@@ -96,10 +94,13 @@ module Agilix
              }
           }
           self.update_domains [ {domainid: response.dig('response', 'user', 'domainid'), data: sso}]
-          # userspace = response.dig('response', 'user', 'userspace')
-          "https://api.leaderinme.net/SSOLogin?domainid=#{response.dig('response', 'user', 'domainid')}&url=/home&token=#{response.dig('response', 'user', 'token')}"
+          userspace = response.dig('response', 'user', 'userspace')
+          token = response.dig('response', 'user', 'token')
+          # "https://api.leaderinme.net/SSOLogin?domainid=#{response.dig('response', 'user', 'domainid')}&url=/home&token=#{response.dig('response', 'user', 'token')}"
+          if token && userspace
+            "https://#{userspace}.leaderinme.net/login?token=#{token}&url=/#{redirect_url}"
+          end
         end
-        # :skip_test_coverage:
 
         # api.reset_lockout userid: 57181
         def reset_lockout(options = {})

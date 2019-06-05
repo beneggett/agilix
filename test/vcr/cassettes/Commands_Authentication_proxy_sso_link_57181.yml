@@ -1,0 +1,175 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: api.agilixbuzz.com/cmd
+    body:
+      encoding: UTF-8
+      string: '{"request":{"cmd":"login2","username":"auto-tests/<AGILIX_BUZZ_USERNAME>","password":"<AGILIX_BUZZ_PASSWORD>"}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 04 Jun 2019 20:22:10 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d5fe77880f2026d6b0471f4e12523b5031559679729; expires=Wed, 03-Jun-20
+        20:22:09 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000
+      Agilix-Encoding:
+      - gzip
+      Agilix-Server:
+      - xLi_7321 (23)
+      Cache-Control:
+      - no-cache, no-store
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4e1c9e076a99a068-SLC
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"response\":{\r\n    \"code\":\"OK\",\r\n    \"user\":{\r\n
+        \     \"userid\":\"57026\",\r\n      \"username\":\"<AGILIX_BUZZ_USERNAME>\",\r\n
+        \     \"firstname\":\"Buzz\",\r\n      \"lastname\":\"Test\",\r\n      \"email\":\"<AGILIX_BUZZ_USERNAME>\",\r\n
+        \     \"domainid\":\"57025\",\r\n      \"domainname\":\"Alief ISD\",\r\n      \"userspace\":\"auto-tests\",\r\n
+        \     \"token\":\"~0.TGdFgGJ2-msC7N.bh0cPbo9Ocx2lf513lIVo1wt7FWlpf3VrC_NphH51v4\",\r\n
+        \     \"authenticationexpirationminutes\":14\r\n    }\r\n  }\r\n}"
+    http_version: 
+  recorded_at: Tue, 04 Jun 2019 20:22:07 GMT
+- request:
+    method: post
+    uri: api.agilixbuzz.com/cmd
+    body:
+      encoding: UTF-8
+      string: '{"request":{"cmd":"proxy","userid":"57181","noazt":true,"_token":"~0.TGdFgGJ2-msC7N.bh0cPbo9Ocx2lf513lIVo1wt7FWlpf3VrC_NphH51v4"}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 04 Jun 2019 20:22:10 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d6019223a2ccfc3644cd9802ead0257931559679730; expires=Wed, 03-Jun-20
+        20:22:10 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000
+      Agilix-Encoding:
+      - gzip
+      Agilix-Server:
+      - xLi_851152 (22)
+      Cache-Control:
+      - no-cache, no-store
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4e1c9e0a298fa026-SLC
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"response\":{\r\n    \"code\":\"OK\",\r\n    \"user\":{\r\n
+        \     \"userid\":\"57181\",\r\n      \"username\":\"BuzzUserUp1\",\r\n      \"firstname\":\"Buzz\",\r\n
+        \     \"lastname\":\"ManUpdated\",\r\n      \"email\":\"buzzusertest1@agilix.com\",\r\n
+        \     \"domainid\":\"57025\",\r\n      \"domainname\":\"Alief ISD\",\r\n      \"userspace\":\"auto-tests\",\r\n
+        \     \"token\":\"~0.NkVh8MDWBF0d9NAAIs3.qWqBWQQwPJSz5twtn7KD86fOOmtDD9oPL5Ry_C8JgZ4\",\r\n
+        \     \"authenticationexpirationminutes\":14,\r\n      \"agent\":{\r\n        \"userid\":\"57026\",\r\n
+        \       \"username\":\"<AGILIX_BUZZ_USERNAME>\",\r\n        \"firstname\":\"Buzz\",\r\n
+        \       \"lastname\":\"Test\",\r\n        \"email\":\"<AGILIX_BUZZ_USERNAME>\",\r\n
+        \       \"domainid\":\"57025\",\r\n        \"domainname\":\"Alief ISD\",\r\n
+        \       \"userspace\":\"auto-tests\"\r\n      }\r\n    }\r\n  }\r\n}"
+    http_version: 
+  recorded_at: Tue, 04 Jun 2019 20:22:08 GMT
+- request:
+    method: post
+    uri: api.agilixbuzz.com/cmd?_token=~0.TGdFgGJ2-msC7N.bh0cPbo9Ocx2lf513lIVo1wt7FWlpf3VrC_NphH51v4&cmd=updatedomains
+    body:
+      encoding: UTF-8
+      string: '{"requests":{"domain":[{"domainid":"57025","data":{"customization":{"authentication":{"provider":{"server":"https://www.google.com"}}}}}]}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 04 Jun 2019 20:22:10 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=dfd552a80f002d601eaceeda725cc84ce1559679730; expires=Wed, 03-Jun-20
+        20:22:10 GMT; path=/; domain=.agilixbuzz.com; HttpOnly; Secure
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000
+      Agilix-Encoding:
+      - gzip
+      Agilix-Server:
+      - xLi_7321 (81)
+      Cache-Control:
+      - no-cache, no-store
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 4e1c9e0be987a044-SLC
+    body:
+      encoding: UTF-8
+      string: "{\r\n  \"response\":{\r\n    \"code\":\"OK\",\r\n    \"responses\":{\r\n
+        \     \"response\":[{\r\n        \"code\":\"OK\"\r\n      }]\r\n    }\r\n
+        \ }\r\n}"
+    http_version: 
+  recorded_at: Tue, 04 Jun 2019 20:22:08 GMT
+recorded_with: VCR 4.0.0
