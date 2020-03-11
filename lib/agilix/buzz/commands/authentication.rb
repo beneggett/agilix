@@ -84,16 +84,16 @@ module Agilix
         # api.proxy_sso_link userid: 57181
         def proxy_sso_link(userid: , redirect_url: "home")
           response = proxy userid: userid
-          sso =  {
-             "customization": {
-                "authentication": {
-                   "provider": {
-                      "server": "https://www.google.com"
-                   }
-                }
-             }
-          }
-          self.update_domains [ {domainid: response.dig('response', 'user', 'domainid'), data: sso}]
+          # sso =  {
+          #    "customization": {
+          #       "authentication": {
+          #          "provider": {
+          #             "server": "https://www.google.com"
+          #          }
+          #       }
+          #    }
+          # }
+          # self.update_domains [ {domainid: response.dig('response', 'user', 'domainid'), data: sso}]
           userspace = response.dig('response', 'user', 'userspace')
           token = response.dig('response', 'user', 'token')
           # "https://api.leaderinme.net/SSOLogin?domainid=#{response.dig('response', 'user', 'domainid')}&url=/home&token=#{response.dig('response', 'user', 'token')}"
