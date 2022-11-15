@@ -14,7 +14,7 @@ module Agilix
       include Agilix::Buzz::Commands::Right
       include Agilix::Buzz::Commands::User
 
-      attr_accessor :username, :password, :domain, :token, :token_expiration
+      attr_accessor :username, :password, :domain, :token, :token_expiration, :agilix_url_endpoint
 
       def initialize(options = {})
         @username = options.fetch(:username, default_username)
@@ -22,6 +22,7 @@ module Agilix
         @domain = options.fetch(:domain, default_domain)
         @token = options.dig(:token)
         @token_expiration = options.dig(:token_expiration)
+        @agilix_url_endpoint = options.fetch(:agilix_url_endpoint, default_agilix_url_endpoint)
       end
 
       def authenticated_get(query = {})
@@ -161,8 +162,8 @@ module Agilix
         ENV["AGILIX_BUZZ_DEFAULT_DOMAIN"]
       end
 
-      def agilix_url_endpoint
-        @agilix_url_endpoint ||= ENV.fetch("AGILIX_BUZZ_URL", "https://api.agilixbuzz.com")
+      def default_agilix_url_endpoint
+        ENV.fetch("AGILIX_BUZZ_URL", "https://api.agilixbuzz.com")
       end
 
       def agilix_url_base
